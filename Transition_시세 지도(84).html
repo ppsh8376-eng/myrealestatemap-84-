@@ -19,6 +19,9 @@
         .btn-on { background-color: #E8F5E9; border-color: #2E7D32; color: #2E7D32; } 
         .btn-off { background-color: #ffffff; border-color: #999; color: #777; opacity: 0.8; } 
 
+        /* 📍 좌측 하단 임장 순서 박스 */
+        .sequence-box { position: absolute; bottom: 20px; left: 20px; z-index: 2000; background-color: rgba(255, 255, 255, 0.9); padding: 12px 18px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); font-size: 13px; font-weight: bold; color: #333; border: 2px solid #555; pointer-events: none; }
+
         /* 아파트 마커 */
         .marker-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0px 1px 3px rgba(0,0,0,0.5); position: absolute; transform: translate(-50%, -50%); }
         .info-box-group { position: relative; display: flex; flex-direction: column; align-items: center; pointer-events: none; }
@@ -32,7 +35,6 @@
         .sch-subtext { padding: 1px 3px; border-radius: 2px; font-size: 8px; font-weight: bold; margin-bottom: 2px; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.3); border: 1px solid rgba(0,0,0,0.2); }
 
         /* ★ 편의시설 마커 (가독성 높은 상단 서브라벨 + 동그라미) ★ */
-        /* calc(-100% + 5px)를 통해 동그라미의 정중앙이 해당 위경도 좌표에 오도록 맞춥니다. */
         .ame-wrapper { position: absolute; transform: translate(-50%, calc(-100% + 5px)); display: flex; flex-direction: column; align-items: center; z-index: 5; pointer-events: none; }
         .ame-name { background-color: rgba(255,255,255,0.95); padding: 2px 4px; border-radius: 3px; font-size: 9px; font-weight: bold; color: #333; margin-bottom: 3px; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.3); border: 1px solid rgba(0,0,0,0.2); }
         .ame-dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
@@ -47,6 +49,10 @@
         <button class="nav-btn btn-on" id="btn-mid" onclick="toggleSchool('mid')">중학교</button>
         <button class="nav-btn btn-on" id="btn-high" onclick="toggleSchool('high')">고등학교</button>
         <button class="nav-btn btn-off" id="btn-amenity" onclick="toggleAmenities()">상권/병원</button>
+    </div>
+
+    <div class="sequence-box">
+        📍 임장 순서: 광교 ➔ 수지 ➔ 영통 ➔ 의왕 ➔ 군포 ➔ 안양 ➔ 광명 ➔ 구로 ➔ 부천 ➔ 관악 ➔ 성북 ➔ 구리 ➔ 수성 ➔ 중, 달 ➔ 천안 ➔ 아산
     </div>
 
     <div id="map"></div>
@@ -368,7 +374,6 @@
             else if (a.type === '대형마트') dotCol = '#FF9800'; // 주황색
             else if (a.type === '종합병원') dotCol = '#F44336'; // 빨간색
             
-            // ★ 서브라벨 씌우고 이름표를 위로 올림
             var content = `
                 <div class="ame-wrapper">
                     <div class="ame-name">${a.name}</div>
