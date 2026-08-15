@@ -8,8 +8,9 @@
         #map { width: 100%; height: 100vh; position: relative; }
         body { margin: 0; padding: 0; overflow: hidden; font-family: 'Malgun Gothic', sans-serif; }
         
-        /* 🚀 버튼 그룹 레이아웃 */
-        .nav-buttons { position: absolute; top: 15px; left: 15px; z-index: 2000; display: flex; gap: 6px; flex-wrap: wrap; max-width: 90vw; }
+        /* 🚀 버튼 그룹 레이아웃 (좌측 상단 2줄 정리) */
+        .nav-buttons-container { position: absolute; top: 15px; left: 15px; z-index: 2000; display: flex; flex-direction: column; gap: 8px; }
+        .nav-row { display: flex; gap: 6px; flex-wrap: wrap; }
         .nav-btn { padding: 6px 12px; border: 2px solid #333; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.3); transition: all 0.2s; }
         .nav-btn:hover { transform: translateY(-2px); }
         .nav-btn:active { transform: translateY(0); box-shadow: 0 1px 2px rgba(0,0,0,0.3); }
@@ -27,16 +28,29 @@
         .price-legend-box::-webkit-scrollbar { width: 5px; }
         .price-legend-box::-webkit-scrollbar-thumb { background: #888; border-radius: 2px; }
 
-        /* ★ 우측 상단 정비사업 절차 패널 ★ */
-        .process-panel { position: absolute; top: 15px; right: 15px; z-index: 2000; background: rgba(255, 255, 255, 0.95); border: 2px solid #555; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); padding: 12px; width: 280px; font-family: 'Malgun Gothic', sans-serif; pointer-events: auto; display: block; }
+        /* ★ 우측 상단 정비사업 절차 패널 (독립 배치) ★ */
+        .process-panel { position: absolute; top: 55px; right: 15px; z-index: 2000; background: rgba(255, 255, 255, 0.95); border: 2px solid #555; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); padding: 12px; width: 280px; font-family: 'Malgun Gothic', sans-serif; pointer-events: auto; display: block; }
         .process-title { text-align: center; font-weight: 900; font-size: 13px; margin-bottom: 10px; border-bottom: 2px solid #333; padding-bottom: 5px; color: #111; letter-spacing: -0.5px; }
         .process-columns { display: flex; gap: 10px; }
         .process-col { flex: 1; display: flex; flex-direction: column; align-items: center; }
         .process-col-title { font-weight: bold; font-size: 12px; margin-bottom: 6px; border-radius: 4px; padding: 4px 0; color: #fff; width: 100%; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); letter-spacing: -0.5px; }
-        .process-col-title.remodel { background-color: #1E88E5; } /* 푸른색 */
-        .process-col-title.recon { background-color: #E53935; } /* 붉은색 */
+        .process-col-title.remodel { background-color: #1E88E5; } 
+        .process-col-title.recon { background-color: #E53935; } 
         .process-step { font-size: 9.5px; font-weight: bold; color: #333; text-align: center; background: #fff; border: 1.5px solid #ccc; border-radius: 4px; padding: 3px 2px; width: 100%; box-sizing: border-box; letter-spacing: -0.5px; word-break: keep-all; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
         .process-arrow { font-size: 10px; color: #777; margin: 1px 0; line-height: 1; }
+
+        /* 📅 임장 캘린더 UI */
+        .calendar-panel { position: absolute; bottom: 65px; right: 20px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none; }
+        .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .cal-btn { background: none; border: none; cursor: pointer; font-size: 14px; color: #555; padding: 0 5px; }
+        .cal-btn:hover { color: #000; }
+        .cal-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        .cal-table th { font-size: 11px; padding: 4px; border-bottom: 1.5px solid #ccc; text-align: center; color: #333; }
+        .cal-table td { border: 1px solid #ddd; height: 45px; vertical-align: top; padding: 3px; background: #fff; }
+        .cal-table td.empty { background: #f9f9f9; }
+        .cal-date { font-size: 10px; font-weight: bold; color: #777; margin-bottom: 2px; }
+        .cal-content { font-size: 10px; min-height: 25px; outline: none; color: #111; word-break: break-all; font-weight: bold; cursor: text; }
+        .cal-content:focus { background: #e8f0fe; border-radius: 2px; }
 
         /* 마커 공통 */
         .marker-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0px 1px 3px rgba(0,0,0,0.5); position: absolute; transform: translate(-50%, -50%); }
@@ -45,7 +59,7 @@
         .price-bubble { border-radius: 6px; padding: 3px 8px; font-size: 14px; font-weight: 900; box-shadow: 0px 4px 8px rgba(0,0,0,0.4); border: 1.5px solid rgba(255,255,255,0.2); z-index: 150; }
         .bubble-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 7px solid; margin-top: -1px; z-index: 100; }
         .regen-badge { font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-bottom: 3px; color: #fff; box-shadow: 0px 2px 4px rgba(0,0,0,0.4); white-space: nowrap; border: 1px solid rgba(255,255,255,0.5); z-index: 250; }
-
+        
         .sch-wrapper { position: absolute; transform: translate(-50%, -100%); margin-top: -8px; display: flex; flex-direction: column; align-items: center; z-index: 10; pointer-events: none; }
         .sch-badge { width: auto; height: 16px; line-height: 16px; text-align: center; border-radius: 3px; color: #fff; font-size: 10px; font-weight: bold; padding: 0 4px; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.3); }
         .sch-subtext { padding: 1px 3px; border-radius: 2px; font-size: 8px; font-weight: bold; margin-bottom: 2px; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.3); border: 1px solid rgba(0,0,0,0.2); }
@@ -56,19 +70,26 @@
     </style>
 </head>
 <body>
-    <div class="nav-buttons">
-        <button class="nav-btn btn-move" onclick="moveTo(37.5141, 127.0142)">서울(강남구)</button>
-        <button class="nav-btn btn-move" onclick="moveTo(37.5893, 127.0167)">서울(성북구)</button>
-        <button class="nav-btn btn-move" onclick="moveTo(36.8154, 127.1138)">천안(서북구)</button>
-        <button class="nav-btn btn-move" onclick="moveTo(35.8575, 128.6358)">대구(범어동)</button>
-        <button class="nav-btn btn-on" id="btn-apt" onclick="toggleApt()">단지 시세</button>
-        <button class="nav-btn btn-on" id="btn-elem" onclick="toggleSchool('elem')">초등학교</button>
-        <button class="nav-btn btn-on" id="btn-mid" onclick="toggleSchool('mid')">중학교</button>
-        <button class="nav-btn btn-on" id="btn-high" onclick="toggleSchool('high')">고등학교</button>
-        <button class="nav-btn btn-off" id="btn-amenity" onclick="toggleAmenities()">상권/병원</button>
-        <button class="nav-btn btn-on" id="btn-process" onclick="toggleProcess()">정비사업 절차 📋</button>
+    <!-- 좌측 상단 컨트롤 패널 -->
+    <div class="nav-buttons-container">
+        <div class="nav-row">
+            <button class="nav-btn btn-move" onclick="moveTo(37.5141, 127.0142)">서울(강남구)</button>
+            <button class="nav-btn btn-move" onclick="moveTo(37.5893, 127.0167)">서울(성북구)</button>
+            <button class="nav-btn btn-move" onclick="moveTo(36.8154, 127.1138)">천안(서북구)</button>
+            <button class="nav-btn btn-move" onclick="moveTo(35.8575, 128.6358)">대구(범어동)</button>
+        </div>
+        <div class="nav-row">
+            <button class="nav-btn btn-on" id="btn-apt" onclick="toggleApt()">단지 시세</button>
+            <button class="nav-btn btn-on" id="btn-elem" onclick="toggleSchool('elem')">초등학교</button>
+            <button class="nav-btn btn-on" id="btn-mid" onclick="toggleSchool('mid')">중학교</button>
+            <button class="nav-btn btn-on" id="btn-high" onclick="toggleSchool('high')">고등학교</button>
+            <button class="nav-btn btn-off" id="btn-amenity" onclick="toggleAmenities()">상권/병원</button>
+        </div>
     </div>
 
+    <!-- 우측 상단 정비사업 버튼 -->
+    <button class="nav-btn btn-on" id="btn-process" onclick="toggleProcess()" style="position: absolute; top: 15px; right: 15px; z-index: 2000;">정비사업 절차 📋</button>
+    
     <!-- 우측 상단 정비사업 절차 패널 -->
     <div class="process-panel" id="process-panel">
         <div class="process-title">🏗️ 정비사업 추진 절차</div>
@@ -130,6 +151,17 @@
         </div>
     </div>
 
+    <!-- 우측 하단 캘린더 버튼 및 패널 -->
+    <button class="nav-btn btn-off" id="btn-calendar" onclick="toggleCalendar()" style="position: absolute; bottom: 20px; right: 20px; z-index: 2000; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">임장 캘린더 📅</button>
+    <div class="calendar-panel" id="calendar-panel">
+        <div class="cal-header">
+            <button class="cal-btn" onclick="changeMonth(-1)">◀</button>
+            <span id="cal-month-year" style="font-weight:bold; font-size:13px; color:#333;"></span>
+            <button class="cal-btn" onclick="changeMonth(1)">▶</button>
+        </div>
+        <div id="cal-grid"></div>
+    </div>
+
     <!-- 좌측 하단 범례 및 순서 -->
     <div class="price-legend-box">
         <div class="legend-row" style="background:#000000; color:#FFD700;">70.0억+</div>
@@ -170,6 +202,8 @@
     </div>
 
     <div id="map"></div>
+    
+    <!-- 겹침 방지를 위해 시세 경계선 이미지의 위치를 우측으로 살짝 이동 -->
     
     
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=fa774c789fb9cb254b3cd60428111247"></script>
@@ -231,7 +265,58 @@
         }
 
         // =====================================
-        // 🗺️ 렌더링 로직
+        // 📅 임장 캘린더 구동 로직 (자동 저장)
+        // =====================================
+        var showCalendar = false;
+        var currentDate = new Date(); // 현재 날짜 기준
+        
+        function toggleCalendar() {
+            showCalendar = !showCalendar;
+            document.getElementById('btn-calendar').className = showCalendar ? "nav-btn btn-on" : "nav-btn btn-off";
+            document.getElementById('calendar-panel').style.display = showCalendar ? "block" : "none";
+            if(showCalendar) renderCalendar();
+        }
+
+        function renderCalendar() {
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth();
+            document.getElementById('cal-month-year').innerText = year + "년 " + (month + 1) + "월";
+            
+            var firstDay = new Date(year, month, 1).getDay();
+            var daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            var html = '<table class="cal-table"><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr><tr>';
+            var dayCount = 1;
+            
+            for (var i = 0; i < 42; i++) {
+                if (i % 7 === 0 && i !== 0) html += '</tr><tr>';
+                if (i < firstDay || dayCount > daysInMonth) {
+                    html += '<td class="empty"></td>';
+                } else {
+                    var dateKey = 'imjang_cal_' + year + '_' + (month+1) + '_' + dayCount;
+                    var savedText = localStorage.getItem(dateKey) || '';
+                    html += `<td>
+                        <div class="cal-date">${dayCount}</div>
+                        <div class="cal-content" contenteditable="true" onblur="saveCalData('${dateKey}', this.innerText)">${savedText}</div>
+                    </td>`;
+                    dayCount++;
+                }
+            }
+            html += '</tr></table>';
+            document.getElementById('cal-grid').innerHTML = html;
+        }
+
+        function changeMonth(dir) {
+            currentDate.setMonth(currentDate.getMonth() + dir);
+            renderCalendar();
+        }
+
+        function saveCalData(key, text) {
+            localStorage.setItem(key, text);
+        }
+
+        // =====================================
+        // 🗺️ 렌더링 로직 (경계선, 상권, 학교, 아파트)
         // =====================================
         var geojson = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"code":"39020","name":"서귀포시","name_eng":"Seogwipo-si","base_year":"2013"},"geometry":{"type":"Polygon","coordinates":[[[126.1701670531016,33.27833920373795],[126.17796199822318,33.28904450342792],[126.20366562455006,33.292582069125935],[126.23227804627976,33.28054651709448],[126.27081469983565,33.29305651947374],[126.28692516789717,33.3095121006344],[126.32582807936741,33.32307849544494],[126.33863040850332,33.33700002289742],[126.37692773779688,33.34348978209229],[126.42008790072302,33.33448285889923],[126.43967991919219,33.34042205120408],[126.44742456956253,33.35529267692266],[126.4918716225209,33.351283204155564],[126.54001194569452,33.35949354681064],[126.55310458705854,33.368769331336765],[126.5830715764017,33.368027779973275],[126.65655971322707,33.39658294968576],[126.68911351796443,33.39691133705054],[126.70784071345439,33.41819831436605],[126.73472429940135,33.422146338653775],[126.75951968887561,33.41497179862364],[126.79074582138537,33.43825351998022],[126.82385785054652,33.44338028367965],[126.8898274152664,33.47823603716075],[126.90529687529418,33.480086403367224],[126.91451306461225,33.46996423390579],[126.93834260748045,33.47055272752707],[126.91017277435895,33.402610687558585],[126.90919306806411,33.3879255679562],[126.87535882585192,33.36822409322237],[126.8705501162605,33.34975159885652],[126.84671810776004,33.33005904428782],[126.83805963301805,33.30541883125935],[126.81058128765947,33.29810905802241],[126.78058721090692,33.30348117728641],[126.74744517061241,33.27477917807315],[126.69397491052028,33.26589785324775],[126.66139509103422,33.26764883602634],[126.64370899012728,33.26176379473827],[126.62124671799259,33.238001461003755],[126.60023270919079,33.23253794499945],[126.58793276547512,33.24078903556731],[126.55000275643071,33.233994617394124],[126.52287888872885,33.237410624439875],[126.5112182224236,33.226741039104716],[126.47233571972863,33.219241198557235],[126.45245786615838,33.23676200849374],[126.43326944303328,33.22862021392413],[126.41456422346796,33.24077765309614],[126.38663415314419,33.2281960784446],[126.32186188505729,33.2348134021202],[126.29961093191966,33.219470994774156],[126.29462959454436,33.20325737472914],[126.27360444082919,33.19065258266024],[126.2344607950971,33.231192587887506],[126.20182608174507,33.242644947267415],[126.18421578146823,33.2556336839387],[126.1701670531016,33.27833920373795]]]}},
 {"type":"Feature","properties":{"code":"39010","name":"제주시","name_eng":"Jeju-si","base_year":"2013"},"geometry":{"type":"MultiPolygon","coordinates":[[[[126.95749379080732,33.52245641440839],[126.9731989684708,33.498754077952555],[126.94954584507536,33.4895447597362],[126.94279608187666,33.50103054337929],[126.95749379080732,33.52245641440839]]],[[[126.90529687529418,33.480086403367224],[126.8898274152664,33.47823603716075],[126.82385785054652,33.44338028367965],[126.79074582138537,33.43825351998022],[126.75951968887561,33.41497179862364],[126.73472429940135,33.422146338653775],[126.70784071345439,33.41819831436605],[126.68911351796443,33.39691133705054],[126.65655971322707,33.39658294968576],[126.5830715764017,33.368027779973275],[126.55310458705854,33.368769331336765],[126.54001194569452,33.35949354681064],[126.4918716225209,33.351283204155564],[126.44742456956253,33.35529267692266],[126.43967991919219,33.34042205120408],[126.42008790072302,33.33448285889923],[126.37692773779688,33.34348978209229],[126.33863040850332,33.33700002289742],[126.32582807936741,33.32307849544494],[126.28692516789717,33.3095121006344],[126.27081469983565,33.29305651947374],[126.23227804627976,33.28054651709448],[126.20366562455006,33.292582069125935],[126.17796199822318,33.28904450342792],[126.1701670531016,33.27833920373795],[126.16319295942347,33.32059642402829],[126.1692541537235,33.34310558958249],[126.21461375807213,33.37309156042842],[126.2619192214544,33.413737972061774],[126.26197058380335,33.43142547688364],[126.3070400569873,33.44823091074929],[126.31005406486322,33.463098336550836],[126.33749501698236,33.46367421762971],[126.38761176138898,33.4865145900699],[126.39670361974751,33.4811364736424],[126.48208433034038,33.50677622835366],[126.49529547568828,33.5184121837681],[126.51667984271614,33.51331402436857],[126.54176863235955,33.527562476211756],[126.55087422195945,33.51759024881304],[126.58362236141552,33.523927713435334],[126.59940627536525,33.53451980393117],[126.63484958960886,33.53527429124482],[126.64568938881722,33.553414822717535],[126.66008979414049,33.548871831149306],[126.75800613842082,33.55555170516014],[126.78655545465347,33.562854180697364],[126.80185825451599,33.553702356637885],[126.82997198815602,33.55685083846837],[126.8331417008821,33.543008206988866],[126.85956040111658,33.5237459631211],[126.87389326759744,33.52840985278047],[126.9044869524447,33.52306487335703],[126.91799070617053,33.498337310154],[126.90529687529418,33.480086403367224]]]]}},
