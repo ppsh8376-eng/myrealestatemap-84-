@@ -86,19 +86,21 @@
         </div>
         <div class="nav-row">
             <button class="nav-btn btn-on" id="btn-apt" onclick="toggleApt()">단지 시세 (84)</button>
+            <button class="nav-btn btn-off" id="btn-struct" onclick="toggleStruct()">구조/방화장실</button>
+        </div>
+        <div class="nav-row">
             <button class="nav-btn btn-on" id="btn-elem" onclick="toggleSchool('elem')">초등학교</button>
             <button class="nav-btn btn-on" id="btn-mid" onclick="toggleSchool('mid')">중학교</button>
             <button class="nav-btn btn-on" id="btn-high" onclick="toggleSchool('high')">고등학교</button>
             <button class="nav-btn btn-off" id="btn-amenity" onclick="toggleAmenities()">상권/병원</button>
-            <button class="nav-btn btn-off" id="btn-struct" onclick="toggleStruct()">구조/방화장실</button>
-        </div>
-        <div class="nav-row">
-            <button class="nav-btn btn-off" onclick="exportData()" style="background-color: #E3F2FD; border-color: #1976D2; color: #1976D2;">데이터 백업 💾</button>
-            <button class="nav-btn btn-off" onclick="importData()" style="background-color: #FBE9E7; border-color: #D84315; color: #D84315;">데이터 복원 📂</button>
         </div>
     </div>
 
-    <button class="nav-btn btn-on" id="btn-process" onclick="toggleProcess()" style="position: absolute; top: 15px; right: 15px; z-index: 2000;">정비사업 절차 📋</button>
+    <div style="position: absolute; top: 15px; right: 15px; z-index: 2000; display: flex; gap: 8px;">
+        <button class="nav-btn btn-off" onclick="exportData()" style="background-color: #E3F2FD; border-color: #1976D2; color: #1976D2; margin: 0;">데이터 백업 💾</button>
+        <button class="nav-btn btn-off" onclick="importData()" style="background-color: #FBE9E7; border-color: #D84315; color: #D84315; margin: 0;">데이터 복원 📂</button>
+        <button class="nav-btn btn-on" id="btn-process" onclick="toggleProcess()" style="margin: 0;">정비사업 절차 📋</button>
+    </div>
     
     <div class="process-panel" id="process-panel">
         <div class="process-title">🏗️ 정비사업 추진 절차</div>
@@ -549,7 +551,8 @@
             
             var html = '';
             for (var reg in grouped) {
-                html += `<div style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px;">📁 ${reg}</div>`;
+                html += `<div style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px; cursor:pointer;" onclick="toggleFolder(this)">📁 ${reg}</div>`;
+                html += `<div class="memo-folder-content" style="display:block;">`;
                 grouped[reg].forEach(function(m) {
                     html += `<div style="margin-bottom: 8px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; background: #fff; position: relative;">
                         <div style="cursor: pointer; padding-right: 90px;" onclick="loadMemoSelection('${m.joined}')">
@@ -562,8 +565,20 @@
                         </div>
                     </div>`;
                 });
+                html += `</div>`;
             }
             content.innerHTML = html;
+        }
+
+        function toggleFolder(el) {
+            var content = el.nextElementSibling;
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                el.innerText = el.innerText.replace('📂', '📁');
+            } else {
+                content.style.display = 'none';
+                el.innerText = el.innerText.replace('📁', '📂');
+            }
         }
 
         function exportData() {
