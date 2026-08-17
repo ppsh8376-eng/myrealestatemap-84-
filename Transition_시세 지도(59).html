@@ -579,13 +579,51 @@
                 grouped[m.region].push(m);
             });
             
-            var html = '';
+            var sortMode = localStorage.getItem('apt_memo_sort_mode') || 'asc';
+            var customOrder = JSON.parse(localStorage.getItem('apt_memo_custom_order') || '[]');
+            var folders = Object.keys(grouped);
+            
+            var customOrderChanged = false;
+            folders.forEach(function(f) {
+                if (customOrder.indexOf(f) === -1) {
+                    customOrder.push(f);
+                    customOrderChanged = true;
+                }
+            });
+            if (customOrderChanged) {
+                localStorage.setItem('apt_memo_custom_order', JSON.stringify(customOrder));
+            }
+            
+            if (sortMode === 'asc') {
+                folders.sort();
+            } else if (sortMode === 'desc') {
+                folders.sort().reverse();
+            } else {
+                folders.sort(function(a, b) { return customOrder.indexOf(a) - customOrder.indexOf(b); });
+            }
+            
+            var html = `<div style="text-align:right; margin-bottom:5px;">
+                <select onchange="localStorage.setItem('apt_memo_sort_mode', this.value); loadMemoList();" style="font-size:11px; padding:2px; border:1px solid #ccc; border-radius:3px;">
+                    <option value="asc" ${sortMode==='asc'?'selected':''}>이름순 (오름차순)</option>
+                    <option value="desc" ${sortMode==='desc'?'selected':''}>이름순 (내림차순)</option>
+                    <option value="custom" ${sortMode==='custom'?'selected':''}>사용자 지정</option>
+                </select>
+            </div>`;
             var states = JSON.parse(localStorage.getItem('apt_folder_states') || '{}');
-            for (var reg in grouped) {
+            for (var i = 0; i < folders.length; i++) {
+                var reg = folders[i];
                 var isOpen = states[reg] !== 'closed';
                 var displayStyle = isOpen ? 'block' : 'none';
                 var icon = isOpen ? '▼' : '▶';
-                html += `<div data-region="${reg}" style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px; cursor:pointer;" onclick="toggleFolder(this, 'apt')">${icon} ${reg}</div>`;
+                
+                var orderButtons = '';
+                if (sortMode === 'custom') {
+                    var upBtn = i > 0 ? `<span onclick="moveFolderOrder('${reg}', -1, 'apt'); event.stopPropagation();" style="margin-right:4px;">🔼</span>` : `<span style="margin-right:4px; opacity:0.2;">🔼</span>`;
+                    var downBtn = i < folders.length - 1 ? `<span onclick="moveFolderOrder('${reg}', 1, 'apt'); event.stopPropagation();" style="margin-right:4px;">🔽</span>` : `<span style="margin-right:4px; opacity:0.2;">🔽</span>`;
+                    orderButtons = `<span style="float:right;">${upBtn}${downBtn}</span>`;
+                }
+                
+                html += `<div data-region="${reg}" style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px; cursor:pointer;" onclick="toggleFolder(this, 'apt')">${icon} ${reg} ${orderButtons}</div>`;
                 html += `<div class="memo-folder-content" style="display:${displayStyle};">`;
                 grouped[reg].forEach(function(m) {
                     html += `<div style="margin-bottom: 8px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; background: #fff; position: relative;">
@@ -622,6 +660,59 @@
             }
             localStorage.setItem(statesKey, JSON.stringify(states));
         }
+        
+        function moveFolderOrder(folder, direction, type) {
+            var isUser = type === 'user';
+            var orderKey = isUser ? 'user_memo_custom_order' : 'apt_memo_custom_order';
+            var customOrder = JSON.parse(localStorage.getItem(orderKey) || '[]');
+            var idx = customOrder.indexOf(folder);
+            if (idx === -1) return;
+            var newIdx = idx + direction;
+            if (newIdx < 0 || newIdx >= customOrder.length) return;
+            
+            var temp = customOrder[idx];
+            customOrder[idx] = customOrder[newIdx];
+            customOrder[newIdx] = temp;
+            
+            localStorage.setItem(orderKey, JSON.stringify(customOrder));
+            if (isUser) loadUserMemoList();
+            else loadMemoList();
+        }
+        
+        function renameUserFolder(oldName) {
+            var newName = prompt("새 폴더 이름을 입력하세요:", oldName);
+            if (!newName || newName.trim() === '' || newName === oldName) return;
+            newName = newName.trim();
+            
+            for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                if (key.startsWith('user_memo_')) {
+                    try {
+                        var data = JSON.parse(localStorage.getItem(key));
+                        if (data.folder === oldName) {
+                            data.folder = newName;
+                            localStorage.setItem(key, JSON.stringify(data));
+                        }
+                    } catch(e) {}
+                }
+            }
+            
+            var states = JSON.parse(localStorage.getItem('user_folder_states') || '{}');
+            if (states[oldName]) {
+                states[newName] = states[oldName];
+                delete states[oldName];
+                localStorage.setItem('user_folder_states', JSON.stringify(states));
+            }
+            
+            var customOrder = JSON.parse(localStorage.getItem('user_memo_custom_order') || '[]');
+            var idx = customOrder.indexOf(oldName);
+            if (idx !== -1) {
+                customOrder[idx] = newName;
+                localStorage.setItem('user_memo_custom_order', JSON.stringify(customOrder));
+            }
+            
+            loadUserMemoList();
+        }
 
         function loadUserMemoList() {
             var content = document.getElementById('user-memo-content');
@@ -646,13 +737,57 @@
                 grouped[m.folder].push(m);
             });
             
-            var html = '';
+            var sortMode = localStorage.getItem('user_memo_sort_mode') || 'asc';
+            var customOrder = JSON.parse(localStorage.getItem('user_memo_custom_order') || '[]');
+            var folders = Object.keys(grouped);
+            
+            var customOrderChanged = false;
+            folders.forEach(function(f) {
+                if (customOrder.indexOf(f) === -1) {
+                    customOrder.push(f);
+                    customOrderChanged = true;
+                }
+            });
+            if (customOrderChanged) {
+                localStorage.setItem('user_memo_custom_order', JSON.stringify(customOrder));
+            }
+            
+            if (sortMode === 'asc') {
+                folders.sort();
+            } else if (sortMode === 'desc') {
+                folders.sort().reverse();
+            } else {
+                folders.sort(function(a, b) { return customOrder.indexOf(a) - customOrder.indexOf(b); });
+            }
+            
+            var html = `<div style="text-align:right; margin-bottom:5px;">
+                <select onchange="localStorage.setItem('user_memo_sort_mode', this.value); loadUserMemoList();" style="font-size:11px; padding:2px; border:1px solid #ccc; border-radius:3px;">
+                    <option value="asc" ${sortMode==='asc'?'selected':''}>이름순 (오름차순)</option>
+                    <option value="desc" ${sortMode==='desc'?'selected':''}>이름순 (내림차순)</option>
+                    <option value="custom" ${sortMode==='custom'?'selected':''}>사용자 지정</option>
+                </select>
+            </div>`;
             var states = JSON.parse(localStorage.getItem('user_folder_states') || '{}');
-            for (var folder in grouped) {
+            for (var i = 0; i < folders.length; i++) {
+                var folder = folders[i];
                 var isOpen = states[folder] !== 'closed';
                 var displayStyle = isOpen ? 'block' : 'none';
                 var icon = isOpen ? '▼' : '▶';
-                html += `<div data-region="${folder}" style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px; cursor:pointer;" onclick="toggleFolder(this, 'user')">${icon} ${folder}</div>`;
+                
+                var orderButtons = '';
+                if (sortMode === 'custom') {
+                    var upBtn = i > 0 ? `<span onclick="moveFolderOrder('${folder}', -1, 'user'); event.stopPropagation();" style="margin-right:4px;">🔼</span>` : `<span style="margin-right:4px; opacity:0.2;">🔼</span>`;
+                    var downBtn = i < folders.length - 1 ? `<span onclick="moveFolderOrder('${folder}', 1, 'user'); event.stopPropagation();" style="margin-right:4px;">🔽</span>` : `<span style="margin-right:4px; opacity:0.2;">🔽</span>`;
+                    orderButtons = `<span style="float:right;">${upBtn}${downBtn}</span>`;
+                }
+                
+                var renameBtn = `<span onclick="renameUserFolder('${folder}'); event.stopPropagation();" style="float:right; margin-right:8px; font-size:10px; color:#666;" title="폴더 이름 변경">✏️수정</span>`;
+                
+                html += `<div data-region="${folder}" style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px; cursor:pointer;" onclick="toggleFolder(this, 'user')">
+                    ${icon} ${folder} 
+                    ${orderButtons}
+                    ${renameBtn}
+                </div>`;
                 html += `<div class="memo-folder-content" style="display:${displayStyle};">`;
                 grouped[folder].forEach(function(m) {
                     var preview = m.text.length > 20 ? m.text.substring(0,20)+'...' : m.text;
