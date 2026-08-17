@@ -96,10 +96,13 @@
         </div>
     </div>
 
-    <div style="position: absolute; top: 15px; right: 15px; z-index: 2000; display: flex; gap: 8px;">
-        <button class="nav-btn btn-off" onclick="exportData()" style="background-color: #E3F2FD; border-color: #1976D2; color: #1976D2; margin: 0;">데이터 백업 💾</button>
-        <button class="nav-btn btn-off" onclick="importData()" style="background-color: #FBE9E7; border-color: #D84315; color: #D84315; margin: 0;">데이터 복원 📂</button>
-        <button class="nav-btn btn-on" id="btn-process" onclick="toggleProcess()" style="margin: 0;">정비사업 절차 📋</button>
+    <div style="position: absolute; top: 15px; right: 15px; z-index: 2000; display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+        <div style="display: flex; gap: 8px;">
+            <button class="nav-btn btn-off" id="btn-user-memo" onclick="toggleUserMemoList()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">사용자 메모 목록 🗒️</button>
+            <button class="nav-btn btn-off" id="btn-memo-list" onclick="toggleMemoList()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">단지별 메모 목록 📝</button>
+            <button class="nav-btn btn-off" id="btn-calendar" onclick="toggleCalendar()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">임장 캘린더 📅</button>
+            <button class="nav-btn btn-on" id="btn-process" onclick="toggleProcess()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">정비사업 절차 📋</button>
+        </div>
     </div>
     
     <div class="process-panel" id="process-panel">
@@ -162,8 +165,7 @@
         </div>
     </div>
 
-    <button class="nav-btn btn-off" id="btn-calendar" onclick="toggleCalendar()" style="position: absolute; bottom: 20px; right: 20px; z-index: 2000; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">임장 캘린더 📅</button>
-    <div class="calendar-panel" id="calendar-panel">
+    <div class="calendar-panel" id="calendar-panel" style="position: absolute; top: 55px; right: 15px;">
         <div class="cal-header">
             <button class="cal-btn" onclick="changeMonth(-1)">◀</button>
             <span id="cal-month-year" style="font-weight:bold; font-size:13px; color:#333;"></span>
@@ -172,10 +174,23 @@
         <div id="cal-grid"></div>
     </div>
 
-    <button class="nav-btn btn-off" id="btn-memo-list" onclick="toggleMemoList()" style="position: absolute; bottom: 65px; right: 20px; z-index: 2000; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">저장된 메모 목록 📝</button>
-    <div id="memo-list-panel" style="position: absolute; bottom: 110px; right: 20px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none;">
+    <div id="memo-list-panel" style="position: absolute; top: 55px; right: 15px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none;">
         <div style="font-weight: 900; font-size: 13px; margin-bottom: 8px; border-bottom: 2px solid #333; padding-bottom: 5px;">📝 메모가 저장된 단지</div>
         <div id="memo-list-content"></div>
+    </div>
+
+    <div id="user-memo-panel" style="position: absolute; top: 55px; right: 15px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none;">
+        <div style="font-weight: 900; font-size: 13px; margin-bottom: 8px; border-bottom: 2px solid #333; padding-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+            <span>🗒️ 사용자 메모 목록</span>
+            <button onclick="openUserMemoEditor('', '')" style="background: #007BFF; color: #fff; border: none; border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer;">+ 메모 추가</button>
+        </div>
+        <div id="user-memo-content"></div>
+    </div>
+
+    <!-- 하단 우측 데이터 백업/복원 -->
+    <div style="position: absolute; bottom: 20px; right: 20px; z-index: 2000; display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+        <button class="nav-btn btn-off" onclick="exportData()" style="background-color: #E3F2FD; border-color: #1976D2; color: #1976D2; margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">데이터 백업 💾</button>
+        <button class="nav-btn btn-off" onclick="importData()" style="background-color: #FBE9E7; border-color: #D84315; color: #D84315; margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">데이터 복원 📂</button>
     </div>
 
 
@@ -309,6 +324,7 @@
             
             if(showCalendar) {
                 if (showMemoListPanel) toggleMemoList();
+                if (showUserMemoListPanel) toggleUserMemoList();
                 renderCalendar();
             }
         }
@@ -488,7 +504,21 @@
             
             if (showMemoListPanel) {
                 if (showCalendar) toggleCalendar(); 
+                if (showUserMemoListPanel) toggleUserMemoList();
                 loadMemoList();
+            }
+        }
+        
+        var showUserMemoListPanel = false;
+        function toggleUserMemoList() {
+            showUserMemoListPanel = !showUserMemoListPanel;
+            document.getElementById('btn-user-memo').className = showUserMemoListPanel ? "nav-btn btn-on" : "nav-btn btn-off";
+            document.getElementById('user-memo-panel').style.display = showUserMemoListPanel ? "block" : "none";
+            
+            if (showUserMemoListPanel) {
+                if (showCalendar) toggleCalendar();
+                if (showMemoListPanel) toggleMemoList();
+                loadUserMemoList();
             }
         }
         
@@ -550,18 +580,22 @@
             });
             
             var html = '';
+            var states = JSON.parse(localStorage.getItem('apt_folder_states') || '{}');
             for (var reg in grouped) {
-                html += `<div style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px; cursor:pointer;" onclick="toggleFolder(this)">📁 ${reg}</div>`;
-                html += `<div class="memo-folder-content" style="display:block;">`;
+                var isOpen = states[reg] !== 'closed';
+                var displayStyle = isOpen ? 'block' : 'none';
+                var icon = isOpen ? '▼' : '▶';
+                html += `<div data-region="${reg}" style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px; cursor:pointer;" onclick="toggleFolder(this, 'apt')">${icon} ${reg}</div>`;
+                html += `<div class="memo-folder-content" style="display:${displayStyle};">`;
                 grouped[reg].forEach(function(m) {
                     html += `<div style="margin-bottom: 8px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; background: #fff; position: relative;">
-                        <div style="cursor: pointer; padding-right: 90px;" onclick="loadMemoSelection('${m.joined}')">
+                        <div style="cursor: pointer; padding-right: 60px;" onclick="loadMemoSelection('${m.joined}')">
                             <div style="font-weight: bold; font-size: 11px; color: #007BFF; margin-bottom: 2px;">${m.names}</div>
                             <div style="font-size: 10px; color: #555;">${m.preview}</div>
                         </div>
                         <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); display: flex; gap: 4px;">
-                            <button onclick="loadMemoSelection('${m.joined}')" style="padding: 5px 8px; font-size: 11px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">편집 ✏️</button>
-                            <button onclick="deleteMemo('${m.key}')" style="padding: 5px 8px; font-size: 11px; background: #E53935; color: #fff; border: none; border-radius: 4px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">삭제 🗑️</button>
+                            <button onclick="loadMemoSelection('${m.joined}')" style="padding: 5px 8px; font-size: 11px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" title="편집">✏️</button>
+                            <button onclick="deleteMemo('${m.key}')" style="padding: 5px 8px; font-size: 11px; background: #E53935; color: #fff; border: none; border-radius: 4px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" title="삭제">🗑️</button>
                         </div>
                     </div>`;
                 });
@@ -570,14 +604,131 @@
             content.innerHTML = html;
         }
 
-        function toggleFolder(el) {
+        function toggleFolder(el, type) {
             var content = el.nextElementSibling;
+            var regName = el.getAttribute('data-region');
+            var isUser = type === 'user';
+            var statesKey = isUser ? 'user_folder_states' : 'apt_folder_states';
+            var states = JSON.parse(localStorage.getItem(statesKey) || '{}');
+            
             if (content.style.display === 'none') {
                 content.style.display = 'block';
-                el.innerText = el.innerText.replace('📂', '📁');
+                el.innerText = '▼ ' + regName;
+                states[regName] = 'open';
             } else {
                 content.style.display = 'none';
-                el.innerText = el.innerText.replace('📁', '📂');
+                el.innerText = '▶ ' + regName;
+                states[regName] = 'closed';
+            }
+            localStorage.setItem(statesKey, JSON.stringify(states));
+        }
+
+        function loadUserMemoList() {
+            var content = document.getElementById('user-memo-content');
+            var memos = [];
+            for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                if (key.startsWith('user_memo_')) {
+                    try {
+                        var data = JSON.parse(localStorage.getItem(key));
+                        memos.push({ key: key, folder: data.folder || '일반', title: data.title || '제목 없음', text: data.text || '' });
+                    } catch(e) {}
+                }
+            }
+            if (memos.length === 0) {
+                content.innerHTML = '<div style="font-size:11px; color:#777; text-align:center;">저장된 사용자 메모가 없습니다.</div>';
+                return;
+            }
+            
+            var grouped = {};
+            memos.forEach(function(m) {
+                if (!grouped[m.folder]) grouped[m.folder] = [];
+                grouped[m.folder].push(m);
+            });
+            
+            var html = '';
+            var states = JSON.parse(localStorage.getItem('user_folder_states') || '{}');
+            for (var folder in grouped) {
+                var isOpen = states[folder] !== 'closed';
+                var displayStyle = isOpen ? 'block' : 'none';
+                var icon = isOpen ? '▼' : '▶';
+                html += `<div data-region="${folder}" style="margin-top:10px; margin-bottom:5px; font-weight:900; font-size:12px; color:#333; border-bottom:1px solid #aaa; padding-bottom:3px; cursor:pointer;" onclick="toggleFolder(this, 'user')">${icon} ${folder}</div>`;
+                html += `<div class="memo-folder-content" style="display:${displayStyle};">`;
+                grouped[folder].forEach(function(m) {
+                    var preview = m.text.length > 20 ? m.text.substring(0,20)+'...' : m.text;
+                    var escTitle = m.title.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    var escPreview = preview.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    html += `<div style="margin-bottom: 8px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; background: #fff; position: relative;">
+                        <div style="cursor: pointer; padding-right: 60px;" onclick="openUserMemoEditor('${m.key}')">
+                            <div style="font-weight: bold; font-size: 11px; color: #007BFF; margin-bottom: 2px;">${escTitle}</div>
+                            <div style="font-size: 10px; color: #555;">${escPreview}</div>
+                        </div>
+                        <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); display: flex; gap: 4px;">
+                            <button onclick="openUserMemoEditor('${m.key}')" style="padding: 5px 8px; font-size: 11px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" title="편집">✏️</button>
+                            <button onclick="deleteUserMemo('${m.key}')" style="padding: 5px 8px; font-size: 11px; background: #E53935; color: #fff; border: none; border-radius: 4px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);" title="삭제">🗑️</button>
+                        </div>
+                    </div>`;
+                });
+                html += `</div>`;
+            }
+            content.innerHTML = html;
+        }
+
+        function openUserMemoEditor(key) {
+            var folder = '', title = '', text = '';
+            var isNew = !key;
+            if (!isNew) {
+                try {
+                    var data = JSON.parse(localStorage.getItem(key));
+                    folder = data.folder || '';
+                    title = data.title || '';
+                    text = data.text || '';
+                } catch(e) {}
+            }
+            
+            var esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            
+            var folderHtml = `<input type="text" id="edit-user-memo-folder" value="${esc(folder)}" placeholder="폴더명 (예: 기사 스크랩)" style="width: 100%; box-sizing: border-box; padding: 6px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 11px;">`;
+            var titleHtml = `<input type="text" id="edit-user-memo-title" value="${esc(title)}" placeholder="메모 제목" style="width: 100%; box-sizing: border-box; padding: 6px; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 11px; font-weight: bold;">`;
+            var textHtml = `<textarea id="edit-user-memo-text" placeholder="내용을 입력하세요" style="width: 100%; box-sizing: border-box; padding: 6px; height: 120px; border: 1px solid #ccc; border-radius: 4px; font-size: 11px; resize: none; margin-bottom: 10px;">${esc(text)}</textarea>`;
+            
+            var modalHtml = `
+            <div id="user-memo-editor-overlay" style="position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index: 3000; display:flex; justify-content:center; align-items:center;">
+                <div style="background:#fff; padding: 20px; border-radius:8px; width: 320px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+                    <div style="font-weight:900; font-size:14px; margin-bottom: 15px; border-bottom: 2px solid #333; padding-bottom: 5px;">${isNew ? '새 사용자 메모' : '사용자 메모 편집'}</div>
+                    ${folderHtml}
+                    ${titleHtml}
+                    ${textHtml}
+                    <div style="display:flex; justify-content:flex-end; gap:8px;">
+                        <button onclick="document.getElementById('user-memo-editor-overlay').remove()" style="padding: 6px 12px; background: #eee; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; font-size: 11px;">취소</button>
+                        <button onclick="saveUserMemo('${key || ''}')" style="padding: 6px 12px; background: #007BFF; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold;">저장</button>
+                    </div>
+                </div>
+            </div>`;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
+        function saveUserMemo(key) {
+            var folder = document.getElementById('edit-user-memo-folder').value.trim();
+            var title = document.getElementById('edit-user-memo-title').value.trim();
+            var text = document.getElementById('edit-user-memo-text').value.trim();
+            if (!title) { alert('제목을 입력하세요.'); return; }
+            
+            if (!key) {
+                key = 'user_memo_' + new Date().getTime();
+            }
+            
+            var data = { folder: folder, title: title, text: text };
+            localStorage.setItem(key, JSON.stringify(data));
+            document.getElementById('user-memo-editor-overlay').remove();
+            loadUserMemoList();
+        }
+
+        function deleteUserMemo(key) {
+            if (confirm("이 사용자 메모를 정말 삭제하시겠습니까?")) {
+                localStorage.removeItem(key);
+                loadUserMemoList();
             }
         }
 
@@ -585,7 +736,7 @@
             var data = {};
             for (var i = 0; i < localStorage.length; i++) {
                 var key = localStorage.key(i);
-                if (key.startsWith('memo_multi_') || key.startsWith('imjang_cal_')) {
+                if (key.startsWith('memo_multi_') || key.startsWith('imjang_cal_') || key.startsWith('user_memo_') || key.endsWith('_folder_states')) {
                     data[key] = localStorage.getItem(key);
                 }
             }
@@ -625,7 +776,7 @@
                     var data = JSON.parse(inputStr);
                     var count = 0;
                     for (var key in data) {
-                        if (key.startsWith('memo_multi_') || key.startsWith('imjang_cal_')) {
+                        if (key.startsWith('memo_multi_') || key.startsWith('imjang_cal_') || key.startsWith('user_memo_') || key.endsWith('_folder_states')) {
                             localStorage.setItem(key, data[key]);
                             count++;
                         }
