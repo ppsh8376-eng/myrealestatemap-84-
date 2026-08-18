@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>자산 성장 시뮬레이터 (모바일 버젼)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; background-color: #f4f6f8; -webkit-font-smoothing: antialiased; }
+        .input-box { border: 1px solid #d1d5db; border-radius: 6px; padding: 8px 12px; width: 100%; font-size: 14px; outline: none; transition: all 0.2s; }
+        .input-box:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); }
+        .cell-input { width: 100%; border: none; background: transparent; text-align: right; outline: none; font-family: inherit; font-size: inherit; color: inherit; padding: 0; margin: 0; }
+        .cell-input:focus { background-color: rgba(59, 130, 246, 0.1); border-radius: 4px; }
+        .blurred { color: #9ca3af !important; font-style: italic; }
+        .bg-blurred { background-color: #e5e7eb !important; }
+        .anchor { background-color: #fef08a !important; color: #b91c1c !important; font-weight: bold !important; font-style: normal !important; }
+        th, td { border-bottom: 1px solid #e5e7eb; padding: 10px 12px; white-space: nowrap; }
+        th { background-color: #f9fafb; color: #6b7280; font-weight: 600; text-align: center; }
+        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        input[type="text"] { appearance: none; }
+    </style>
+</head>
+<body class="p-3 md:p-8 text-gray-800">
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 gap-3">
+            <h1 class="text-2xl font-bold text-gray-900">자산 성장 시뮬레이터 <span class="text-sm font-normal text-gray-500 ml-1">Mobile Web</span></h1>
+            <div class="flex gap-2 w-full md:w-auto">
+                <button id="btnLoad" onclick="loadData()" class="flex-1 md:flex-none px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm font-bold text-gray-700 shadow-sm transition-colors">불러오기</button>
+                <button id="btnSave" onclick="saveData()" class="flex-1 md:flex-none px-4 py-2.5 bg-blue-600 rounded-lg text-sm font-bold text-white shadow-sm transition-colors">설정 저장</button>
+            </div>
+        </div>
+
+        <!-- Input Card -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-5">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">현재 순자산(원)</label>
+                    <input type="text" id="netWorth" inputmode="numeric" class="input-box trigger-calc font-semibold" value="472,242,478">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">계약 연봉(원)</label>
+                    <input type="text" id="salary" inputmode="numeric" class="input-box trigger-calc" value="53,060,000">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">연봉 인상률(%)</label>
+                    <input type="text" id="salaryInc" inputmode="decimal" class="input-box trigger-calc" value="3">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">연봉 상한선(원)</label>
+                    <input type="text" id="salaryCeil" inputmode="numeric" class="input-box trigger-calc" value="150,000,000">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">저축률(%)</label>
+                    <input type="text" id="savingsRate" inputmode="decimal" class="input-box trigger-calc" value="70">
+                </div>
+                
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">투자 수익률(%)</label>
+                    <input type="text" id="returnRate" inputmode="decimal" class="input-box trigger-calc" value="15">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">원베일리 24평(원)</label>
+                    <input type="text" id="re24" inputmode="numeric" class="input-box trigger-calc" value="2,800,000,000">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">원베일리 34평(원)</label>
+                    <input type="text" id="re34" inputmode="numeric" class="input-box trigger-calc" value="4,000,000,000">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">부동산 상승률(%)</label>
+                    <input type="text" id="reRate" inputmode="decimal" class="input-box trigger-calc" value="4">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">은퇴 연도(년)</label>
+                    <input type="text" id="retYear" inputmode="numeric" class="input-box trigger-calc" value="2050">
+                </div>
+            </div>
+        </div>
+
+        <!-- Info & Reset -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-3">
+            <p class="text-emerald-700 text-xs md:text-sm bg-emerald-50 px-3 py-2 rounded-lg border border-emerald-100 w-full md:w-auto">
+                💡 <b>모바일 팁:</b> 표를 좌우로 스크롤하세요. ✏️ 아이콘이 있는 셀을 터치해 직접 값을 수정할 수 있습니다.
+            </p>
+            <button id="btnReset" onclick="resetAnchor()" style="display:none;" class="w-full md:w-auto px-4 py-2 bg-red-50 border border-red-300 text-red-700 rounded-lg text-sm font-bold shadow-sm whitespace-nowrap active:bg-red-100 transition-colors">
+                🔄 기준점 초기화 (블러 해제)
+            </button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container bg-white rounded-xl shadow-sm border border-gray-200">
+            <table class="w-full text-xs md:text-sm text-left">
+                <thead>
+                    <tr>
+                        <th class="sticky left-0 bg-gray-50 z-10 shadow-[1px_0_0_0_#e5e7eb]">연도</th>
+                        <th>나이</th>
+                        <th class="bg-blue-50 text-blue-800">영업이익(조) ✏️</th>
+                        <th>세전 연봉</th>
+                        <th>세전 성과급</th>
+                        <th>세전 총수입</th>
+                        <th class="text-gray-900">세후 수입(추산)</th>
+                        <th>본인 저축액</th>
+                        <th class="bg-fuchsia-50 text-fuchsia-800">여자친구 저축 ✏️</th>
+                        <th class="text-indigo-800">당해 총 저축액</th>
+                        <th class="bg-red-50 text-red-800">누적 순자산 ✏️</th>
+                        <th class="bg-emerald-50 text-emerald-800">원베일리 24평</th>
+                        <th class="bg-emerald-50 text-emerald-800">원베일리 34평</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Javascript will populate this -->
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <script>
+        let tableData = {};
+        let anchorYear = null;
+
+        function formatNumber(num) {
+            return Math.round(num).toLocaleString('ko-KR');
+        }
+
+        function parseNumber(str) {
+            if (!str) return 0;
+            return parseFloat(str.toString().replace(/,/g, '')) || 0;
+        }
+
+        function calcAfterTax(grossIncome) {
+            const pension = Math.min(grossIncome, 77880000) * 0.045;
+            const health = grossIncome * 0.03545;
+            const longTermCare = health * 0.1295;
+            const employment = grossIncome * 0.009;
+            
+            const deductions = pension + health + longTermCare + employment;
+            const taxableIncome = grossIncome - deductions;
+            
+            let incomeTax = 0;
+            if (taxableIncome <= 14000000) incomeTax = taxableIncome * 0.06;
+            else if (taxableIncome <= 50000000) incomeTax = 840000 + (taxableIncome - 14000000) * 0.15;
+            else if (taxableIncome <= 88000000) incomeTax = 6240000 + (taxableIncome - 50000000) * 0.24;
+            else if (taxableIncome <= 150000000) incomeTax = 15360000 + (taxableIncome - 88000000) * 0.35;
+            else if (taxableIncome <= 300000000) incomeTax = 37060000 + (taxableIncome - 150000000) * 0.38;
+            else if (taxableIncome <= 500000000) incomeTax = 94060000 + (taxableIncome - 300000000) * 0.40;
+            else if (taxableIncome <= 1000000000) incomeTax = 174060000 + (taxableIncome - 500000000) * 0.42;
+            else incomeTax = 384060000 + (taxableIncome - 1000000000) * 0.45;
+                
+            const localTax = incomeTax * 0.1;
+            return Math.max(0, grossIncome - (deductions + incomeTax + localTax));
+        }
+
+        function renderTable() {
+            const startYear = 2026;
+            const retYear = parseInt(document.getElementById('retYear').value) || 2050;
+            
+            let currentNetWorth = parseNumber(document.getElementById('netWorth').value);
+            let currentSalary = parseNumber(document.getElementById('salary').value);
+            const salaryInc = parseNumber(document.getElementById('salaryInc').value) / 100;
+            const salaryCeil = parseNumber(document.getElementById('salaryCeil').value);
+            
+            const savingsRate = parseNumber(document.getElementById('savingsRate').value) / 100;
+            const returnRate = parseNumber(document.getElementById('returnRate').value) / 100;
+            
+            let re24 = parseNumber(document.getElementById('re24').value);
+            let re34 = parseNumber(document.getElementById('re34').value);
+            const reRate = parseNumber(document.getElementById('reRate').value) / 100;
+            
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            
+            const netWorthInput = document.getElementById('netWorth');
+            if (anchorYear !== null) {
+                netWorthInput.classList.add('bg-gray-100', 'text-gray-400');
+            } else {
+                netWorthInput.classList.remove('bg-gray-100', 'text-gray-400');
+            }
+
+            document.getElementById('btnReset').style.display = anchorYear !== null ? 'block' : 'none';
+
+            for (let year = startYear; year <= retYear; year++) {
+                const age = 30 + (year - startYear);
+                
+                const overrides = tableData[year] || {};
+                const expectedOp = overrides.op !== undefined ? overrides.op : 47.2;
+                const gfSavings = overrides.gf !== undefined ? overrides.gf : 0;
+                
+                const isPastRow = anchorYear !== null && year < anchorYear;
+                const isAnchorRow = anchorYear === year;
+                const isBlurred = isPastRow || isAnchorRow;
+                const bgClass = isBlurred ? 'bg-blurred' : 'bg-white';
+                
+                const opRatio = expectedOp / 47.2063;
+                const bonusPercent = 29.64 * opRatio;
+                
+                const baseUnit = currentSalary / 20.0;
+                const bonusAmount = baseUnit * bonusPercent;
+                const grossIncome = currentSalary + bonusAmount;
+                const netIncome = calcAfterTax(grossIncome);
+                
+                const mySavings = netIncome * savingsRate;
+                const totalSavings = mySavings + gfSavings;
+                
+                if (isAnchorRow) {
+                    currentNetWorth = overrides.nw;
+                } else {
+                    currentNetWorth = (currentNetWorth * (1 + returnRate)) + totalSavings;
+                }
+                
+                const tr = document.createElement('tr');
+                tr.className = bgClass;
+                
+                const yearAgeClass = isPastRow ? 'blurred' : 'font-medium text-gray-900';
+                const yearBg = isPastRow ? 'bg-gray-200' : 'bg-white';
+                
+                tr.innerHTML += `<td class="text-center sticky left-0 z-10 shadow-[1px_0_0_0_#e5e7eb] ${yearBg} ${yearAgeClass}">${year}년</td>`;
+                tr.innerHTML += `<td class="text-center ${yearAgeClass}">${age}세</td>`;
+                
+                const txtClass = isBlurred ? 'blurred' : '';
+                
+                const opColor = isBlurred ? '' : 'bg-blue-50 text-blue-700 font-bold';
+                tr.innerHTML += `<td class="${opColor} ${txtClass}"><input type="text" inputmode="decimal" class="cell-input" value="${expectedOp}" onchange="updateData(${year}, 'op', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                
+                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(currentSalary)}</td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(bonusAmount)}</td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(grossIncome)}</td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass} ${!isBlurred ? 'font-medium text-gray-900' : ''}">${formatNumber(netIncome)}</td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(mySavings)}</td>`;
+                
+                const gfColor = isBlurred ? '' : 'bg-fuchsia-50 text-fuchsia-700 font-medium';
+                tr.innerHTML += `<td class="${gfColor} ${txtClass}"><input type="text" inputmode="numeric" class="cell-input" value="${formatNumber(gfSavings)}" onchange="updateData(${year}, 'gf', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                
+                tr.innerHTML += `<td class="text-right ${txtClass} ${!isBlurred ? 'text-indigo-700 font-bold' : ''}">${formatNumber(totalSavings)}</td>`;
+                
+                let nwClass = txtClass;
+                if (isAnchorRow) nwClass = 'anchor';
+                else if (!isBlurred) nwClass = 'text-red-600 font-bold';
+                
+                tr.innerHTML += `<td class="text-right ${nwClass}"><input type="text" inputmode="numeric" class="cell-input" value="${formatNumber(currentNetWorth)}" onchange="updateAnchor(${year}, this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                
+                const reClass = isBlurred ? txtClass : 'bg-emerald-50 text-emerald-700 font-bold';
+                tr.innerHTML += `<td class="text-right ${reClass}">${formatNumber(re24)}</td>`;
+                tr.innerHTML += `<td class="text-right ${reClass}">${formatNumber(re34)}</td>`;
+                
+                tbody.appendChild(tr);
+                
+                currentSalary = Math.min(currentSalary * (1 + salaryInc), salaryCeil);
+                re24 *= (1 + reRate);
+                re34 *= (1 + reRate);
+            }
+        }
+
+        function updateData(year, key, value) {
+            if (!tableData[year]) tableData[year] = {};
+            tableData[year][key] = parseNumber(value);
+            renderTable();
+        }
+
+        function updateAnchor(year, value) {
+            if (value.trim() === '') {
+                if (anchorYear === year) {
+                    anchorYear = null;
+                    if(tableData[year]) delete tableData[year].nw;
+                }
+            } else {
+                anchorYear = year;
+                if (!tableData[year]) tableData[year] = {};
+                tableData[year].nw = parseNumber(value);
+            }
+            renderTable();
+        }
+
+        function resetAnchor() {
+            anchorYear = null;
+            for (let y in tableData) {
+                delete tableData[y].nw;
+            }
+            renderTable();
+        }
+
+        function saveData() {
+            const data = {
+                netWorth: parseNumber(document.getElementById('netWorth').value),
+                salary: parseNumber(document.getElementById('salary').value),
+                salaryInc: parseNumber(document.getElementById('salaryInc').value),
+                salaryCeil: parseNumber(document.getElementById('salaryCeil').value),
+                savingsRate: parseNumber(document.getElementById('savingsRate').value),
+                returnRate: parseNumber(document.getElementById('returnRate').value),
+                re24: parseNumber(document.getElementById('re24').value),
+                re34: parseNumber(document.getElementById('re34').value),
+                reRate: parseNumber(document.getElementById('reRate').value),
+                retYear: parseNumber(document.getElementById('retYear').value),
+                anchorYear: anchorYear,
+                tableData: tableData
+            };
+            localStorage.setItem('simulatorDataMobile', JSON.stringify(data));
+            
+            const btn = document.getElementById('btnSave');
+            btn.innerText = '저장 완료! ✓';
+            btn.classList.replace('bg-blue-600', 'bg-emerald-500');
+            setTimeout(() => {
+                btn.innerText = '설정 저장';
+                btn.classList.replace('bg-emerald-500', 'bg-blue-600');
+            }, 2000);
+        }
+
+        function loadData() {
+            const stored = localStorage.getItem('simulatorDataMobile');
+            if (stored) {
+                const data = JSON.parse(stored);
+                document.getElementById('netWorth').value = formatNumber(data.netWorth) || '472,242,478';
+                document.getElementById('salary').value = formatNumber(data.salary) || '53,060,000';
+                document.getElementById('salaryInc').value = data.salaryInc || '3';
+                document.getElementById('salaryCeil').value = formatNumber(data.salaryCeil) || '150,000,000';
+                document.getElementById('savingsRate').value = data.savingsRate || '70';
+                document.getElementById('returnRate').value = data.returnRate || '15';
+                document.getElementById('re24').value = formatNumber(data.re24) || '2,800,000,000';
+                document.getElementById('re34').value = formatNumber(data.re34) || '4,000,000,000';
+                document.getElementById('reRate').value = data.reRate || '4';
+                document.getElementById('retYear').value = data.retYear || '2050';
+                
+                anchorYear = data.anchorYear !== undefined ? data.anchorYear : null;
+                tableData = data.tableData || {};
+                
+                renderTable();
+                
+                const btn = document.getElementById('btnLoad');
+                btn.innerText = '불러오기 완료! ✓';
+                btn.classList.replace('bg-white', 'bg-emerald-500');
+                btn.classList.replace('text-gray-700', 'text-white');
+                setTimeout(() => {
+                    btn.innerText = '불러오기';
+                    btn.classList.replace('bg-emerald-500', 'bg-white');
+                    btn.classList.replace('text-white', 'text-gray-700');
+                }, 2000);
+            }
+        }
+
+        window.onload = () => {
+            document.querySelectorAll('.trigger-calc').forEach(el => {
+                el.addEventListener('input', () => {
+                    // Ignore comma formatting while typing to prevent cursor jump
+                    if(el.id !== 'salaryInc' && el.id !== 'savingsRate' && el.id !== 'returnRate' && el.id !== 'reRate' && el.id !== 'retYear') {
+                        // We do formatting only on blur to not mess up typing experience
+                    }
+                    renderTable();
+                });
+                if(el.id !== 'salaryInc' && el.id !== 'savingsRate' && el.id !== 'returnRate' && el.id !== 'reRate' && el.id !== 'retYear') {
+                    el.addEventListener('blur', function() {
+                        this.value = formatNumber(parseNumber(this.value));
+                        renderTable();
+                    });
+                    el.addEventListener('focus', function() {
+                        this.value = this.value.replace(/,/g, '');
+                    });
+                }
+            });
+            
+            loadData();
+            if(Object.keys(tableData).length === 0) renderTable();
+        };
+    </script>
+</body>
+</html>
