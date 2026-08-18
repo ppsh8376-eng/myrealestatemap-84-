@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>자산 성장 시뮬레이터 (모바일 버젼)</title>
+    <title>자산 성장 시뮬레이터 (모바일/웹 버젼)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; background-color: #f4f6f8; -webkit-font-smoothing: antialiased; }
         .input-box { border: 1px solid #d1d5db; border-radius: 6px; padding: 8px 12px; width: 100%; font-size: 14px; outline: none; transition: all 0.2s; }
         .input-box:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); }
-        .cell-input { width: 100%; border: none; background: transparent; text-align: right; outline: none; font-family: inherit; font-size: inherit; color: inherit; padding: 0; margin: 0; }
+        .cell-input { width: 100%; border: none; background: transparent; text-align: right; outline: none; font-family: inherit; font-size: inherit; color: inherit; padding: 0; margin: 0; transition: background-color 0.1s; cursor: text;}
         .cell-input:focus { background-color: rgba(59, 130, 246, 0.1); border-radius: 4px; }
         .blurred { color: #9ca3af !important; font-style: italic; }
         .bg-blurred { background-color: #e5e7eb !important; }
         .anchor { background-color: #fef08a !important; color: #b91c1c !important; font-weight: bold !important; font-style: normal !important; }
         th, td { border-bottom: 1px solid #e5e7eb; padding: 10px 12px; white-space: nowrap; }
-        th { background-color: #f9fafb; color: #6b7280; font-weight: 600; text-align: center; }
+        th { background-color: #f9fafb; color: #6b7280; font-weight: 600; text-align: center; user-select: none;}
         .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         input[type="text"] { appearance: none; }
+        
+        /* Disable text selection on dragging over the table so we can do cell highlighting */
+        .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
     </style>
 </head>
 <body class="p-3 md:p-8 text-gray-800">
     <div class="max-w-7xl mx-auto">
         
         <!-- Header -->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 gap-3">
-            <h1 class="text-2xl font-bold text-gray-900">자산 성장 시뮬레이터 <span class="text-sm font-normal text-gray-500 ml-1">Mobile Web</span></h1>
-            <div class="flex gap-2 w-full md:w-auto">
-                <button id="btnLoad" onclick="loadData()" class="flex-1 md:flex-none px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm font-bold text-gray-700 shadow-sm transition-colors">불러오기</button>
-                <button id="btnSave" onclick="saveData()" class="flex-1 md:flex-none px-4 py-2.5 bg-blue-600 rounded-lg text-sm font-bold text-white shadow-sm transition-colors">설정 저장</button>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 gap-4">
+            <h1 class="text-2xl font-bold text-gray-900">자산 성장 시뮬레이터 <span class="text-sm font-normal text-gray-500 ml-1">Web Ver.</span></h1>
+            
+            <div class="flex flex-wrap gap-2 w-full md:w-auto">
+                <button onclick="copySyncCode()" id="btnCopy" class="flex-1 md:flex-none px-3 py-2 bg-gray-100 border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📱코드 복사(내보내기)</button>
+                <button onclick="pasteSyncCode()" class="flex-1 md:flex-none px-3 py-2 bg-gray-100 border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📥코드 붙여넣기</button>
+                
+                <button id="btnLoad" onclick="loadDataLocal()" class="flex-1 md:flex-none px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-bold text-gray-700 shadow-sm transition-colors">불러오기(로컬)</button>
+                <button id="btnSave" onclick="saveDataLocal()" class="flex-1 md:flex-none px-4 py-2 bg-blue-600 rounded-lg text-sm font-bold text-white shadow-sm transition-colors">저장(로컬)</button>
             </div>
         </div>
 
@@ -82,7 +89,8 @@
         <!-- Info & Reset -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-3">
             <p class="text-emerald-700 text-xs md:text-sm bg-emerald-50 px-3 py-2 rounded-lg border border-emerald-100 w-full md:w-auto">
-                💡 <b>모바일 팁:</b> 표를 좌우로 스크롤하세요. ✏️ 아이콘이 있는 셀을 터치해 직접 값을 수정할 수 있습니다.
+                💡 <b>PC 조작:</b> 표 셀 드래그 후 <b>Ctrl+Enter</b>로 일괄 수정! <br>
+                💡 <b>GitHub 연동:</b> Github에 이 html과 <code>asset_simulator_config.json</code>이 같이 있으면 자동으로 불러옵니다!
             </p>
             <button id="btnReset" onclick="resetAnchor()" style="display:none;" class="w-full md:w-auto px-4 py-2 bg-red-50 border border-red-300 text-red-700 rounded-lg text-sm font-bold shadow-sm whitespace-nowrap active:bg-red-100 transition-colors">
                 🔄 기준점 초기화 (블러 해제)
@@ -90,7 +98,7 @@
         </div>
 
         <!-- Table -->
-        <div class="table-container bg-white rounded-xl shadow-sm border border-gray-200">
+        <div class="table-container bg-white rounded-xl shadow-sm border border-gray-200 no-select" id="tableWrapper">
             <table class="w-full text-xs md:text-sm text-left">
                 <thead>
                     <tr>
@@ -110,7 +118,6 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    <!-- Javascript will populate this -->
                 </tbody>
             </table>
         </div>
@@ -121,21 +128,15 @@
         let tableData = {};
         let anchorYear = null;
 
-        function formatNumber(num) {
-            return Math.round(num).toLocaleString('ko-KR');
-        }
-
-        function parseNumber(str) {
-            if (!str) return 0;
-            return parseFloat(str.toString().replace(/,/g, '')) || 0;
-        }
+        // --- Core Formatting ---
+        function formatNumber(num) { return Math.round(num).toLocaleString('ko-KR'); }
+        function parseNumber(str) { if (!str) return 0; return parseFloat(str.toString().replace(/,/g, '')) || 0; }
 
         function calcAfterTax(grossIncome) {
             const pension = Math.min(grossIncome, 77880000) * 0.045;
             const health = grossIncome * 0.03545;
             const longTermCare = health * 0.1295;
             const employment = grossIncome * 0.009;
-            
             const deductions = pension + health + longTermCare + employment;
             const taxableIncome = grossIncome - deductions;
             
@@ -149,10 +150,10 @@
             else if (taxableIncome <= 1000000000) incomeTax = 174060000 + (taxableIncome - 500000000) * 0.42;
             else incomeTax = 384060000 + (taxableIncome - 1000000000) * 0.45;
                 
-            const localTax = incomeTax * 0.1;
-            return Math.max(0, grossIncome - (deductions + incomeTax + localTax));
+            return Math.max(0, grossIncome - (deductions + incomeTax + (incomeTax * 0.1)));
         }
 
+        // --- Render Table ---
         function renderTable() {
             const startYear = 2026;
             const retYear = parseInt(document.getElementById('retYear').value) || 2050;
@@ -173,17 +174,13 @@
             tbody.innerHTML = '';
             
             const netWorthInput = document.getElementById('netWorth');
-            if (anchorYear !== null) {
-                netWorthInput.classList.add('bg-gray-100', 'text-gray-400');
-            } else {
-                netWorthInput.classList.remove('bg-gray-100', 'text-gray-400');
-            }
+            if (anchorYear !== null) netWorthInput.classList.add('bg-gray-100', 'text-gray-400');
+            else netWorthInput.classList.remove('bg-gray-100', 'text-gray-400');
 
             document.getElementById('btnReset').style.display = anchorYear !== null ? 'block' : 'none';
 
             for (let year = startYear; year <= retYear; year++) {
                 const age = 30 + (year - startYear);
-                
                 const overrides = tableData[year] || {};
                 const expectedOp = overrides.op !== undefined ? overrides.op : 47.2;
                 const gfSavings = overrides.gf !== undefined ? overrides.gf : 0;
@@ -193,22 +190,15 @@
                 const isBlurred = isPastRow || isAnchorRow;
                 const bgClass = isBlurred ? 'bg-blurred' : 'bg-white';
                 
-                const opRatio = expectedOp / 47.2063;
-                const bonusPercent = 29.64 * opRatio;
-                
-                const baseUnit = currentSalary / 20.0;
-                const bonusAmount = baseUnit * bonusPercent;
+                const bonusPercent = 29.64 * (expectedOp / 47.2063);
+                const bonusAmount = (currentSalary / 20.0) * bonusPercent;
                 const grossIncome = currentSalary + bonusAmount;
                 const netIncome = calcAfterTax(grossIncome);
-                
                 const mySavings = netIncome * savingsRate;
                 const totalSavings = mySavings + gfSavings;
                 
-                if (isAnchorRow) {
-                    currentNetWorth = overrides.nw;
-                } else {
-                    currentNetWorth = (currentNetWorth * (1 + returnRate)) + totalSavings;
-                }
+                if (isAnchorRow) currentNetWorth = overrides.nw;
+                else currentNetWorth = (currentNetWorth * (1 + returnRate)) + totalSavings;
                 
                 const tr = document.createElement('tr');
                 tr.className = bgClass;
@@ -221,26 +211,31 @@
                 
                 const txtClass = isBlurred ? 'blurred' : '';
                 
+                // Editable: OP
                 const opColor = isBlurred ? '' : 'bg-blue-50 text-blue-700 font-bold';
-                tr.innerHTML += `<td class="${opColor} ${txtClass}"><input type="text" inputmode="decimal" class="cell-input" value="${expectedOp}" onchange="updateData(${year}, 'op', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                tr.innerHTML += `<td class="${opColor} ${txtClass} p-0"><input type="text" inputmode="decimal" class="cell-input p-2.5" data-year="${year}" data-key="op" value="${expectedOp}" onchange="updateData(${year}, 'op', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
                 
+                // Readonlys
                 tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(currentSalary)}</td>`;
                 tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(bonusAmount)}</td>`;
                 tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(grossIncome)}</td>`;
                 tr.innerHTML += `<td class="text-right ${txtClass} ${!isBlurred ? 'font-medium text-gray-900' : ''}">${formatNumber(netIncome)}</td>`;
                 tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(mySavings)}</td>`;
                 
+                // Editable: GF Savings
                 const gfColor = isBlurred ? '' : 'bg-fuchsia-50 text-fuchsia-700 font-medium';
-                tr.innerHTML += `<td class="${gfColor} ${txtClass}"><input type="text" inputmode="numeric" class="cell-input" value="${formatNumber(gfSavings)}" onchange="updateData(${year}, 'gf', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                tr.innerHTML += `<td class="${gfColor} ${txtClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="gf" value="${formatNumber(gfSavings)}" onchange="updateData(${year}, 'gf', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
                 
+                // Readonly: Total Savings
                 tr.innerHTML += `<td class="text-right ${txtClass} ${!isBlurred ? 'text-indigo-700 font-bold' : ''}">${formatNumber(totalSavings)}</td>`;
                 
+                // Editable: Net Worth Anchor
                 let nwClass = txtClass;
                 if (isAnchorRow) nwClass = 'anchor';
                 else if (!isBlurred) nwClass = 'text-red-600 font-bold';
+                tr.innerHTML += `<td class="${nwClass} text-right p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="nw" value="${formatNumber(currentNetWorth)}" onchange="updateAnchor(${year}, this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
                 
-                tr.innerHTML += `<td class="text-right ${nwClass}"><input type="text" inputmode="numeric" class="cell-input" value="${formatNumber(currentNetWorth)}" onchange="updateAnchor(${year}, this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                
+                // Readonly: Real Estates
                 const reClass = isBlurred ? txtClass : 'bg-emerald-50 text-emerald-700 font-bold';
                 tr.innerHTML += `<td class="text-right ${reClass}">${formatNumber(re24)}</td>`;
                 tr.innerHTML += `<td class="text-right ${reClass}">${formatNumber(re34)}</td>`;
@@ -253,6 +248,7 @@
             }
         }
 
+        // --- Data Updates ---
         function updateData(year, key, value) {
             if (!tableData[year]) tableData[year] = {};
             tableData[year][key] = parseNumber(value);
@@ -275,14 +271,13 @@
 
         function resetAnchor() {
             anchorYear = null;
-            for (let y in tableData) {
-                delete tableData[y].nw;
-            }
+            for (let y in tableData) { delete tableData[y].nw; }
             renderTable();
         }
 
-        function saveData() {
-            const data = {
+        // --- State Management (Get/Set Object) ---
+        function getSaveDataObj() {
+            return {
                 netWorth: parseNumber(document.getElementById('netWorth').value),
                 salary: parseNumber(document.getElementById('salary').value),
                 salaryInc: parseNumber(document.getElementById('salaryInc').value),
@@ -296,71 +291,163 @@
                 anchorYear: anchorYear,
                 tableData: tableData
             };
-            localStorage.setItem('simulatorDataMobile', JSON.stringify(data));
+        }
+
+        function applySaveDataObj(data) {
+            if(!data) return;
+            document.getElementById('netWorth').value = formatNumber(data.netWorth !== undefined ? data.netWorth : 472242478);
+            document.getElementById('salary').value = formatNumber(data.salary !== undefined ? data.salary : 53060000);
+            document.getElementById('salaryInc').value = data.salaryInc || '3';
+            document.getElementById('salaryCeil').value = formatNumber(data.salaryCeil !== undefined ? data.salaryCeil : 150000000);
+            document.getElementById('savingsRate').value = data.savingsRate || '70';
+            document.getElementById('returnRate').value = data.returnRate || '15';
+            document.getElementById('re24').value = formatNumber(data.re24 !== undefined ? data.re24 : 2800000000);
+            document.getElementById('re34').value = formatNumber(data.re34 !== undefined ? data.re34 : 4000000000);
+            document.getElementById('reRate').value = data.reRate || '4';
+            document.getElementById('retYear').value = data.retYear || '2050';
             
+            anchorYear = data.anchorYear !== undefined ? data.anchorYear : null;
+            tableData = data.tableData || {};
+            renderTable();
+        }
+
+        // --- Local & GitHub Syncing ---
+        function saveDataLocal() {
+            localStorage.setItem('simulatorDataMobile', JSON.stringify(getSaveDataObj()));
             const btn = document.getElementById('btnSave');
             btn.innerText = '저장 완료! ✓';
             btn.classList.replace('bg-blue-600', 'bg-emerald-500');
-            setTimeout(() => {
-                btn.innerText = '설정 저장';
-                btn.classList.replace('bg-emerald-500', 'bg-blue-600');
-            }, 2000);
+            setTimeout(() => { btn.innerText = '저장(로컬)'; btn.classList.replace('bg-emerald-500', 'bg-blue-600'); }, 2000);
         }
 
-        function loadData() {
+        function loadDataLocal() {
             const stored = localStorage.getItem('simulatorDataMobile');
             if (stored) {
-                const data = JSON.parse(stored);
-                document.getElementById('netWorth').value = formatNumber(data.netWorth) || '472,242,478';
-                document.getElementById('salary').value = formatNumber(data.salary) || '53,060,000';
-                document.getElementById('salaryInc').value = data.salaryInc || '3';
-                document.getElementById('salaryCeil').value = formatNumber(data.salaryCeil) || '150,000,000';
-                document.getElementById('savingsRate').value = data.savingsRate || '70';
-                document.getElementById('returnRate').value = data.returnRate || '15';
-                document.getElementById('re24').value = formatNumber(data.re24) || '2,800,000,000';
-                document.getElementById('re34').value = formatNumber(data.re34) || '4,000,000,000';
-                document.getElementById('reRate').value = data.reRate || '4';
-                document.getElementById('retYear').value = data.retYear || '2050';
-                
-                anchorYear = data.anchorYear !== undefined ? data.anchorYear : null;
-                tableData = data.tableData || {};
-                
-                renderTable();
-                
+                applySaveDataObj(JSON.parse(stored));
                 const btn = document.getElementById('btnLoad');
-                btn.innerText = '불러오기 완료! ✓';
+                btn.innerText = '완료! ✓';
                 btn.classList.replace('bg-white', 'bg-emerald-500');
                 btn.classList.replace('text-gray-700', 'text-white');
-                setTimeout(() => {
-                    btn.innerText = '불러오기';
-                    btn.classList.replace('bg-emerald-500', 'bg-white');
-                    btn.classList.replace('text-white', 'text-gray-700');
-                }, 2000);
+                setTimeout(() => { btn.innerText = '불러오기(로컬)'; btn.classList.replace('bg-emerald-500', 'bg-white'); btn.classList.replace('text-white', 'text-gray-700'); }, 2000);
             }
         }
 
-        window.onload = () => {
-            document.querySelectorAll('.trigger-calc').forEach(el => {
-                el.addEventListener('input', () => {
-                    // Ignore comma formatting while typing to prevent cursor jump
-                    if(el.id !== 'salaryInc' && el.id !== 'savingsRate' && el.id !== 'returnRate' && el.id !== 'reRate' && el.id !== 'retYear') {
-                        // We do formatting only on blur to not mess up typing experience
-                    }
-                    renderTable();
-                });
-                if(el.id !== 'salaryInc' && el.id !== 'savingsRate' && el.id !== 'returnRate' && el.id !== 'reRate' && el.id !== 'retYear') {
-                    el.addEventListener('blur', function() {
-                        this.value = formatNumber(parseNumber(this.value));
+        async function fetchGithubConfig() {
+            try {
+                // If this html is hosted (e.g. Github Pages), it will try to fetch the config.json next to it.
+                const response = await fetch('asset_simulator_config.json', { cache: "no-store" });
+                if (response.ok) {
+                    const data = await response.json();
+                    applySaveDataObj(data);
+                    console.log("Loaded GitHub/Server config.json!");
+                    return true;
+                }
+            } catch (e) {
+                console.log("No remote config.json found or running locally.");
+            }
+            return false;
+        }
+
+        // --- Copy / Paste Sync (Base64 URL encoding) ---
+        function copySyncCode() {
+            const jsonStr = JSON.stringify(getSaveDataObj());
+            const b64 = btoa(encodeURIComponent(jsonStr));
+            navigator.clipboard.writeText(b64).then(() => {
+                const btn = document.getElementById('btnCopy');
+                btn.innerText = '복사 완료! ✓';
+                btn.classList.replace('bg-gray-100', 'bg-emerald-100');
+                setTimeout(() => { btn.innerText = '📱코드 복사(내보내기)'; btn.classList.replace('bg-emerald-100', 'bg-gray-100'); }, 2000);
+            });
+        }
+
+        function pasteSyncCode() {
+            const b64 = prompt("PC(.exe)나 다른 기기에서 복사한 영문 코드를 붙여넣어 주세요:");
+            if (b64 && b64.trim() !== '') {
+                try {
+                    const jsonStr = decodeURIComponent(atob(b64.trim()));
+                    applySaveDataObj(JSON.parse(jsonStr));
+                    alert("성공적으로 연동되었습니다!");
+                } catch (e) {
+                    alert("올바르지 않은 코드입니다.");
+                }
+            }
+        }
+
+        // --- Multi Drag & Ctrl+Enter Selection Logic ---
+        let isDragging = false;
+        document.addEventListener('mousedown', (e) => {
+            if (e.target.classList.contains('cell-input')) {
+                // reset others
+                document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
+                e.target.dataset.selected = 'true';
+                e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
+                isDragging = true;
+            } else {
+                isDragging = false; // not starting drag on a cell
+                // Clear selection if clicking outside
+                if(!e.target.closest('#tableWrapper')) {
+                    document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
+                }
+            }
+        });
+        document.addEventListener('mouseup', () => isDragging = false);
+        document.addEventListener('mouseover', (e) => {
+            if (isDragging && e.target.classList.contains('cell-input')) {
+                e.target.dataset.selected = 'true';
+                e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                const active = document.activeElement;
+                if (active && active.classList.contains('cell-input')) {
+                    const val = active.value;
+                    let updated = false;
+                    document.querySelectorAll('.cell-input[data-selected="true"]').forEach(el => {
+                        el.value = val;
+                        const year = parseInt(el.dataset.year);
+                        const key = el.dataset.key;
+                        
+                        if (key === 'nw') {
+                            if (val.trim() === '') {
+                                if (anchorYear === year) { anchorYear = null; if (tableData[year]) delete tableData[year].nw; }
+                            } else {
+                                anchorYear = year;
+                                if (!tableData[year]) tableData[year] = {};
+                                tableData[year].nw = parseNumber(val);
+                            }
+                        } else {
+                            if (!tableData[year]) tableData[year] = {};
+                            tableData[year][key] = parseNumber(val);
+                        }
+                        updated = true;
+                    });
+                    if (updated) {
+                        active.blur();
                         renderTable();
-                    });
-                    el.addEventListener('focus', function() {
-                        this.value = this.value.replace(/,/g, '');
-                    });
+                    }
+                }
+            }
+        });
+
+        // --- Init ---
+        window.onload = async () => {
+            document.querySelectorAll('.trigger-calc').forEach(el => {
+                el.addEventListener('input', () => { renderTable(); });
+                if(!['salaryInc', 'savingsRate', 'returnRate', 'reRate', 'retYear'].includes(el.id)) {
+                    el.addEventListener('blur', function() { this.value = formatNumber(parseNumber(this.value)); renderTable(); });
+                    el.addEventListener('focus', function() { this.value = this.value.replace(/,/g, ''); });
                 }
             });
             
-            loadData();
-            if(Object.keys(tableData).length === 0) renderTable();
+            // 1. Try Github Sync first
+            const fromServer = await fetchGithubConfig();
+            // 2. If failed, fallback to local storage
+            if (!fromServer) {
+                const stored = localStorage.getItem('simulatorDataMobile');
+                if (stored) applySaveDataObj(JSON.parse(stored));
+                else renderTable(); // initial blank render
+            }
         };
     </script>
 </body>
