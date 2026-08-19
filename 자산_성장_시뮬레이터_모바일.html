@@ -19,7 +19,6 @@
         .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         input[type="text"] { appearance: none; }
         
-        /* Disable text selection on dragging over the table so we can do cell highlighting */
         .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
     </style>
 </head>
@@ -28,13 +27,18 @@
         
         <!-- Header -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 gap-4">
-            <h1 class="text-2xl font-bold text-gray-900">자산 성장 시뮬레이터 <span class="text-sm font-normal text-gray-500 ml-1">Web Ver.</span></h1>
+            <h1 class="text-2xl font-bold text-gray-900 flex items-center">
+                자산 성장 시뮬레이터 <span class="text-sm font-normal text-gray-500 ml-2">Web Ver.</span>
+            </h1>
             
             <div class="flex flex-wrap gap-2 w-full md:w-auto">
                 <button onclick="copySyncCode()" id="btnCopy" class="flex-1 md:flex-none px-3 py-2 bg-gray-100 border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📱코드 복사(내보내기)</button>
                 <button onclick="pasteSyncCode()" class="flex-1 md:flex-none px-3 py-2 bg-gray-100 border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📥코드 붙여넣기</button>
                 
-                <button id="btnLoad" onclick="loadDataLocal()" class="flex-1 md:flex-none px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-bold text-gray-700 shadow-sm transition-colors">불러오기(로컬)</button>
+                <label class="cursor-pointer flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm transition-colors flex items-center justify-center">
+                    📂 JSON 열기
+                    <input type="file" id="fileImport" accept=".json" style="display:none;" onchange="importJsonFile(event)">
+                </label>
                 <button id="btnSave" onclick="saveDataLocal()" class="flex-1 md:flex-none px-4 py-2 bg-blue-600 rounded-lg text-sm font-bold text-white shadow-sm transition-colors">저장(로컬)</button>
             </div>
         </div>
@@ -42,8 +46,12 @@
         <!-- Input Card -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-5">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+                <!-- Row 1 -->
                 <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">현재 순자산(원)</label>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5 flex justify-between">
+                        현재 순자산(원)
+                        <button onclick="toggleNw()" id="btnToggleNw" class="text-blue-500 hover:text-blue-700">👁️ 숨기기</button>
+                    </label>
                     <input type="text" id="netWorth" inputmode="numeric" class="input-box trigger-calc font-semibold" value="472,242,478">
                 </div>
                 <div>
@@ -63,6 +71,7 @@
                     <input type="text" id="savingsRate" inputmode="decimal" class="input-box trigger-calc" value="70">
                 </div>
                 
+                <!-- Row 2 -->
                 <div>
                     <label class="block text-xs font-bold text-gray-500 mb-1.5">투자 수익률(%)</label>
                     <input type="text" id="returnRate" inputmode="decimal" class="input-box trigger-calc" value="15">
@@ -82,6 +91,20 @@
                 <div>
                     <label class="block text-xs font-bold text-gray-500 mb-1.5">은퇴 연도(년)</label>
                     <input type="text" id="retYear" inputmode="numeric" class="input-box trigger-calc" value="2050">
+                </div>
+                
+                <!-- Row 3 (Bonus Deferral) -->
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">당해 성과급 비율(%)</label>
+                    <input type="text" id="bonusP0" inputmode="decimal" class="input-box trigger-calc" value="80">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">1년 이연 성과급(%)</label>
+                    <input type="text" id="bonusP1" inputmode="decimal" class="input-box trigger-calc" value="10">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5">2년 이연 성과급(%)</label>
+                    <input type="text" id="bonusP2" inputmode="decimal" class="input-box trigger-calc" value="10">
                 </div>
             </div>
         </div>
@@ -127,6 +150,21 @@
     <script>
         let tableData = {};
         let anchorYear = null;
+        let hideNw = false;
+
+        function toggleNw() {
+            hideNw = !hideNw;
+            const btn = document.getElementById('btnToggleNw');
+            const input = document.getElementById('netWorth');
+            if (hideNw) {
+                btn.innerText = "👁️ 보기";
+                input.type = "password";
+            } else {
+                btn.innerText = "👁️ 숨기기";
+                input.type = "text";
+            }
+            renderTable();
+        }
 
         // --- Core Formatting ---
         function formatNumber(num) { return Math.round(num).toLocaleString('ko-KR'); }
@@ -169,6 +207,10 @@
             let re24 = parseNumber(document.getElementById('re24').value);
             let re34 = parseNumber(document.getElementById('re34').value);
             const reRate = parseNumber(document.getElementById('reRate').value) / 100;
+
+            const p0 = parseNumber(document.getElementById('bonusP0').value) / 100;
+            const p1 = parseNumber(document.getElementById('bonusP1').value) / 100;
+            const p2 = parseNumber(document.getElementById('bonusP2').value) / 100;
             
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
@@ -179,6 +221,21 @@
 
             document.getElementById('btnReset').style.display = anchorYear !== null ? 'block' : 'none';
 
+            // Phase 1: Calculate Base Bonuses for all years
+            let bonusHistory = {};
+            let tempSal = currentSalary;
+            for (let year = startYear; year <= retYear; year++) {
+                const overrides = tableData[year] || {};
+                const expectedOp = overrides.op !== undefined ? overrides.op : 47.2;
+                const baseUnit = tempSal / 20.0;
+                const bonusPercent = 29.64 * (expectedOp / 47.2063);
+                bonusHistory[year] = baseUnit * bonusPercent;
+                tempSal = Math.min(tempSal * (1 + salaryInc), salaryCeil);
+            }
+            bonusHistory[2024] = bonusHistory[2026];
+            bonusHistory[2025] = bonusHistory[2026];
+
+            // Phase 2: Render Table
             for (let year = startYear; year <= retYear; year++) {
                 const age = 30 + (year - startYear);
                 const overrides = tableData[year] || {};
@@ -190,8 +247,9 @@
                 const isBlurred = isPastRow || isAnchorRow;
                 const bgClass = isBlurred ? 'bg-blurred' : 'bg-white';
                 
-                const bonusPercent = 29.64 * (expectedOp / 47.2063);
-                const bonusAmount = (currentSalary / 20.0) * bonusPercent;
+                // Deferred bonus calculation
+                const bonusAmount = (bonusHistory[year] * p0) + (bonusHistory[year-1] * p1) + (bonusHistory[year-2] * p2);
+                
                 const grossIncome = currentSalary + bonusAmount;
                 const netIncome = calcAfterTax(grossIncome);
                 const mySavings = netIncome * savingsRate;
@@ -233,7 +291,9 @@
                 let nwClass = txtClass;
                 if (isAnchorRow) nwClass = 'anchor';
                 else if (!isBlurred) nwClass = 'text-red-600 font-bold';
-                tr.innerHTML += `<td class="${nwClass} text-right p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="nw" value="${formatNumber(currentNetWorth)}" onchange="updateAnchor(${year}, this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                
+                const nwType = hideNw ? 'password' : 'text';
+                tr.innerHTML += `<td class="${nwClass} text-right p-0"><input type="${nwType}" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="nw" value="${formatNumber(currentNetWorth)}" onchange="updateAnchor(${year}, this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
                 
                 // Readonly: Real Estates
                 const reClass = isBlurred ? txtClass : 'bg-emerald-50 text-emerald-700 font-bold';
@@ -288,6 +348,10 @@
                 re34: parseNumber(document.getElementById('re34').value),
                 reRate: parseNumber(document.getElementById('reRate').value),
                 retYear: parseNumber(document.getElementById('retYear').value),
+                bonusP0: parseNumber(document.getElementById('bonusP0').value),
+                bonusP1: parseNumber(document.getElementById('bonusP1').value),
+                bonusP2: parseNumber(document.getElementById('bonusP2').value),
+                hideNw: hideNw,
                 anchorYear: anchorYear,
                 tableData: tableData
             };
@@ -295,6 +359,36 @@
 
         function applySaveDataObj(data) {
             if(!data) return;
+            // Migration
+            if (data.tableData === undefined && data.net_worth !== undefined) {
+                data.netWorth = data.net_worth;
+                data.salaryInc = data.salary_inc;
+                data.salaryCeil = data.salary_ceiling;
+                data.savingsRate = data.savings_rate;
+                data.returnRate = data.return_rate;
+                data.re24 = data.re_24;
+                data.re34 = data.re_34;
+                data.reRate = data.re_rate;
+                data.retYear = data.retirement_year;
+                
+                data.tableData = {};
+                const aRow = data.anchor_row !== undefined ? data.anchor_row : -1;
+                if (aRow !== -1) data.anchorYear = 2026 + aRow;
+                else data.anchorYear = null;
+                
+                const opData = data.op_data || [];
+                const gfData = data.gf_data || [];
+                const len = Math.max(opData.length, gfData.length);
+                for(let i=0; i<len; i++) {
+                    const y = 2026 + i;
+                    const r = {};
+                    if(opData[i] && parseFloat(opData[i].toString().replace(/,/g,'')) !== 47.2) r.op = parseFloat(opData[i].toString().replace(/,/g,''));
+                    if(gfData[i] && parseFloat(gfData[i].toString().replace(/,/g,'')) !== 0) r.gf = parseFloat(gfData[i].toString().replace(/,/g,''));
+                    if(i === aRow) r.nw = parseFloat(data.manual_net_worth || 0);
+                    if(Object.keys(r).length > 0) data.tableData[y] = r;
+                }
+            }
+
             document.getElementById('netWorth').value = formatNumber(data.netWorth !== undefined ? data.netWorth : 472242478);
             document.getElementById('salary').value = formatNumber(data.salary !== undefined ? data.salary : 53060000);
             document.getElementById('salaryInc').value = data.salaryInc || '3';
@@ -306,12 +400,20 @@
             document.getElementById('reRate').value = data.reRate || '4';
             document.getElementById('retYear').value = data.retYear || '2050';
             
+            document.getElementById('bonusP0').value = data.bonusP0 !== undefined ? data.bonusP0 : 80;
+            document.getElementById('bonusP1').value = data.bonusP1 !== undefined ? data.bonusP1 : 10;
+            document.getElementById('bonusP2').value = data.bonusP2 !== undefined ? data.bonusP2 : 10;
+            
+            if (data.hideNw !== undefined && data.hideNw !== hideNw) {
+                toggleNw(); // syncs UI button and state
+            }
+            
             anchorYear = data.anchorYear !== undefined ? data.anchorYear : null;
             tableData = data.tableData || {};
             renderTable();
         }
 
-        // --- Local & GitHub Syncing ---
+        // --- Local & File Syncing ---
         function saveDataLocal() {
             localStorage.setItem('simulatorDataMobile', JSON.stringify(getSaveDataObj()));
             const btn = document.getElementById('btnSave');
@@ -324,17 +426,29 @@
             const stored = localStorage.getItem('simulatorDataMobile');
             if (stored) {
                 applySaveDataObj(JSON.parse(stored));
-                const btn = document.getElementById('btnLoad');
-                btn.innerText = '완료! ✓';
-                btn.classList.replace('bg-white', 'bg-emerald-500');
-                btn.classList.replace('text-gray-700', 'text-white');
-                setTimeout(() => { btn.innerText = '불러오기(로컬)'; btn.classList.replace('bg-emerald-500', 'bg-white'); btn.classList.replace('text-white', 'text-gray-700'); }, 2000);
+                alert("로컬 스토리지에서 성공적으로 불러왔습니다!");
             }
+        }
+
+        function importJsonFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    applySaveDataObj(data);
+                    alert("JSON 파일을 성공적으로 불러왔습니다!");
+                } catch (err) {
+                    alert("잘못된 JSON 파일입니다.");
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = ''; 
         }
 
         async function fetchGithubConfig() {
             try {
-                // If this html is hosted (e.g. Github Pages), it will try to fetch the config.json next to it.
                 const response = await fetch('asset_simulator_config.json', { cache: "no-store" });
                 if (response.ok) {
                     const data = await response.json();
@@ -377,14 +491,12 @@
         let isDragging = false;
         document.addEventListener('mousedown', (e) => {
             if (e.target.classList.contains('cell-input')) {
-                // reset others
                 document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
                 e.target.dataset.selected = 'true';
                 e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
                 isDragging = true;
             } else {
-                isDragging = false; // not starting drag on a cell
-                // Clear selection if clicking outside
+                isDragging = false; 
                 if(!e.target.closest('#tableWrapper')) {
                     document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
                 }
@@ -434,19 +546,17 @@
         window.onload = async () => {
             document.querySelectorAll('.trigger-calc').forEach(el => {
                 el.addEventListener('input', () => { renderTable(); });
-                if(!['salaryInc', 'savingsRate', 'returnRate', 'reRate', 'retYear'].includes(el.id)) {
+                if(!['salaryInc', 'savingsRate', 'returnRate', 'reRate', 'retYear', 'bonusP0', 'bonusP1', 'bonusP2'].includes(el.id)) {
                     el.addEventListener('blur', function() { this.value = formatNumber(parseNumber(this.value)); renderTable(); });
                     el.addEventListener('focus', function() { this.value = this.value.replace(/,/g, ''); });
                 }
             });
             
-            // 1. Try Github Sync first
             const fromServer = await fetchGithubConfig();
-            // 2. If failed, fallback to local storage
             if (!fromServer) {
                 const stored = localStorage.getItem('simulatorDataMobile');
                 if (stored) applySaveDataObj(JSON.parse(stored));
-                else renderTable(); // initial blank render
+                else renderTable(); 
             }
         };
     </script>
