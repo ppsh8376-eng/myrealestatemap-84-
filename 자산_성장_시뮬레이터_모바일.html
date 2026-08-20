@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; background-color: #f4f6f8; -webkit-font-smoothing: antialiased; }
-        .input-box { border: 1px solid #d1d5db; border-radius: 6px; padding: 8px 12px; width: 100%; font-size: 14px; outline: none; transition: all 0.2s; }
+        .input-box { border: 1px solid #d1d5db; border-radius: 6px; padding: 8px 10px; width: 100%; font-size: 13px; outline: none; transition: all 0.2s; background-color: #ffffff; }
         .input-box:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); }
         .cell-input { width: 100%; border: none; background: transparent; text-align: right; outline: none; font-family: inherit; font-size: inherit; color: inherit; padding: 0; margin: 0; transition: background-color 0.1s; cursor: text;}
         .cell-input:focus { background-color: rgba(59, 130, 246, 0.1); border-radius: 4px; }
@@ -32,8 +32,8 @@
             </h1>
             
             <div class="flex flex-wrap gap-2 w-full md:w-auto">
-                <button onclick="copySyncCode()" id="btnCopy" class="flex-1 md:flex-none px-3 py-2 bg-gray-100 border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📱코드 복사(내보내기)</button>
-                <button onclick="pasteSyncCode()" class="flex-1 md:flex-none px-3 py-2 bg-gray-100 border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📥코드 붙여넣기</button>
+                <button onclick="copySyncCode()" id="btnCopy" class="flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📱코드 내보내기</button>
+                <button onclick="pasteSyncCode()" class="flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📥코드 불러오기</button>
                 
                 <label class="cursor-pointer flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm transition-colors flex items-center justify-center">
                     📂 JSON 열기
@@ -43,70 +43,91 @@
             </div>
         </div>
 
-        <!-- Input Card -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-5">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
-                <!-- Row 1 -->
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5 flex justify-between">
-                        현재 순자산(원)
-                        <button onclick="toggleNw()" id="btnToggleNw" class="text-blue-500 hover:text-blue-700">👁️ 숨기기</button>
-                    </label>
-                    <input type="text" id="netWorth" inputmode="numeric" class="input-box trigger-calc font-semibold" value="472,242,478">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">계약 연봉(원)</label>
-                    <input type="text" id="salary" inputmode="numeric" class="input-box trigger-calc" value="53,060,000">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">연봉 인상률(%)</label>
-                    <input type="text" id="salaryInc" inputmode="decimal" class="input-box trigger-calc" value="3">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">연봉 상한선(원)</label>
-                    <input type="text" id="salaryCeil" inputmode="numeric" class="input-box trigger-calc" value="150,000,000">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">저축률(%)</label>
-                    <input type="text" id="savingsRate" inputmode="decimal" class="input-box trigger-calc" value="70">
-                </div>
-                
-                <!-- Row 2 -->
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">투자 수익률(%)</label>
-                    <input type="text" id="returnRate" inputmode="decimal" class="input-box trigger-calc" value="15">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">원베일리 24평(원)</label>
-                    <input type="text" id="re24" inputmode="numeric" class="input-box trigger-calc" value="2,800,000,000">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">원베일리 34평(원)</label>
-                    <input type="text" id="re34" inputmode="numeric" class="input-box trigger-calc" value="4,000,000,000">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">부동산 상승률(%)</label>
-                    <input type="text" id="reRate" inputmode="decimal" class="input-box trigger-calc" value="4">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">은퇴 연도(년)</label>
-                    <input type="text" id="retYear" inputmode="numeric" class="input-box trigger-calc" value="2050">
-                </div>
-                
-                <!-- Row 3 (Bonus Deferral) -->
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">당해 성과급 비율(%)</label>
-                    <input type="text" id="bonusP0" inputmode="decimal" class="input-box trigger-calc" value="80">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">1년 이연 성과급(%)</label>
-                    <input type="text" id="bonusP1" inputmode="decimal" class="input-box trigger-calc" value="10">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5">2년 이연 성과급(%)</label>
-                    <input type="text" id="bonusP2" inputmode="decimal" class="input-box trigger-calc" value="10">
+        <!-- Input Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-5">
+            
+            <!-- Group 1: Career -->
+            <div class="bg-blue-50/40 rounded-xl shadow-sm border border-blue-200 p-4">
+                <h3 class="text-sm font-bold text-blue-800 mb-4 flex items-center gap-1.5">
+                    <span class="text-base">🏢</span> 직장 및 소득 설정
+                </h3>
+                <div class="grid grid-cols-2 gap-3 md:gap-4">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">계약 연봉(원)</label>
+                        <input type="text" id="salary" inputmode="numeric" class="input-box trigger-calc" value="53,060,000">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">연봉 인상률(%)</label>
+                        <input type="text" id="salaryInc" inputmode="decimal" class="input-box trigger-calc" value="3">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">연봉 상한선(원)</label>
+                        <input type="text" id="salaryCeil" inputmode="numeric" class="input-box trigger-calc" value="150,000,000">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">당해 성과급 비율(%)</label>
+                        <input type="text" id="bonusP0" inputmode="decimal" class="input-box trigger-calc" value="80">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">1년 이연 성과급(%)</label>
+                        <input type="text" id="bonusP1" inputmode="decimal" class="input-box trigger-calc" value="10">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">2년 이연 성과급(%)</label>
+                        <input type="text" id="bonusP2" inputmode="decimal" class="input-box trigger-calc" value="10">
+                    </div>
                 </div>
             </div>
+
+            <!-- Group 2: Asset & Investment -->
+            <div class="bg-emerald-50/40 rounded-xl shadow-sm border border-emerald-200 p-4">
+                <h3 class="text-sm font-bold text-emerald-800 mb-4 flex items-center gap-1.5">
+                    <span class="text-base">📈</span> 자산 및 투자 설정
+                </h3>
+                <div class="grid grid-cols-2 gap-3 md:gap-4">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1 flex justify-between items-center">
+                            현재 순자산(원)
+                            <button onclick="toggleNw()" id="btnToggleNw" class="text-emerald-600 hover:text-emerald-800 focus:outline-none">👁️ 숨기기</button>
+                        </label>
+                        <input type="text" id="netWorth" inputmode="numeric" class="input-box trigger-calc font-semibold text-emerald-900" value="472,242,478">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">저축률(%)</label>
+                        <input type="text" id="savingsRate" inputmode="decimal" class="input-box trigger-calc" value="70">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">투자 수익률(%)</label>
+                        <input type="text" id="returnRate" inputmode="decimal" class="input-box trigger-calc" value="15">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">은퇴 연도(년)</label>
+                        <input type="text" id="retYear" inputmode="numeric" class="input-box trigger-calc" value="2050">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group 3: Real Estate -->
+            <div class="bg-orange-50/40 rounded-xl shadow-sm border border-orange-200 p-4">
+                <h3 class="text-sm font-bold text-orange-800 mb-4 flex items-center gap-1.5">
+                    <span class="text-base">🏠</span> 부동산 설정
+                </h3>
+                <div class="grid grid-cols-2 gap-3 md:gap-4">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">원베일리 24평(원)</label>
+                        <input type="text" id="re24" inputmode="numeric" class="input-box trigger-calc" value="2,800,000,000">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">원베일리 34평(원)</label>
+                        <input type="text" id="re34" inputmode="numeric" class="input-box trigger-calc" value="4,000,000,000">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-600 mb-1">부동산 상승률(%)</label>
+                        <input type="text" id="reRate" inputmode="decimal" class="input-box trigger-calc" value="4">
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
         <!-- Info & Reset -->
@@ -426,7 +447,6 @@
             const stored = localStorage.getItem('simulatorDataMobile');
             if (stored) {
                 applySaveDataObj(JSON.parse(stored));
-                alert("로컬 스토리지에서 성공적으로 불러왔습니다!");
             }
         }
 
@@ -469,8 +489,8 @@
             navigator.clipboard.writeText(b64).then(() => {
                 const btn = document.getElementById('btnCopy');
                 btn.innerText = '복사 완료! ✓';
-                btn.classList.replace('bg-gray-100', 'bg-emerald-100');
-                setTimeout(() => { btn.innerText = '📱코드 복사(내보내기)'; btn.classList.replace('bg-emerald-100', 'bg-gray-100'); }, 2000);
+                btn.classList.replace('bg-white', 'bg-emerald-100');
+                setTimeout(() => { btn.innerText = '📱코드 내보내기'; btn.classList.replace('bg-emerald-100', 'bg-white'); }, 2000);
             });
         }
 
