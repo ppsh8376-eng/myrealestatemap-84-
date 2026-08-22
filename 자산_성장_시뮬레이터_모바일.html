@@ -262,8 +262,8 @@
             renderTable();
         }
 
-        function formatNumber(num) { return Math.round(num).toLocaleString('ko-KR'); }
         function parseNumber(str) { if (str === undefined || str === null || str === '') return null; return parseFloat(str.toString().replace(/,/g, '')) || 0; }
+        function formatNumber(num) { return Math.round(parseNumber(num)).toLocaleString('ko-KR'); }
         
         function removeCommas(el) { el.value = el.value.replace(/,/g, ''); }
         function addCommas(el) { el.value = formatNumber(parseNumber(el.value)); }
