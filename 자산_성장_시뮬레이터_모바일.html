@@ -463,7 +463,8 @@
                     invInc = ov.invInc;
                     cumInv += invInc;
                 } else {
-                    invInc = baseForRoi * returnRate;
+                    let rrC = Math.min(returnRate, 0.9999);
+                    invInc = baseForRoi * (rrC / (1 - rrC));
                     cumInv += invInc;
                 }
 
@@ -473,7 +474,7 @@
                     currentNw = baseForRoi + invInc;
                 }
                 
-                const actualReturnRate = baseForRoi > 0 ? (invInc / baseForRoi) * 100 : 0;
+                const actualReturnRate = currentNw > 0 ? (invInc / currentNw) * 100 : 0;
 
                 if (isPastRow) {
                     sumRet += actualReturnRate; cntRet++;
