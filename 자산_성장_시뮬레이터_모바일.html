@@ -668,12 +668,23 @@
         }
 
         window.onload = () => {
-            const saved = localStorage.getItem('simulatorDataMobile');
-            if (saved) {
-                try { applySaveDataObj(JSON.parse(saved)); } catch(e) { renderBonusDB(); }
-            } else {
-                renderBonusDB();
-            }
+            fetch('asset_simulator_config.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    applySaveDataObj(data);
+                })
+                .catch(error => {
+                    console.log('No online config found or fetch failed, falling back to local storage.');
+                    const saved = localStorage.getItem('simulatorDataMobile');
+                    if (saved) {
+                        try { applySaveDataObj(JSON.parse(saved)); } catch(e) { renderBonusDB(); }
+                    } else {
+                        renderBonusDB();
+                    }
+                });
 
             document.querySelectorAll('.trigger-calc').forEach(el => {
                 el.addEventListener('change', () => { renderTable(); });
