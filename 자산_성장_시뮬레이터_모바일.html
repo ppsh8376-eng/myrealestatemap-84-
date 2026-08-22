@@ -178,7 +178,7 @@
                             <th class="p-2 border bg-blue-50 whitespace-nowrap">영업이익(조)✏️</th>
                             <th class="p-2 border bg-blue-50 whitespace-nowrap">세전 연봉✏️</th>
                             <th class="p-2 border bg-blue-50 whitespace-nowrap">기본급✏️</th>
-                            <th class="p-2 border bg-blue-100 whitespace-nowrap">성과급 산정비율(%)</th>
+                            <th class="p-2 border bg-blue-50 whitespace-nowrap">성과급 산정비율(%)</th>
                             <th class="p-2 border bg-blue-50 whitespace-nowrap">세전 성과급</th>
                             <th class="p-2 border bg-blue-50 whitespace-nowrap">세전 총수입</th>
                             <th class="p-2 border border-r-2 border-gray-400 bg-blue-50 whitespace-nowrap">세후 수입</th>
@@ -188,7 +188,7 @@
                             <th class="p-2 border border-r-2 border-gray-400 bg-red-50 whitespace-nowrap">당해 총저축액</th>
                             <th class="p-2 border bg-emerald-50 whitespace-nowrap">투자수입✏️</th>
                             <th class="p-2 border bg-emerald-50 whitespace-nowrap">누적 투자수입✏️</th>
-                            <th class="p-2 border bg-emerald-100 whitespace-nowrap">누적 순자산✏️</th>
+                            <th class="p-2 border bg-emerald-50 whitespace-nowrap">누적 순자산✏️</th>
                             <th class="p-2 border border-r-2 border-gray-400 bg-emerald-50 whitespace-nowrap">당해 수익률(%)</th>
                             <th class="p-2 border bg-orange-50 whitespace-nowrap">원베일리 24평</th>
                             <th class="p-2 border bg-orange-50 whitespace-nowrap">원베일리 34평</th>
@@ -319,9 +319,9 @@
         function removeBonusDB(idx) { bonusDB.splice(idx, 1); renderBonusDB(); }
 
         function renderTable() {
-            const birthYear = parseInt(document.getElementById('birthYear').value) || 1997;
-            const startYear = parseInt(document.getElementById('startYear').value) || 2023;
-            const retYear = parseInt(document.getElementById('retYear').value) || 2050;
+            const birthYear = parseNumber(document.getElementById('birthYear').value) || 1997;
+            const startYear = parseNumber(document.getElementById('startYear').value) || 2023;
+            const retYear = parseNumber(document.getElementById('retYear').value) || 2050;
             
             let initNw = parseNumber(document.getElementById('netWorth').value) || 0;
             let initSalary = parseNumber(document.getElementById('salary').value) || 0;
@@ -332,7 +332,7 @@
             const savingsInput = parseNumber(document.getElementById('savingsRate').value) || 0;
             const returnRate = (parseNumber(document.getElementById('returnRate').value) || 0) / 100;
             
-            let reBaseYear = parseInt(document.getElementById('reBaseYear').value) || 2024;
+            let reBaseYear = parseNumber(document.getElementById('reBaseYear').value) || 2024;
             let re24 = parseNumber(document.getElementById('re24').value) || 0;
             let re34 = parseNumber(document.getElementById('re34').value) || 0;
             const reRate = (parseNumber(document.getElementById('reRate').value) || 0) / 100;
@@ -345,7 +345,7 @@
             let hasAnyOverride = false;
             for (let y in tableData) {
                 if (tableData[y].nw !== undefined) {
-                    let yearInt = parseInt(y);
+                    let yearInt = parseNumber(y);
                     if (anchorYear === null || yearInt > anchorYear) anchorYear = yearInt;
                 }
                 if (Object.keys(tableData[y]).length > 0) hasAnyOverride = true;
@@ -451,6 +451,10 @@
                     cumExp += expense;
                 }
 
+                const gf = ov.gf !== undefined ? ov.gf : 0;
+                const totalSavings = netIncome - expense + gf;
+                const baseForRoi = currentNw + totalSavings;
+                
                 let invInc = 0;
                 if (ov.cumInv !== undefined) {
                     invInc = ov.cumInv - cumInv;
@@ -459,20 +463,17 @@
                     invInc = ov.invInc;
                     cumInv += invInc;
                 } else {
-                    invInc = currentNw * returnRate;
+                    invInc = baseForRoi * returnRate;
                     cumInv += invInc;
                 }
-
-                const gf = ov.gf !== undefined ? ov.gf : 0;
-                const totalSavings = netIncome - expense + gf;
 
                 if (ov.nw !== undefined) {
                     currentNw = ov.nw;
                 } else {
-                    currentNw = currentNw + totalSavings + invInc;
+                    currentNw = baseForRoi + invInc;
                 }
                 
-                const actualReturnRate = currentNw > 0 ? (invInc / currentNw) * 100 : 0;
+                const actualReturnRate = baseForRoi > 0 ? (invInc / baseForRoi) * 100 : 0;
 
                 if (isPastRow) {
                     sumRet += actualReturnRate; cntRet++;
@@ -491,25 +492,26 @@
                 const td = (val, key, colorClass, editable = true, isFloat = false) => {
                     let isOv = ov[key] !== undefined;
                     let cls = `p-2 border whitespace-nowrap ${colorClass}`;
+                    if (isAnchorRow) cls = cls.replace(/bg-[a-z]+-[0-9]+/g, 'bg-yellow-100');
                     if (isOv) cls += " font-bold text-red-600";
                     let displayVal = isFloat ? val.toFixed(2) : formatNumber(val);
-                    if (key === 'nw' && hideNw) displayVal = "👀 비밀";
+                    if (key === 'nw' && hideNw) displayVal = "🔒 비공개";
                     
-                    if (editable && !isAnchorRow) {
-                        return `<td class="${cls} cursor-pointer" onclick="editCell(${year}, '${key}', ${val})">${displayVal}</td>`;
-                    } else if (editable && isAnchorRow) {
-                        return `<td class="${cls} cursor-pointer bg-yellow-100 text-red-600" onclick="editCell(${year}, '${key}', ${val})">${displayVal}</td>`;
+                    if (editable) {
+                        if (isAnchorRow) cls += " cursor-pointer text-red-600";
+                        else cls += " cursor-pointer";
+                        return `<td class="${cls}" onclick="editCell(${year}, '${key}', ${val})">${displayVal}</td>`;
                     }
                     return `<td class="${cls}">${displayVal}</td>`;
                 };
 
                 let rowHtml = `
-                    <td class="p-2 border whitespace-nowrap sticky left-0 z-10 ${isPastRow && !isAnchorRow ? 'bg-gray-100' : 'bg-white font-medium'}">${year}년</td>
-                    <td class="p-2 border border-r-2 border-gray-400 whitespace-nowrap">${age}세</td>
+                    <td class="p-2 border whitespace-nowrap sticky left-0 z-10 ${isAnchorRow ? 'bg-yellow-100' : (isPastRow ? 'bg-gray-100' : 'bg-white font-medium')}">${year}년</td>
+                    <td class="p-2 border border-r-2 border-gray-400 whitespace-nowrap ${isAnchorRow ? 'bg-yellow-100' : ''}">${age}세</td>
                     ${td(expectedOp, 'op', 'bg-blue-50', true, true)}
                     ${td(salaryHistory[year], 'sal', 'bg-blue-50')}
                     ${td(baseSalHistory[year], 'baseSal', 'bg-blue-50')}
-                    ${td(basePct, 'pct', 'bg-blue-100 text-blue-800', false, true)}
+                    ${td(basePct, 'pct', 'bg-blue-50 text-blue-800', false, true)}
                     ${td(bonusAmount, 'bonus', 'bg-blue-50', false)}
                     ${td(grossIncome, 'gross', 'bg-blue-50', false)}
                     ${td(netIncome, 'net', 'bg-blue-50 border-r-2 border-gray-400 text-blue-900 font-medium', false)}
@@ -526,10 +528,12 @@
                 `;
                 
                 let re24Cls = currentNw >= re24Val ? "bg-orange-50 font-bold text-emerald-600" : "bg-orange-50 text-orange-800";
+                if (isAnchorRow) re24Cls = re24Cls.replace('bg-orange-50', 'bg-yellow-100 text-red-600');
                 let re24Txt = formatNumber(re24Val) + (currentNw >= re24Val ? " ✅" : "");
                 rowHtml += `<td class="p-2 border ${re24Cls} text-right">${re24Txt}</td>`;
                 
                 let re34Cls = currentNw >= re34Val ? "bg-orange-50 font-bold text-emerald-600" : "bg-orange-50 text-orange-800";
+                if (isAnchorRow) re34Cls = re34Cls.replace('bg-orange-50', 'bg-yellow-100 text-red-600');
                 let re34Txt = formatNumber(re34Val) + (currentNw >= re34Val ? " ✅" : "");
                 rowHtml += `<td class="p-2 border ${re34Cls} text-right">${re34Txt}</td>`;
                 
@@ -570,24 +574,24 @@
 
         function getSaveDataObj() {
             return {
-                birthYear: document.getElementById('birthYear').value,
-                startYear: document.getElementById('startYear').value,
-                netWorth: document.getElementById('netWorth').value,
-                salary: document.getElementById('salary').value,
-                baseSalary: document.getElementById('baseSalary').value,
-                salaryInc: document.getElementById('salaryInc').value,
-                salaryCeil: document.getElementById('salaryCeil').value,
-                savingsRate: document.getElementById('savingsRate').value,
-                returnRate: document.getElementById('returnRate').value,
-                reBaseYear: document.getElementById('reBaseYear').value,
-                re24: document.getElementById('re24').value,
-                re34: document.getElementById('re34').value,
-                reRate: document.getElementById('reRate').value,
-                bonusP0: document.getElementById('bonusP0').value,
-                bonusP1: document.getElementById('bonusP1').value,
-                bonusP2: document.getElementById('bonusP2').value,
+                birthYear: parseNumber(document.getElementById('birthYear').value),
+                startYear: parseNumber(document.getElementById('startYear').value),
+                netWorth: parseNumber(document.getElementById('netWorth').value),
+                salary: parseNumber(document.getElementById('salary').value),
+                baseSalary: parseNumber(document.getElementById('baseSalary').value),
+                salaryInc: parseNumber(document.getElementById('salaryInc').value),
+                salaryCeil: parseNumber(document.getElementById('salaryCeil').value),
+                savingsRate: parseNumber(document.getElementById('savingsRate').value),
+                returnRate: parseNumber(document.getElementById('returnRate').value),
+                reBaseYear: parseNumber(document.getElementById('reBaseYear').value),
+                re24: parseNumber(document.getElementById('re24').value),
+                re34: parseNumber(document.getElementById('re34').value),
+                reRate: parseNumber(document.getElementById('reRate').value),
+                bonusP0: parseNumber(document.getElementById('bonusP0').value),
+                bonusP1: parseNumber(document.getElementById('bonusP1').value),
+                bonusP2: parseNumber(document.getElementById('bonusP2').value),
                 hideNw: hideNw,
-                expenseMode: isExpenseMode,
+                isExpenseMode: isExpenseMode,
                 tableData: tableData,
                 bonusDB: bonusDB
             };
@@ -602,7 +606,7 @@
             document.getElementById('baseSalary').value = formatNumber(data.baseSalary !== undefined ? data.baseSalary : 2700000);
             document.getElementById('salaryInc').value = data.salaryInc || '8';
             document.getElementById('salaryCeil').value = formatNumber(data.salaryCeil !== undefined ? data.salaryCeil : 150000000);
-            isExpenseMode = data.expenseMode || false;
+            isExpenseMode = data.isExpenseMode !== undefined ? data.isExpenseMode : (data.expenseMode || false);
             document.getElementById('lblSavingsRate').innerText = isExpenseMode ? "연간 지출액(원)" : "저축률(%)";
             document.getElementById('savingsRate').value = isExpenseMode ? formatNumber(data.savingsRate || 30000000) : (data.savingsRate || '70');
             document.getElementById('returnRate').value = data.returnRate || '15';
