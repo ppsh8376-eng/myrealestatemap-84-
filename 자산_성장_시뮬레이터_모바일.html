@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>자산 성장 시뮬레이터 (Rev 1.18)</title>
+    <title>자산 성장 시뮬레이터 (Rev 1.22)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; background-color: #f4f6f8; -webkit-font-smoothing: antialiased; }
@@ -27,14 +27,14 @@
         <!-- Header -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 gap-4">
             <h1 class="text-2xl font-bold text-gray-900 flex items-center">
-                자산 성장 시뮬레이터 <span class="text-sm font-normal text-gray-500 ml-2">Web Ver.</span>
+                자산 성장 시뮬레이터<span class="text-sm font-normal text-gray-500 ml-2">Web Ver.</span>
             </h1>
             
             <div class="flex flex-wrap gap-2 w-full md:w-auto">
-                <button onclick="copySyncCode()" id="btnCopy" class="flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📱코드 내보내기</button>
-                <button onclick="pasteSyncCode()" class="flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📥코드 불러오기</button>
+                <button onclick="copySyncCode()" id="btnCopy" class="flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">동기화 코드 복사</button>
+                <button onclick="pasteSyncCode()" class="flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">코드 불러오기</button>
                 <label class="cursor-pointer flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm transition-colors flex items-center justify-center">
-                    📂 JSON 열기
+                    JSON 열기
                     <input type="file" id="fileImport" accept=".json" style="display:none;" onchange="importJsonFile(event)">
                 </label>
                 <button id="btnSave" onclick="saveDataLocal()" class="flex-1 md:flex-none px-4 py-2 bg-blue-600 rounded-lg text-sm font-bold text-white shadow-sm transition-colors">저장(로컬)</button>
@@ -43,8 +43,8 @@
 
         <!-- Tabs -->
         <div class="flex border-b border-gray-200 mb-5">
-            <button id="tabBtn1" class="px-5 py-3 border-b-2 border-blue-600 text-blue-600 font-bold text-sm focus:outline-none" onclick="switchTab(1)">📊 메인 시뮬레이터</button>
-            <button id="tabBtn2" class="px-5 py-3 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-gray-700 focus:outline-none" onclick="switchTab(2)">📈 성과급 DB 설정</button>
+            <button id="tabBtn1" class="px-5 py-3 border-b-2 border-blue-600 text-blue-600 font-bold text-sm focus:outline-none" onclick="switchTab(1)">메인 시뮬레이터</button>
+            <button id="tabBtn2" class="px-5 py-3 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-gray-700 focus:outline-none" onclick="switchTab(2)">성과급 DB 설정</button>
         </div>
 
         <!-- TAB 1: Main Simulator -->
@@ -53,33 +53,24 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-5">
                 <!-- Group 1: Career -->
                 <div class="bg-blue-50/40 rounded-xl shadow-sm border border-blue-200 p-4">
-                    <h3 class="text-sm font-bold text-blue-800 mb-4 flex items-center gap-1.5"><span class="text-base">🏢</span> 직장 및 소득 설정</h3>
+                    <h3 class="text-sm font-bold text-blue-800 mb-4 flex items-center gap-1.5"><span class="text-base">💼</span> 직장 및 소득 설정</h3>
                     <div class="grid grid-cols-2 gap-3 md:gap-4">
-                        
-                
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700">초기 연봉(원)</label>
-                    <input type="text" id="salary" value="54,060,000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500" onfocus="removeCommas(this)" onblur="addCommas(this)">
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700">초기 기본급(원)</label>
-                    <input type="text" id="baseSalary" value="2,700,000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500" onfocus="removeCommas(this)" onblur="addCommas(this)">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-semibold text-gray-700">초기 기본급(원)</label>
-                    <input type="text" id="baseSalary" value="2,700,000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500" onfocus="removeCommas(this)" onblur="addCommas(this)">
-                </div>
-
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">초기 세전 연봉(원)</label>
+                            <input type="text" id="salary" inputmode="numeric" class="input-box trigger-calc font-semibold" value="54,060,000">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">초기 기본급(원)</label>
+                            <input type="text" id="baseSalary" inputmode="numeric" class="input-box trigger-calc font-semibold" value="2,700,000">
+                        </div>
                         <div>
                             <label class="block text-[11px] font-bold text-gray-600 mb-1">연봉 인상률(%)</label>
-                            <input type="text" id="salaryInc" inputmode="decimal" class="input-box trigger-calc" value="3">
+                            <input type="text" id="salaryInc" inputmode="decimal" class="input-box trigger-calc" value="8">
                         </div>
                         <div>
                             <label class="block text-[11px] font-bold text-gray-600 mb-1">연봉 상한선(원)</label>
                             <input type="text" id="salaryCeil" inputmode="numeric" class="input-box trigger-calc" value="150,000,000">
                         </div>
-                        <div></div> <!-- Empty grid space to align rows nicely -->
                         <div>
                             <label class="block text-[11px] font-bold text-gray-600 mb-1">당해 성과급 비율(%)</label>
                             <input type="text" id="bonusP0" inputmode="decimal" class="input-box trigger-calc" value="80">
@@ -109,7 +100,7 @@
                         </div>
                         <div>
                             <label class="block text-[11px] font-bold text-gray-600 mb-1 flex justify-between items-center">
-                                초기 자산(원) <button onclick="toggleNw()" id="btnToggleNw" class="text-emerald-600 hover:text-emerald-800 focus:outline-none">👁️ 숨기기</button>
+                                초기 자산(원) <button onclick="toggleNw()" id="btnToggleNw" class="text-emerald-600 hover:text-emerald-800 focus:outline-none">👀 숨기기</button>
                             </label>
                             <input type="text" id="netWorth" inputmode="numeric" class="input-box trigger-calc font-semibold text-emerald-900" value="10,000,000">
                         </div>
@@ -155,39 +146,52 @@
                 </div>
             </div>
 
+            <!-- Affordability Banner -->
+            <div id="affordabilityBanner" class="mt-4 mb-4 bg-orange-100 text-orange-900 font-bold p-3 rounded-lg text-center shadow border border-orange-200 text-sm md:text-base">
+                🎯 매수 가능 시점 ｜ 원베일리 24평: 계산 범위 밖 ｜ 원베일리 34평: 계산 범위 밖
+            </div>
+
             <!-- Info & Reset -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-3">
                 <div id="avgStats" class="text-sm font-bold bg-blue-50 text-blue-800 px-4 py-2 rounded border border-blue-200 w-full md:w-auto text-center shadow-sm">
-                    📊 과거 기록 없음
+                    평균 수익률 등
                 </div>
                 <button id="btnReset" onclick="resetAnchor()" style="display:none;" class="w-full md:w-auto px-4 py-2 bg-red-50 border border-red-300 text-red-700 rounded-lg text-sm font-bold shadow-sm whitespace-nowrap active:bg-red-100 transition-colors">
-                    🔄 메인 표 입력값 전체 초기화
+                    🧹 메인 표 입력값 전체 초기화
                 </button>
             </div>
 
             <!-- Table -->
             <div class="table-container bg-white rounded-xl shadow-sm border border-gray-200 no-select" id="tableWrapper">
                 <table class="w-full text-xs md:text-sm text-left">
-                    <thead>
-                        <tr>
-                            <th class="sticky left-0 bg-gray-50 z-10 shadow-[1px_0_0_0_#e5e7eb]">연도</th>
-                            <th>나이</th>
-                            <th class="bg-blue-50 text-blue-800">전년 영업이익(조)✏️</th>
-                            <th class="bg-blue-50 text-blue-800">세전 연봉 ✏️</th>
-                            <th class="bg-gray-50 text-gray-700">성과급 산정비율(%)</th>
-                            <th>세전 성과급</th>
-                            <th>세전 총수입</th>
-                            <th class="text-gray-900">세후 수입</th>
-                            <th class="bg-red-50 text-red-800">당해 지출액 ✏️</th>
-                            <th class="bg-red-50 text-red-800">누적 지출액 ✏️</th>
-                            <th class="bg-fuchsia-50 text-fuchsia-800">여친 저축액 ✏️</th>
-                            <th class="text-indigo-800">당해 총저축액</th>
-                            <th class="bg-emerald-50 text-emerald-800">투자/외부수입 ✏️</th>
-                            <th class="bg-emerald-50 text-emerald-800">누적 투자수입 ✏️</th>
-                            <th class="bg-orange-50 text-orange-800">누적 순자산 ✏️</th>
-                            <th>당해 수익률(%)</th>
-                            <th>원베일리 24평</th>
-                            <th>원베일리 34평</th>
+                    <thead class="sticky top-0 z-10 shadow bg-white">
+                        <tr class="bg-gray-200 text-gray-800 border-b-2 border-gray-400 font-bold text-center text-xs">
+                            <th colspan="2" class="p-2 border-r-2 border-gray-400">기본</th>
+                            <th colspan="7" class="p-2 bg-blue-200 text-blue-900 border-r-2 border-gray-400">소득 및 성과급</th>
+                            <th colspan="4" class="p-2 bg-red-200 text-red-900 border-r-2 border-gray-400">지출 및 저축</th>
+                            <th colspan="4" class="p-2 bg-emerald-200 text-emerald-900 border-r-2 border-gray-400">투자 및 순자산</th>
+                            <th colspan="2" class="p-2 bg-orange-200 text-orange-900">부동산 예측</th>
+                        </tr>
+                        <tr class="bg-gray-50 text-gray-700 text-[11px] md:text-xs">
+                            <th class="p-2 border whitespace-nowrap sticky left-0 z-20 bg-gray-50">연도</th>
+                            <th class="p-2 border border-r-2 border-gray-400 whitespace-nowrap">나이</th>
+                            <th class="p-2 border bg-blue-50 whitespace-nowrap">영업이익(조)✏️</th>
+                            <th class="p-2 border bg-blue-50 whitespace-nowrap">세전 연봉✏️</th>
+                            <th class="p-2 border bg-blue-50 whitespace-nowrap">기본급✏️</th>
+                            <th class="p-2 border bg-blue-100 whitespace-nowrap">성과급 산정비율(%)</th>
+                            <th class="p-2 border bg-blue-50 whitespace-nowrap">세전 성과급</th>
+                            <th class="p-2 border bg-blue-50 whitespace-nowrap">세전 총수입</th>
+                            <th class="p-2 border border-r-2 border-gray-400 bg-blue-50 whitespace-nowrap">세후 수입</th>
+                            <th class="p-2 border bg-red-50 whitespace-nowrap">당해 지출액✏️</th>
+                            <th class="p-2 border bg-red-50 whitespace-nowrap">누적 지출액✏️</th>
+                            <th class="p-2 border bg-fuchsia-50 whitespace-nowrap">여친 저축액✏️</th>
+                            <th class="p-2 border border-r-2 border-gray-400 bg-red-50 whitespace-nowrap">당해 총저축액</th>
+                            <th class="p-2 border bg-emerald-50 whitespace-nowrap">투자수입✏️</th>
+                            <th class="p-2 border bg-emerald-50 whitespace-nowrap">누적 투자수입✏️</th>
+                            <th class="p-2 border bg-emerald-100 whitespace-nowrap">누적 순자산✏️</th>
+                            <th class="p-2 border border-r-2 border-gray-400 bg-emerald-50 whitespace-nowrap">당해 수익률(%)</th>
+                            <th class="p-2 border bg-orange-50 whitespace-nowrap">원베일리 24평</th>
+                            <th class="p-2 border bg-orange-50 whitespace-nowrap">원베일리 34평</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody"></tbody>
@@ -201,7 +205,7 @@
                 <h2 class="text-lg font-bold text-gray-900 mb-2">성과급 지급 기록 데이터베이스</h2>
                 <p class="text-sm text-gray-500 mb-4">과거 연도별 전년도 영업이익과 실제 지급된 성과급 파이 비율을 입력하세요.<br>입력된 데이터를 바탕으로 영업이익 1조당 평균 배수를 산출하여 시뮬레이터에 자동 적용합니다.</p>
                 
-                <div id="avgMultiplier" class="text-blue-800 bg-blue-50 p-3 rounded-lg font-bold text-base mb-4 inline-block border border-blue-200 shadow-sm">📈 평균 1조당 성과급 배수: -</div>
+                <div id="avgMultiplier" class="text-blue-800 bg-blue-50 p-3 rounded-lg font-bold text-base mb-4 inline-block border border-blue-200 shadow-sm">평균 1조당 배수: -</div>
                 
                 <div class="overflow-x-auto rounded border border-gray-200 mb-4">
                     <table class="w-full text-sm text-left">
@@ -224,7 +228,6 @@
     </div>
 
     <script>
-        // State variables
         let tableData = {};
         let hideNw = false;
         let isExpenseMode = false;
@@ -236,7 +239,6 @@
         ];
         let avgMult = 78.4853;
 
-        // UI toggles
         function switchTab(tabId) {
             document.getElementById('tab1').className = tabId === 1 ? 'block' : 'hidden';
             document.getElementById('tab2').className = tabId === 2 ? 'block' : 'hidden';
@@ -248,21 +250,23 @@
             hideNw = !hideNw;
             const btn = document.getElementById('btnToggleNw');
             const input = document.getElementById('netWorth');
-            if (hideNw) { btn.innerText = "👁️ 보기"; input.type = "password"; }
-            else { btn.innerText = "👁️ 숨기기"; input.type = "text"; }
+            if (hideNw) { btn.innerText = "👀 보기"; input.type = "password"; }
+            else { btn.innerText = "👀 숨기기"; input.type = "text"; }
             renderTable();
         }
 
         function toggleExpenseMode() {
             isExpenseMode = !isExpenseMode;
-            document.getElementById('lblSavingsRate').innerText = isExpenseMode ? "연간 지출(원)" : "저축률(%)";
+            document.getElementById('lblSavingsRate').innerText = isExpenseMode ? "연간 지출액(원)" : "저축률(%)";
             document.getElementById('savingsRate').value = isExpenseMode ? "30,000,000" : "70";
             renderTable();
         }
 
-        // Format Utilities
         function formatNumber(num) { return Math.round(num).toLocaleString('ko-KR'); }
         function parseNumber(str) { if (str === undefined || str === null || str === '') return null; return parseFloat(str.toString().replace(/,/g, '')) || 0; }
+        
+        function removeCommas(el) { el.value = el.value.replace(/,/g, ''); }
+        function addCommas(el) { el.value = formatNumber(parseNumber(el.value)); }
 
         function calcAfterTax(grossIncome) {
             const pension = Math.min(grossIncome, 77880000) * 0.045;
@@ -285,7 +289,6 @@
             return Math.max(0, grossIncome - (deductions + incomeTax + (incomeTax * 0.1)));
         }
 
-        // DB Tab Render
         function renderBonusDB() {
             const tbody = document.getElementById('bonusDbBody');
             tbody.innerHTML = '';
@@ -301,33 +304,20 @@
                         <td class="p-2"><input type="number" step="0.01" class="input-box text-center" value="${row.op}" onchange="updateBonusDB(${i}, 'op', this.value)"></td>
                         <td class="p-2"><input type="number" class="input-box text-center" value="${row.pct}" onchange="updateBonusDB(${i}, 'pct', this.value)"></td>
                         <td class="p-2 text-center font-bold text-blue-700">${mult > 0 ? mult.toFixed(2) + '%' : '-'}</td>
-                        <td class="p-2 text-center"><button onclick="removeBonusDB(${i})" class="text-red-500 font-bold px-3 py-1 rounded hover:bg-red-50 transition-colors">❌</button></td>
+                        <td class="p-2 text-center"><button onclick="removeBonusDB(${i})" class="text-red-500 font-bold px-3 py-1 rounded hover:bg-red-50 transition-colors">삭제</button></td>
                     </tr>
                 `;
             });
             
             avgMult = cntMult > 0 ? (sumMult / cntMult) : 78.4853;
-            document.getElementById('avgMultiplier').innerText = `📈 평균 1조당 성과급 배수: ${avgMult.toFixed(2)}%`;
-            renderTable(); // Update simulator
+            document.getElementById('avgMultiplier').innerText = `평균 1조당 성과급 배수: ${avgMult.toFixed(2)}%`;
+            renderTable();
         }
 
-        function updateBonusDB(idx, key, val) {
-            bonusDB[idx][key] = parseFloat(val) || 0;
-            renderBonusDB();
-        }
+        function updateBonusDB(idx, key, val) { bonusDB[idx][key] = parseFloat(val) || 0; renderBonusDB(); }
+        function addBonusDB() { let y = bonusDB.length > 0 ? bonusDB[bonusDB.length-1].year + 1 : 2027; bonusDB.push({year: y, op: 0, pct: 0}); renderBonusDB(); }
+        function removeBonusDB(idx) { bonusDB.splice(idx, 1); renderBonusDB(); }
 
-        function addBonusDB() {
-            let y = bonusDB.length > 0 ? bonusDB[bonusDB.length-1].year + 1 : 2027;
-            bonusDB.push({year: y, op: 0, pct: 0});
-            renderBonusDB();
-        }
-
-        function removeBonusDB(idx) {
-            bonusDB.splice(idx, 1);
-            renderBonusDB();
-        }
-
-        // Main Table Render
         function renderTable() {
             const birthYear = parseInt(document.getElementById('birthYear').value) || 1997;
             const startYear = parseInt(document.getElementById('startYear').value) || 2023;
@@ -335,6 +325,7 @@
             
             let initNw = parseNumber(document.getElementById('netWorth').value) || 0;
             let initSalary = parseNumber(document.getElementById('salary').value) || 0;
+            let initBaseSalary = parseNumber(document.getElementById('baseSalary').value) || 0;
             const salaryInc = (parseNumber(document.getElementById('salaryInc').value) || 0) / 100;
             const salaryCeil = parseNumber(document.getElementById('salaryCeil').value) || 0;
             
@@ -361,21 +352,29 @@
             }
 
             let salaryHistory = {};
+            let baseSalHistory = {};
             let basePctHistory = {};
             let tempSal = initSalary;
+            let tempBaseSal = initBaseSalary;
             let sumSalInc = 0, cntSalInc = 0;
 
             for (let y = startYear; y <= retYear; y++) {
-                const overrides = tableData[y] || {};
+                const ov = tableData[y] || {};
                 
-                let currentSal;
-                if (overrides.sal !== undefined) {
-                    currentSal = overrides.sal;
-                } else {
+                if (ov.sal !== undefined) currentSal = ov.sal;
+                else {
                     if (y === startYear) currentSal = initSalary;
                     else currentSal = Math.min(tempSal * (1 + salaryInc), salaryCeil);
                 }
+                
+                if (ov.baseSal !== undefined) currentBaseSal = ov.baseSal;
+                else {
+                    if (y === startYear) currentBaseSal = initBaseSalary;
+                    else currentBaseSal = tempBaseSal * (1 + salaryInc);
+                }
+                
                 salaryHistory[y] = currentSal;
+                baseSalHistory[y] = currentBaseSal;
                 
                 const isPast = anchorYear !== null && y <= anchorYear;
                 if (y > startYear && isPast) {
@@ -386,8 +385,9 @@
                 }
                 
                 tempSal = currentSal;
+                tempBaseSal = currentBaseSal;
                 
-                const op = overrides.op !== undefined ? overrides.op : 47.2;
+                const op = ov.op !== undefined ? ov.op : 47.2;
                 const dbRow = bonusDB.find(r => r.year === y);
                 if (dbRow) {
                     basePctHistory[y] = dbRow.pct;
@@ -398,6 +398,7 @@
             
             for (let i = 1; i <= 3; i++) {
                 salaryHistory[startYear - i] = initSalary / Math.pow(1 + salaryInc, i);
+                baseSalHistory[startYear - i] = initBaseSalary / Math.pow(1 + salaryInc, i);
                 basePctHistory[startYear - i] = basePctHistory[startYear]; 
             }
 
@@ -416,31 +417,34 @@
             
             let sumRet = 0, cntRet = 0;
             let sumExp = 0, cntExp = 0;
+            
+            let aff24 = null;
+            let aff34 = null;
 
             for (let year = startYear; year <= retYear; year++) {
                 const age = year - birthYear + 1;
-                const overrides = tableData[year] || {};
+                const ov = tableData[year] || {};
                 const isPastRow = anchorYear !== null && year <= anchorYear;
                 const isAnchorRow = anchorYear === year;
-                const bgClass = isPastRow ? 'bg-blurred' : 'bg-white';
+                const bgClass = isPastRow && !isAnchorRow ? 'bg-gray-50 italic text-gray-500' : 'bg-white hover:bg-yellow-50';
                 
-                const expectedOp = overrides.op !== undefined ? overrides.op : 47.2;
+                const expectedOp = ov.op !== undefined ? ov.op : 47.2;
                 const basePct = basePctHistory[year] || 0;
                 
-                const b0 = (salaryHistory[year-1] / 20) * (basePctHistory[year] / 100) * p0;
-                const b1 = (salaryHistory[year-2] / 20) * (basePctHistory[year-1] / 100) * p1;
-                const b2 = (salaryHistory[year-3] / 20) * (basePctHistory[year-2] / 100) * p2;
+                const b0 = baseSalHistory[year-1] * (basePctHistory[year] / 100) * p0;
+                const b1 = baseSalHistory[year-2] * (basePctHistory[year-1] / 100) * p1;
+                const b2 = baseSalHistory[year-3] * (basePctHistory[year-2] / 100) * p2;
                 const bonusAmount = b0 + b1 + b2;
                 
                 const grossIncome = salaryHistory[year] + bonusAmount;
                 const netIncome = calcAfterTax(grossIncome);
                 
                 let expense = 0;
-                if (overrides.cumExp !== undefined) {
-                    expense = overrides.cumExp - cumExp;
-                    cumExp = overrides.cumExp;
-                } else if (overrides.exp !== undefined) {
-                    expense = overrides.exp;
+                if (ov.cumExp !== undefined) {
+                    expense = ov.cumExp - cumExp;
+                    cumExp = ov.cumExp;
+                } else if (ov.exp !== undefined) {
+                    expense = ov.exp;
                     cumExp += expense;
                 } else {
                     expense = isExpenseMode ? savingsInput : netIncome * (1 - (savingsInput/100));
@@ -448,121 +452,122 @@
                 }
 
                 let invInc = 0;
-                if (overrides.cumInv !== undefined) {
-                    invInc = overrides.cumInv - cumInv;
-                    cumInv = overrides.cumInv;
-                } else if (overrides.invInc !== undefined) {
-                    invInc = overrides.invInc;
+                if (ov.cumInv !== undefined) {
+                    invInc = ov.cumInv - cumInv;
+                    cumInv = ov.cumInv;
+                } else if (ov.invInc !== undefined) {
+                    invInc = ov.invInc;
                     cumInv += invInc;
                 } else {
                     invInc = currentNw * returnRate;
                     cumInv += invInc;
                 }
 
-                const gf = overrides.gf !== undefined ? overrides.gf : 0;
+                const gf = ov.gf !== undefined ? ov.gf : 0;
                 const totalSavings = netIncome - expense + gf;
-                const actualReturnRate = currentNw > 0 ? (invInc / currentNw) * 100 : 0;
 
-                if (overrides.nw !== undefined) {
-                    currentNw = overrides.nw;
+                if (ov.nw !== undefined) {
+                    currentNw = ov.nw;
                 } else {
                     currentNw = currentNw + totalSavings + invInc;
                 }
+                
+                const actualReturnRate = currentNw > 0 ? (invInc / currentNw) * 100 : 0;
 
                 if (isPastRow) {
                     sumRet += actualReturnRate; cntRet++;
                     sumExp += expense; cntExp++;
                 }
                 
-                const tr = document.createElement('tr');
-                tr.className = bgClass;
-                
-                const yearAgeClass = isPastRow && !isAnchorRow ? 'blurred' : 'font-medium text-gray-900';
-                const yearBg = isPastRow && !isAnchorRow ? 'bg-gray-200' : 'bg-white';
-                const txtClass = isPastRow && !isAnchorRow ? 'blurred' : '';
-                const editableClass = (isPastRow && !isAnchorRow) ? '' : 'font-bold';
-                
-                tr.innerHTML += `<td class="text-center sticky left-0 z-10 shadow-[1px_0_0_0_#e5e7eb] ${yearBg} ${yearAgeClass}">${year}년</td>`;
-                tr.innerHTML += `<td class="text-center ${yearAgeClass}">${age}세</td>`;
-                
-                const opColor = (isPastRow && !isAnchorRow) ? '' : 'bg-blue-50 text-blue-700';
-                tr.innerHTML += `<td class="${opColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="decimal" class="cell-input p-2.5" data-year="${year}" data-key="op" value="${overrides.op !== undefined ? overrides.op : expectedOp}" onchange="updateData(${year}, 'op', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                
-                const salColor = (isPastRow && !isAnchorRow) ? '' : 'bg-blue-50 text-blue-700';
-                tr.innerHTML += `<td class="${salColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="sal" value="${overrides.sal !== undefined ? formatNumber(overrides.sal) : formatNumber(salaryHistory[year])}" onchange="updateData(${year}, 'sal', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                
-                tr.innerHTML += `<td class="text-right ${txtClass} text-gray-600 font-medium">${formatNumber(basePct)}</td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(bonusAmount)}</td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(grossIncome)}</td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass} ${(!isPastRow || isAnchorRow) ? 'font-medium text-gray-900' : ''}">${formatNumber(netIncome)}</td>`;
-                
-                const expColor = (isPastRow && !isAnchorRow) ? '' : 'bg-red-50 text-red-700';
-                tr.innerHTML += `<td class="${expColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="exp" value="${overrides.exp !== undefined ? formatNumber(overrides.exp) : formatNumber(expense)}" onchange="updateData(${year}, 'exp', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                tr.innerHTML += `<td class="${expColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="cumExp" value="${overrides.cumExp !== undefined ? formatNumber(overrides.cumExp) : formatNumber(cumExp)}" onchange="updateData(${year}, 'cumExp', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                
-                const gfColor = (isPastRow && !isAnchorRow) ? '' : 'bg-fuchsia-50 text-fuchsia-700';
-                tr.innerHTML += `<td class="${gfColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="gf" value="${formatNumber(gf)}" onchange="updateData(${year}, 'gf', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass} ${(!isPastRow || isAnchorRow) ? 'text-indigo-700 font-bold' : ''}">${formatNumber(totalSavings)}</td>`;
-                
-                const invColor = (isPastRow && !isAnchorRow) ? '' : 'bg-emerald-50 text-emerald-700';
-                tr.innerHTML += `<td class="${invColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="invInc" value="${overrides.invInc !== undefined ? formatNumber(overrides.invInc) : formatNumber(invInc)}" onchange="updateData(${year}, 'invInc', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                tr.innerHTML += `<td class="${invColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="cumInv" value="${overrides.cumInv !== undefined ? formatNumber(overrides.cumInv) : formatNumber(cumInv)}" onchange="updateData(${year}, 'cumInv', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                
-                let nwClass = txtClass;
-                if (isAnchorRow) nwClass = 'anchor';
-                else if (!isPastRow) nwClass = 'bg-orange-50 text-orange-700 font-bold';
-                
-                const nwType = hideNw ? 'password' : 'text';
-                tr.innerHTML += `<td class="${nwClass} text-right p-0"><input type="${nwType}" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="nw" value="${overrides.nw !== undefined ? formatNumber(overrides.nw) : formatNumber(currentNw)}" onchange="updateData(${year}, 'nw', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass}">${actualReturnRate.toFixed(2)}%</td>`;
-                
                 const re24Val = re24 * Math.pow(1 + reRate, year - reBaseYear);
                 const re34Val = re34 * Math.pow(1 + reRate, year - reBaseYear);
-                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(re24Val)}</td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(re34Val)}</td>`;
                 
+                if (currentNw >= re24Val && !aff24) aff24 = `${year}년 (${age}세)`;
+                if (currentNw >= re34Val && !aff34) aff34 = `${year}년 (${age}세)`;
+                
+                const tr = document.createElement('tr');
+                tr.className = `text-center ${bgClass}`;
+                
+                const td = (val, key, colorClass, editable = true, isFloat = false) => {
+                    let isOv = ov[key] !== undefined;
+                    let cls = `p-2 border whitespace-nowrap ${colorClass}`;
+                    if (isOv) cls += " font-bold text-red-600";
+                    let displayVal = isFloat ? val.toFixed(2) : formatNumber(val);
+                    if (key === 'nw' && hideNw) displayVal = "👀 비밀";
+                    
+                    if (editable && !isAnchorRow) {
+                        return `<td class="${cls} cursor-pointer" onclick="editCell(${year}, '${key}', ${val})">${displayVal}</td>`;
+                    } else if (editable && isAnchorRow) {
+                        return `<td class="${cls} cursor-pointer bg-yellow-100 text-red-600" onclick="editCell(${year}, '${key}', ${val})">${displayVal}</td>`;
+                    }
+                    return `<td class="${cls}">${displayVal}</td>`;
+                };
+
+                let rowHtml = `
+                    <td class="p-2 border whitespace-nowrap sticky left-0 z-10 ${isPastRow && !isAnchorRow ? 'bg-gray-100' : 'bg-white font-medium'}">${year}년</td>
+                    <td class="p-2 border border-r-2 border-gray-400 whitespace-nowrap">${age}세</td>
+                    ${td(expectedOp, 'op', 'bg-blue-50', true, true)}
+                    ${td(salaryHistory[year], 'sal', 'bg-blue-50')}
+                    ${td(baseSalHistory[year], 'baseSal', 'bg-blue-50')}
+                    ${td(basePct, 'pct', 'bg-blue-100 text-blue-800', false, true)}
+                    ${td(bonusAmount, 'bonus', 'bg-blue-50', false)}
+                    ${td(grossIncome, 'gross', 'bg-blue-50', false)}
+                    ${td(netIncome, 'net', 'bg-blue-50 border-r-2 border-gray-400 text-blue-900 font-medium', false)}
+                    
+                    ${td(expense, 'exp', 'bg-red-50')}
+                    ${td(cumExp, 'cumExp', 'bg-red-50')}
+                    ${td(gf, 'gf', 'bg-fuchsia-50')}
+                    ${td(totalSavings, 'totSav', 'bg-red-100 text-red-800 font-bold border-r-2 border-gray-400', false)}
+                    
+                    ${td(invInc, 'invInc', 'bg-emerald-50')}
+                    ${td(cumInv, 'cumInv', 'bg-emerald-50')}
+                    ${td(currentNw, 'nw', 'bg-emerald-100 text-emerald-800 font-bold')}
+                    <td class="p-2 border border-r-2 border-gray-400 bg-emerald-50 whitespace-nowrap text-right">${actualReturnRate.toFixed(2)}%</td>
+                `;
+                
+                let re24Cls = currentNw >= re24Val ? "bg-orange-50 font-bold text-emerald-600" : "bg-orange-50 text-orange-800";
+                let re24Txt = formatNumber(re24Val) + (currentNw >= re24Val ? " ✅" : "");
+                rowHtml += `<td class="p-2 border ${re24Cls} text-right">${re24Txt}</td>`;
+                
+                let re34Cls = currentNw >= re34Val ? "bg-orange-50 font-bold text-emerald-600" : "bg-orange-50 text-orange-800";
+                let re34Txt = formatNumber(re34Val) + (currentNw >= re34Val ? " ✅" : "");
+                rowHtml += `<td class="p-2 border ${re34Cls} text-right">${re34Txt}</td>`;
+                
+                tr.innerHTML = rowHtml;
                 tbody.appendChild(tr);
             }
+
+            document.getElementById('affordabilityBanner').innerHTML = `🎯 <b>매수 가능 시점</b> ｜ 원베일리 24평: ${aff24 || '계산 범위 밖'} ｜ 원베일리 34평: ${aff34 || '계산 범위 밖'}`;
 
             let parts = [];
-            if (cntRet > 0) parts.push(`📊 과거 평균 수익률: <b class="text-blue-700">${(sumRet/cntRet).toFixed(2)}%</b> ｜ 평균 연지출: <b class="text-red-700">${formatNumber(sumExp/cntExp)}원</b>`);
-            if (cntSalInc > 0) parts.push(`📉 평균 연봉인상: <b class="text-blue-700">${(sumSalInc/cntSalInc).toFixed(2)}%</b>`);
+            if (cntRet > 0) parts.push(`📌 평균 수익률: <b class="text-blue-700">${(sumRet/cntRet).toFixed(2)}%</b> ｜ 평균 지출: <b class="text-red-700">${formatNumber(sumExp/cntExp)}원</b>`);
+            if (cntSalInc > 0) parts.push(`｜ 평균 연봉인상: <b class="text-blue-700">${(sumSalInc/cntSalInc).toFixed(2)}%</b>`);
             
             if (parts.length > 0) {
-                document.getElementById('avgStats').innerHTML = parts.join(" ｜ ");
+                document.getElementById('avgStats').innerHTML = parts.join(" ");
             } else {
-                document.getElementById('avgStats').innerHTML = `📊 과거 기록 없음 <span class="text-gray-500 font-normal">(표에 ✏️값을 덮어쓰면 평균이 자동 계산됩니다)</span>`;
-            }
-        }="updateData(${year}, 'nw', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass}">${actualReturnRate.toFixed(2)}%</td>`;
-                
-                tbody.appendChild(tr);
-            }
-
-            let avgSalIncStr = cntSalInc > 0 ? \` ｜ 평균 연봉인상: <b class="text-blue-700">\${(sumSalInc/cntSalInc).toFixed(2)}%</b>\` : '';
-            if (cntRet > 0) {
-                document.getElementById('avgStats').innerHTML = \`📊 과거 평균 수익률: <b class="text-blue-700">\${(sumRet/cntRet).toFixed(2)}%</b> ｜ 평균 연지출: <b class="text-red-700">\${formatNumber(sumExp/cntExp)}원</b>\${avgSalIncStr}\`;
-            } else {
-                document.getElementById('avgStats').innerHTML = \`📊 과거 기록 없음 <span class="text-gray-500 font-normal">(표에 ✏️값을 덮어쓰면 평균이 자동 계산됩니다)</span>\`;
+                document.getElementById('avgStats').innerHTML = `📌 과거 기록 없음 <span class="text-gray-500 font-normal">(표에 ✏️값을 덮어쓰면 평균이 자동 계산됩니다)</span>`;
             }
         }
 
-        function updateData(year, key, value) {
-            if (!tableData[year]) tableData[year] = {};
-            const parsed = parseNumber(value);
-            if (parsed === null) {
-                delete tableData[year][key];
-                if (Object.keys(tableData[year]).length === 0) delete tableData[year];
+        function editCell(year, key, currentVal) {
+            let newVal = prompt(`${year}년 데이터 수정 (${key})
+숫자만 입력하세요. 비우면 자동계산됩니다:`, Math.round(currentVal));
+            if (newVal === null) return;
+            if (newVal.trim() === "") {
+                if (tableData[year]) {
+                    delete tableData[year][key];
+                    if (Object.keys(tableData[year]).length === 0) delete tableData[year];
+                }
             } else {
-                tableData[year][key] = parsed;
+                if (!tableData[year]) tableData[year] = {};
+                tableData[year][key] = parseFloat(newVal.replace(/,/g, ''));
             }
             renderTable();
         }
 
         function resetAnchor() { tableData = {}; renderTable(); }
 
-        
-        
         function getSaveDataObj() {
             return {
                 birthYear: document.getElementById('birthYear').value,
@@ -581,15 +586,11 @@
                 bonusP0: document.getElementById('bonusP0').value,
                 bonusP1: document.getElementById('bonusP1').value,
                 bonusP2: document.getElementById('bonusP2').value,
-                hideNw: isHideNw,
+                hideNw: hideNw,
                 expenseMode: isExpenseMode,
                 tableData: tableData,
                 bonusDB: bonusDB
             };
-        }
-;
-        }
-;
         }
 
         function applySaveDataObj(data) {
@@ -597,18 +598,18 @@
             document.getElementById('birthYear').value = data.birthYear || '1997';
             document.getElementById('startYear').value = data.startYear || '2023';
             document.getElementById('netWorth').value = formatNumber(data.netWorth !== undefined ? data.netWorth : 10000000);
-            document.getElementById('salary').value = formatNumber(data.salary !== undefined ? data.salary : 53060000);
-            document.getElementById('salaryInc').value = data.salaryInc || '3';
+            document.getElementById('salary').value = formatNumber(data.salary !== undefined ? data.salary : 54060000);
+            document.getElementById('baseSalary').value = formatNumber(data.baseSalary !== undefined ? data.baseSalary : 2700000);
+            document.getElementById('salaryInc').value = data.salaryInc || '8';
             document.getElementById('salaryCeil').value = formatNumber(data.salaryCeil !== undefined ? data.salaryCeil : 150000000);
-            isExpenseMode = data.isExpenseMode || false;
-            document.getElementById('lblSavingsRate').innerText = isExpenseMode ? "연간 지출(원)" : "저축률(%)";
+            isExpenseMode = data.expenseMode || false;
+            document.getElementById('lblSavingsRate').innerText = isExpenseMode ? "연간 지출액(원)" : "저축률(%)";
             document.getElementById('savingsRate').value = isExpenseMode ? formatNumber(data.savingsRate || 30000000) : (data.savingsRate || '70');
             document.getElementById('returnRate').value = data.returnRate || '15';
             document.getElementById('reBaseYear').value = data.reBaseYear || '2024';
             document.getElementById('re24').value = formatNumber(data.re24 !== undefined ? data.re24 : 2800000000);
             document.getElementById('re34').value = formatNumber(data.re34 !== undefined ? data.re34 : 4000000000);
             document.getElementById('reRate').value = data.reRate || '4';
-            document.getElementById('retYear').value = data.retYear || '2050';
             document.getElementById('bonusP0').value = data.bonusP0 !== undefined ? data.bonusP0 : 80;
             document.getElementById('bonusP1').value = data.bonusP1 !== undefined ? data.bonusP1 : 10;
             document.getElementById('bonusP2').value = data.bonusP2 !== undefined ? data.bonusP2 : 10;
@@ -633,30 +634,18 @@
             setTimeout(() => { btn.innerText = '저장(로컬)'; btn.classList.replace('bg-emerald-500', 'bg-blue-600'); }, 2000);
         }
 
-        async function fetchGithubConfig() {
-            try {
-                const response = await fetch('asset_simulator_config.json', { cache: "no-store" });
-                if (response.ok) {
-                    const data = await response.json();
-                    applySaveDataObj(data);
-                    return true;
-                }
-            } catch (e) { }
-            return false;
-        }
-
         function copySyncCode() {
             navigator.clipboard.writeText(btoa(encodeURIComponent(JSON.stringify(getSaveDataObj())))).then(() => {
                 const btn = document.getElementById('btnCopy');
                 btn.innerText = '복사 완료! ✓'; btn.classList.replace('bg-white', 'bg-emerald-100');
-                setTimeout(() => { btn.innerText = '📱코드 내보내기'; btn.classList.replace('bg-emerald-100', 'bg-white'); }, 2000);
+                setTimeout(() => { btn.innerText = '동기화 코드 복사'; btn.classList.replace('bg-emerald-100', 'bg-white'); }, 2000);
             });
         }
 
         function pasteSyncCode() {
             const b64 = prompt("PC(.exe)나 다른 기기에서 복사한 영문 코드를 붙여넣어 주세요:");
             if (b64 && b64.trim() !== '') {
-                try { applySaveDataObj(JSON.parse(decodeURIComponent(atob(b64.trim())))); alert("성공적으로 연동되었습니다!"); }
+                try { applySaveDataObj(JSON.parse(decodeURIComponent(atob(b64.trim())))); alert("성공적으로 연동되었습니다."); }
                 catch (e) { alert("올바르지 않은 코드입니다."); }
             }
         }
@@ -673,60 +662,21 @@
             event.target.value = ''; 
         }
 
-        let isDragging = false;
-        document.addEventListener('mousedown', (e) => {
-            if (e.target.classList.contains('cell-input')) {
-                document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
-                e.target.dataset.selected = 'true'; e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
-                isDragging = true;
+        window.onload = () => {
+            const saved = localStorage.getItem('simulatorDataMobile');
+            if (saved) {
+                try { applySaveDataObj(JSON.parse(saved)); } catch(e) { renderBonusDB(); }
             } else {
-                isDragging = false; 
-                if(!e.target.closest('#tableWrapper')) document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
+                renderBonusDB();
             }
-        });
-        document.addEventListener('mouseup', () => isDragging = false);
-        document.addEventListener('mouseover', (e) => {
-            if (isDragging && e.target.classList.contains('cell-input')) {
-                e.target.dataset.selected = 'true'; e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-                const active = document.activeElement;
-                if (active && active.classList.contains('cell-input')) {
-                    const val = active.value;
-                    let updated = false;
-                    document.querySelectorAll('.cell-input[data-selected="true"]').forEach(el => {
-                        el.value = val;
-                        const year = parseInt(el.dataset.year);
-                        const key = el.dataset.key;
-                        if (!tableData[year]) tableData[year] = {};
-                        if (val.trim() === '') {
-                            delete tableData[year][key];
-                            if(Object.keys(tableData[year]).length === 0) delete tableData[year];
-                        }
-                        else tableData[year][key] = parseNumber(val);
-                        updated = true;
-                    });
-                    if (updated) { active.blur(); renderTable(); }
-                }
-            }
-        });
 
-        window.onload = async () => {
             document.querySelectorAll('.trigger-calc').forEach(el => {
-                el.addEventListener('change', () => { renderTable(); }); // FIX LAG: change instead of input
+                el.addEventListener('change', () => { renderTable(); });
                 if(!['salaryInc','returnRate','reRate','bonusP0','bonusP1','bonusP2','retYear','birthYear','startYear'].includes(el.id)) {
                     el.addEventListener('blur', function() { this.value = formatNumber(parseNumber(this.value)); });
                     el.addEventListener('focus', function() { this.value = this.value.replace(/,/g, ''); });
                 }
             });
-            const fromServer = await fetchGithubConfig();
-            if (!fromServer) {
-                const stored = localStorage.getItem('simulatorDataMobile');
-                if (stored) applySaveDataObj(JSON.parse(stored));
-                else renderBonusDB(); 
-            }
         };
     </script>
 </body>
