@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>자산 성장 시뮬레이터 (모바일/웹 버젼)</title>
+    <title>자산 성장 시뮬레이터 (Rev 1.18)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; background-color: #f4f6f8; -webkit-font-smoothing: antialiased; }
@@ -17,8 +17,7 @@
         th, td { border-bottom: 1px solid #e5e7eb; padding: 10px 12px; white-space: nowrap; }
         th { background-color: #f9fafb; color: #6b7280; font-weight: 600; text-align: center; user-select: none;}
         .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        input[type="text"] { appearance: none; }
-        
+        input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
         .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
     </style>
 </head>
@@ -34,7 +33,6 @@
             <div class="flex flex-wrap gap-2 w-full md:w-auto">
                 <button onclick="copySyncCode()" id="btnCopy" class="flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📱코드 내보내기</button>
                 <button onclick="pasteSyncCode()" class="flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm">📥코드 불러오기</button>
-                
                 <label class="cursor-pointer flex-1 md:flex-none px-3 py-2 bg-white border border-gray-300 rounded text-xs font-bold text-gray-700 shadow-sm transition-colors flex items-center justify-center">
                     📂 JSON 열기
                     <input type="file" id="fileImport" accept=".json" style="display:none;" onchange="importJsonFile(event)">
@@ -43,153 +41,228 @@
             </div>
         </div>
 
-        <!-- Input Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-5">
-            
-            <!-- Group 1: Career -->
-            <div class="bg-blue-50/40 rounded-xl shadow-sm border border-blue-200 p-4">
-                <h3 class="text-sm font-bold text-blue-800 mb-4 flex items-center gap-1.5">
-                    <span class="text-base">🏢</span> 직장 및 소득 설정
-                </h3>
-                <div class="grid grid-cols-2 gap-3 md:gap-4">
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">계약 연봉(원)</label>
-                        <input type="text" id="salary" inputmode="numeric" class="input-box trigger-calc" value="53,060,000">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">연봉 인상률(%)</label>
-                        <input type="text" id="salaryInc" inputmode="decimal" class="input-box trigger-calc" value="3">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">연봉 상한선(원)</label>
-                        <input type="text" id="salaryCeil" inputmode="numeric" class="input-box trigger-calc" value="150,000,000">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">당해 성과급 비율(%)</label>
-                        <input type="text" id="bonusP0" inputmode="decimal" class="input-box trigger-calc" value="80">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">1년 이연 성과급(%)</label>
-                        <input type="text" id="bonusP1" inputmode="decimal" class="input-box trigger-calc" value="10">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">2년 이연 성과급(%)</label>
-                        <input type="text" id="bonusP2" inputmode="decimal" class="input-box trigger-calc" value="10">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Group 2: Asset & Investment -->
-            <div class="bg-emerald-50/40 rounded-xl shadow-sm border border-emerald-200 p-4">
-                <h3 class="text-sm font-bold text-emerald-800 mb-4 flex items-center gap-1.5">
-                    <span class="text-base">📈</span> 자산 및 투자 설정
-                </h3>
-                <div class="grid grid-cols-2 gap-3 md:gap-4">
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1 flex justify-between items-center">
-                            현재 순자산(원)
-                            <button onclick="toggleNw()" id="btnToggleNw" class="text-emerald-600 hover:text-emerald-800 focus:outline-none">👁️ 숨기기</button>
-                        </label>
-                        <input type="text" id="netWorth" inputmode="numeric" class="input-box trigger-calc font-semibold text-emerald-900" value="472,242,478">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">저축률(%)</label>
-                        <input type="text" id="savingsRate" inputmode="decimal" class="input-box trigger-calc" value="70">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">투자 수익률(%)</label>
-                        <input type="text" id="returnRate" inputmode="decimal" class="input-box trigger-calc" value="15">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">은퇴 연도(년)</label>
-                        <input type="text" id="retYear" inputmode="numeric" class="input-box trigger-calc" value="2050">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Group 3: Real Estate -->
-            <div class="bg-orange-50/40 rounded-xl shadow-sm border border-orange-200 p-4">
-                <h3 class="text-sm font-bold text-orange-800 mb-4 flex items-center gap-1.5">
-                    <span class="text-base">🏠</span> 부동산 설정
-                </h3>
-                <div class="grid grid-cols-2 gap-3 md:gap-4">
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">원베일리 24평(원)</label>
-                        <input type="text" id="re24" inputmode="numeric" class="input-box trigger-calc" value="2,800,000,000">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">원베일리 34평(원)</label>
-                        <input type="text" id="re34" inputmode="numeric" class="input-box trigger-calc" value="4,000,000,000">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-gray-600 mb-1">부동산 상승률(%)</label>
-                        <input type="text" id="reRate" inputmode="decimal" class="input-box trigger-calc" value="4">
-                    </div>
-                </div>
-            </div>
-            
+        <!-- Tabs -->
+        <div class="flex border-b border-gray-200 mb-5">
+            <button id="tabBtn1" class="px-5 py-3 border-b-2 border-blue-600 text-blue-600 font-bold text-sm focus:outline-none" onclick="switchTab(1)">📊 메인 시뮬레이터</button>
+            <button id="tabBtn2" class="px-5 py-3 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-gray-700 focus:outline-none" onclick="switchTab(2)">📈 성과급 DB 설정</button>
         </div>
 
-        <!-- Info & Reset -->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-3">
-            <p class="text-emerald-700 text-xs md:text-sm bg-emerald-50 px-3 py-2 rounded-lg border border-emerald-100 w-full md:w-auto">
-                💡 <b>PC 조작:</b> 표 셀 드래그 후 <b>Ctrl+Enter</b>로 일괄 수정! <br>
-                💡 <b>GitHub 연동:</b> Github에 이 html과 <code>asset_simulator_config.json</code>이 같이 있으면 자동으로 불러옵니다!
-            </p>
-            <button id="btnReset" onclick="resetAnchor()" style="display:none;" class="w-full md:w-auto px-4 py-2 bg-red-50 border border-red-300 text-red-700 rounded-lg text-sm font-bold shadow-sm whitespace-nowrap active:bg-red-100 transition-colors">
-                🔄 기준점 초기화 (블러 해제)
-            </button>
+        <!-- TAB 1: Main Simulator -->
+        <div id="tab1" class="block">
+            <!-- Input Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-5">
+                <!-- Group 1: Career -->
+                <div class="bg-blue-50/40 rounded-xl shadow-sm border border-blue-200 p-4">
+                    <h3 class="text-sm font-bold text-blue-800 mb-4 flex items-center gap-1.5"><span class="text-base">🏢</span> 직장 및 소득 설정</h3>
+                    <div class="grid grid-cols-2 gap-3 md:gap-4">
+                        
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700">초기 연봉(원)</label>
+                    <input type="text" id="salary" value="54,060,000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500" onfocus="removeCommas(this)" onblur="addCommas(this)">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700">초기 기본급(원)</label>
+                    <input type="text" id="baseSalary" value="2,700,000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500" onfocus="removeCommas(this)" onblur="addCommas(this)">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700">초기 기본급(원)</label>
+                    <input type="text" id="baseSalary" value="2,700,000" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500" onfocus="removeCommas(this)" onblur="addCommas(this)">
+                </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">연봉 인상률(%)</label>
+                            <input type="text" id="salaryInc" inputmode="decimal" class="input-box trigger-calc" value="3">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">연봉 상한선(원)</label>
+                            <input type="text" id="salaryCeil" inputmode="numeric" class="input-box trigger-calc" value="150,000,000">
+                        </div>
+                        <div></div> <!-- Empty grid space to align rows nicely -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">당해 성과급 비율(%)</label>
+                            <input type="text" id="bonusP0" inputmode="decimal" class="input-box trigger-calc" value="80">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">1년 이연 성과급(%)</label>
+                            <input type="text" id="bonusP1" inputmode="decimal" class="input-box trigger-calc" value="10">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">2년 이연 성과급(%)</label>
+                            <input type="text" id="bonusP2" inputmode="decimal" class="input-box trigger-calc" value="10">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2: Asset & Investment -->
+                <div class="bg-emerald-50/40 rounded-xl shadow-sm border border-emerald-200 p-4">
+                    <h3 class="text-sm font-bold text-emerald-800 mb-4 flex items-center gap-1.5"><span class="text-base">📈</span> 자산 및 투자 설정</h3>
+                    <div class="grid grid-cols-2 gap-3 md:gap-4">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">출생 연도(년)</label>
+                            <input type="text" id="birthYear" inputmode="numeric" class="input-box trigger-calc" value="1997">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">시작 연도(년)</label>
+                            <input type="text" id="startYear" inputmode="numeric" class="input-box trigger-calc" value="2023">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1 flex justify-between items-center">
+                                초기 자산(원) <button onclick="toggleNw()" id="btnToggleNw" class="text-emerald-600 hover:text-emerald-800 focus:outline-none">👁️ 숨기기</button>
+                            </label>
+                            <input type="text" id="netWorth" inputmode="numeric" class="input-box trigger-calc font-semibold text-emerald-900" value="10,000,000">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1 flex justify-between items-center">
+                                <span id="lblSavingsRate">저축률(%)</span>
+                                <button onclick="toggleExpenseMode()" class="text-emerald-600 hover:text-emerald-800 focus:outline-none">🔄 전환</button>
+                            </label>
+                            <input type="text" id="savingsRate" inputmode="decimal" class="input-box trigger-calc" value="70">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">투자 수익률(%)</label>
+                            <input type="text" id="returnRate" inputmode="decimal" class="input-box trigger-calc" value="15">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">은퇴 연도(년)</label>
+                            <input type="text" id="retYear" inputmode="numeric" class="input-box trigger-calc" value="2050">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Real Estate -->
+                <div class="bg-orange-50/40 rounded-xl shadow-sm border border-orange-200 p-4">
+                    <h3 class="text-sm font-bold text-orange-800 mb-4 flex items-center gap-1.5"><span class="text-base">🏠</span> 부동산 설정</h3>
+                    <div class="grid grid-cols-2 gap-3 md:gap-4">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">가격 기준 연도(년)</label>
+                            <input type="text" id="reBaseYear" inputmode="numeric" class="input-box trigger-calc" value="2024">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">부동산 상승률(%)</label>
+                            <input type="text" id="reRate" inputmode="decimal" class="input-box trigger-calc" value="4">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">원베일리 24평(원)</label>
+                            <input type="text" id="re24" inputmode="numeric" class="input-box trigger-calc" value="2,800,000,000">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-600 mb-1">원베일리 34평(원)</label>
+                            <input type="text" id="re34" inputmode="numeric" class="input-box trigger-calc" value="4,000,000,000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info & Reset -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-3">
+                <div id="avgStats" class="text-sm font-bold bg-blue-50 text-blue-800 px-4 py-2 rounded border border-blue-200 w-full md:w-auto text-center shadow-sm">
+                    📊 과거 기록 없음
+                </div>
+                <button id="btnReset" onclick="resetAnchor()" style="display:none;" class="w-full md:w-auto px-4 py-2 bg-red-50 border border-red-300 text-red-700 rounded-lg text-sm font-bold shadow-sm whitespace-nowrap active:bg-red-100 transition-colors">
+                    🔄 메인 표 입력값 전체 초기화
+                </button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container bg-white rounded-xl shadow-sm border border-gray-200 no-select" id="tableWrapper">
+                <table class="w-full text-xs md:text-sm text-left">
+                    <thead>
+                        <tr>
+                            <th class="sticky left-0 bg-gray-50 z-10 shadow-[1px_0_0_0_#e5e7eb]">연도</th>
+                            <th>나이</th>
+                            <th class="bg-blue-50 text-blue-800">전년 영업이익(조)✏️</th>
+                            <th class="bg-blue-50 text-blue-800">세전 연봉 ✏️</th>
+                            <th class="bg-gray-50 text-gray-700">성과급 산정비율(%)</th>
+                            <th>세전 성과급</th>
+                            <th>세전 총수입</th>
+                            <th class="text-gray-900">세후 수입</th>
+                            <th class="bg-red-50 text-red-800">당해 지출액 ✏️</th>
+                            <th class="bg-red-50 text-red-800">누적 지출액 ✏️</th>
+                            <th class="bg-fuchsia-50 text-fuchsia-800">여친 저축액 ✏️</th>
+                            <th class="text-indigo-800">당해 총저축액</th>
+                            <th class="bg-emerald-50 text-emerald-800">투자/외부수입 ✏️</th>
+                            <th class="bg-emerald-50 text-emerald-800">누적 투자수입 ✏️</th>
+                            <th class="bg-orange-50 text-orange-800">누적 순자산 ✏️</th>
+                            <th>당해 수익률(%)</th>
+                            <th>원베일리 24평</th>
+                            <th>원베일리 34평</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
         </div>
 
-        <!-- Table -->
-        <div class="table-container bg-white rounded-xl shadow-sm border border-gray-200 no-select" id="tableWrapper">
-            <table class="w-full text-xs md:text-sm text-left">
-                <thead>
-                    <tr>
-                        <th class="sticky left-0 bg-gray-50 z-10 shadow-[1px_0_0_0_#e5e7eb]">연도</th>
-                        <th>나이</th>
-                        <th class="bg-blue-50 text-blue-800">영업이익(조) ✏️</th>
-                        <th>세전 연봉</th>
-                        <th>세전 성과급</th>
-                        <th>세전 총수입</th>
-                        <th class="text-gray-900">세후 수입(추산)</th>
-                        <th>본인 저축액</th>
-                        <th class="bg-fuchsia-50 text-fuchsia-800">여자친구 저축 ✏️</th>
-                        <th class="text-indigo-800">당해 총 저축액</th>
-                        <th class="bg-red-50 text-red-800">누적 순자산 ✏️</th>
-                        <th class="bg-emerald-50 text-emerald-800">원베일리 24평</th>
-                        <th class="bg-emerald-50 text-emerald-800">원베일리 34평</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                </tbody>
-            </table>
+        <!-- TAB 2: Bonus DB -->
+        <div id="tab2" class="hidden">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                <h2 class="text-lg font-bold text-gray-900 mb-2">성과급 지급 기록 데이터베이스</h2>
+                <p class="text-sm text-gray-500 mb-4">과거 연도별 전년도 영업이익과 실제 지급된 성과급 파이 비율을 입력하세요.<br>입력된 데이터를 바탕으로 영업이익 1조당 평균 배수를 산출하여 시뮬레이터에 자동 적용합니다.</p>
+                
+                <div id="avgMultiplier" class="text-blue-800 bg-blue-50 p-3 rounded-lg font-bold text-base mb-4 inline-block border border-blue-200 shadow-sm">📈 평균 1조당 성과급 배수: -</div>
+                
+                <div class="overflow-x-auto rounded border border-gray-200 mb-4">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-gray-50 text-gray-600">
+                            <tr>
+                                <th class="p-3 text-center border-b">지급 연도(년)</th>
+                                <th class="p-3 text-center border-b">전년도 영업이익(조)</th>
+                                <th class="p-3 text-center border-b">지급 성과급(%)</th>
+                                <th class="p-3 text-center border-b text-blue-700">1조당 배수(%)</th>
+                                <th class="p-3 text-center border-b">작업</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bonusDbBody"></tbody>
+                    </table>
+                </div>
+                <button onclick="addBonusDB()" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-bold transition-colors border border-gray-300">➕ 새로운 기록 추가</button>
+            </div>
         </div>
         
     </div>
 
     <script>
+        // State variables
         let tableData = {};
-        let anchorYear = null;
         let hideNw = false;
+        let isExpenseMode = false;
+        let bonusDB = [
+            {year: 2023, op: 0.0, pct: 820.0},
+            {year: 2024, op: 0.0, pct: 0.0},
+            {year: 2025, op: 23.47, pct: 2964.0},
+            {year: 2026, op: 47.21, pct: 3704.0}
+        ];
+        let avgMult = 78.4853;
+
+        // UI toggles
+        function switchTab(tabId) {
+            document.getElementById('tab1').className = tabId === 1 ? 'block' : 'hidden';
+            document.getElementById('tab2').className = tabId === 2 ? 'block' : 'hidden';
+            document.getElementById('tabBtn1').className = tabId === 1 ? "px-5 py-3 border-b-2 border-blue-600 text-blue-600 font-bold text-sm focus:outline-none" : "px-5 py-3 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-gray-700 focus:outline-none";
+            document.getElementById('tabBtn2').className = tabId === 2 ? "px-5 py-3 border-b-2 border-blue-600 text-blue-600 font-bold text-sm focus:outline-none" : "px-5 py-3 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-gray-700 focus:outline-none";
+        }
 
         function toggleNw() {
             hideNw = !hideNw;
             const btn = document.getElementById('btnToggleNw');
             const input = document.getElementById('netWorth');
-            if (hideNw) {
-                btn.innerText = "👁️ 보기";
-                input.type = "password";
-            } else {
-                btn.innerText = "👁️ 숨기기";
-                input.type = "text";
-            }
+            if (hideNw) { btn.innerText = "👁️ 보기"; input.type = "password"; }
+            else { btn.innerText = "👁️ 숨기기"; input.type = "text"; }
             renderTable();
         }
 
-        // --- Core Formatting ---
+        function toggleExpenseMode() {
+            isExpenseMode = !isExpenseMode;
+            document.getElementById('lblSavingsRate').innerText = isExpenseMode ? "연간 지출(원)" : "저축률(%)";
+            document.getElementById('savingsRate').value = isExpenseMode ? "30,000,000" : "70";
+            renderTable();
+        }
+
+        // Format Utilities
         function formatNumber(num) { return Math.round(num).toLocaleString('ko-KR'); }
-        function parseNumber(str) { if (!str) return 0; return parseFloat(str.toString().replace(/,/g, '')) || 0; }
+        function parseNumber(str) { if (str === undefined || str === null || str === '') return null; return parseFloat(str.toString().replace(/,/g, '')) || 0; }
 
         function calcAfterTax(grossIncome) {
             const pension = Math.min(grossIncome, 77880000) * 0.045;
@@ -212,27 +285,122 @@
             return Math.max(0, grossIncome - (deductions + incomeTax + (incomeTax * 0.1)));
         }
 
-        // --- Render Table ---
+        // DB Tab Render
+        function renderBonusDB() {
+            const tbody = document.getElementById('bonusDbBody');
+            tbody.innerHTML = '';
+            let sumMult = 0, cntMult = 0;
+            
+            bonusDB.forEach((row, i) => {
+                let mult = (row.op > 0) ? (row.pct / row.op) : 0;
+                if (row.op > 0) { sumMult += mult; cntMult++; }
+                
+                tbody.innerHTML += `
+                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                        <td class="p-2"><input type="number" class="input-box text-center" value="${row.year}" onchange="updateBonusDB(${i}, 'year', this.value)"></td>
+                        <td class="p-2"><input type="number" step="0.01" class="input-box text-center" value="${row.op}" onchange="updateBonusDB(${i}, 'op', this.value)"></td>
+                        <td class="p-2"><input type="number" class="input-box text-center" value="${row.pct}" onchange="updateBonusDB(${i}, 'pct', this.value)"></td>
+                        <td class="p-2 text-center font-bold text-blue-700">${mult > 0 ? mult.toFixed(2) + '%' : '-'}</td>
+                        <td class="p-2 text-center"><button onclick="removeBonusDB(${i})" class="text-red-500 font-bold px-3 py-1 rounded hover:bg-red-50 transition-colors">❌</button></td>
+                    </tr>
+                `;
+            });
+            
+            avgMult = cntMult > 0 ? (sumMult / cntMult) : 78.4853;
+            document.getElementById('avgMultiplier').innerText = `📈 평균 1조당 성과급 배수: ${avgMult.toFixed(2)}%`;
+            renderTable(); // Update simulator
+        }
+
+        function updateBonusDB(idx, key, val) {
+            bonusDB[idx][key] = parseFloat(val) || 0;
+            renderBonusDB();
+        }
+
+        function addBonusDB() {
+            let y = bonusDB.length > 0 ? bonusDB[bonusDB.length-1].year + 1 : 2027;
+            bonusDB.push({year: y, op: 0, pct: 0});
+            renderBonusDB();
+        }
+
+        function removeBonusDB(idx) {
+            bonusDB.splice(idx, 1);
+            renderBonusDB();
+        }
+
+        // Main Table Render
         function renderTable() {
-            const startYear = 2026;
+            const birthYear = parseInt(document.getElementById('birthYear').value) || 1997;
+            const startYear = parseInt(document.getElementById('startYear').value) || 2023;
             const retYear = parseInt(document.getElementById('retYear').value) || 2050;
             
-            let currentNetWorth = parseNumber(document.getElementById('netWorth').value);
-            let currentSalary = parseNumber(document.getElementById('salary').value);
-            const salaryInc = parseNumber(document.getElementById('salaryInc').value) / 100;
-            const salaryCeil = parseNumber(document.getElementById('salaryCeil').value);
+            let initNw = parseNumber(document.getElementById('netWorth').value) || 0;
+            let initSalary = parseNumber(document.getElementById('salary').value) || 0;
+            const salaryInc = (parseNumber(document.getElementById('salaryInc').value) || 0) / 100;
+            const salaryCeil = parseNumber(document.getElementById('salaryCeil').value) || 0;
             
-            const savingsRate = parseNumber(document.getElementById('savingsRate').value) / 100;
-            const returnRate = parseNumber(document.getElementById('returnRate').value) / 100;
+            const savingsInput = parseNumber(document.getElementById('savingsRate').value) || 0;
+            const returnRate = (parseNumber(document.getElementById('returnRate').value) || 0) / 100;
             
-            let re24 = parseNumber(document.getElementById('re24').value);
-            let re34 = parseNumber(document.getElementById('re34').value);
-            const reRate = parseNumber(document.getElementById('reRate').value) / 100;
+            let reBaseYear = parseInt(document.getElementById('reBaseYear').value) || 2024;
+            let re24 = parseNumber(document.getElementById('re24').value) || 0;
+            let re34 = parseNumber(document.getElementById('re34').value) || 0;
+            const reRate = (parseNumber(document.getElementById('reRate').value) || 0) / 100;
 
-            const p0 = parseNumber(document.getElementById('bonusP0').value) / 100;
-            const p1 = parseNumber(document.getElementById('bonusP1').value) / 100;
-            const p2 = parseNumber(document.getElementById('bonusP2').value) / 100;
+            const p0 = (parseNumber(document.getElementById('bonusP0').value) || 0) / 100;
+            const p1 = (parseNumber(document.getElementById('bonusP1').value) || 0) / 100;
+            const p2 = (parseNumber(document.getElementById('bonusP2').value) || 0) / 100;
             
+            let anchorYear = null;
+            let hasAnyOverride = false;
+            for (let y in tableData) {
+                if (tableData[y].nw !== undefined) {
+                    let yearInt = parseInt(y);
+                    if (anchorYear === null || yearInt > anchorYear) anchorYear = yearInt;
+                }
+                if (Object.keys(tableData[y]).length > 0) hasAnyOverride = true;
+            }
+
+            let salaryHistory = {};
+            let basePctHistory = {};
+            let tempSal = initSalary;
+            let sumSalInc = 0, cntSalInc = 0;
+
+            for (let y = startYear; y <= retYear; y++) {
+                const overrides = tableData[y] || {};
+                
+                let currentSal;
+                if (overrides.sal !== undefined) {
+                    currentSal = overrides.sal;
+                } else {
+                    if (y === startYear) currentSal = initSalary;
+                    else currentSal = Math.min(tempSal * (1 + salaryInc), salaryCeil);
+                }
+                salaryHistory[y] = currentSal;
+                
+                const isPast = anchorYear !== null && y <= anchorYear;
+                if (y > startYear && isPast) {
+                    if (salaryHistory[y-1] > 0) {
+                        sumSalInc += (currentSal - salaryHistory[y-1]) / salaryHistory[y-1] * 100;
+                        cntSalInc++;
+                    }
+                }
+                
+                tempSal = currentSal;
+                
+                const op = overrides.op !== undefined ? overrides.op : 47.2;
+                const dbRow = bonusDB.find(r => r.year === y);
+                if (dbRow) {
+                    basePctHistory[y] = dbRow.pct;
+                } else {
+                    basePctHistory[y] = op * avgMult;
+                }
+            }
+            
+            for (let i = 1; i <= 3; i++) {
+                salaryHistory[startYear - i] = initSalary / Math.pow(1 + salaryInc, i);
+                basePctHistory[startYear - i] = basePctHistory[startYear]; 
+            }
+
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
             
@@ -240,201 +408,223 @@
             if (anchorYear !== null) netWorthInput.classList.add('bg-gray-100', 'text-gray-400');
             else netWorthInput.classList.remove('bg-gray-100', 'text-gray-400');
 
-            document.getElementById('btnReset').style.display = anchorYear !== null ? 'block' : 'none';
+            document.getElementById('btnReset').style.display = hasAnyOverride ? 'block' : 'none';
 
-            // Phase 1: Calculate Base Bonuses for all years
-            let bonusHistory = {};
-            let tempSal = currentSalary;
-            for (let year = startYear; year <= retYear; year++) {
-                const overrides = tableData[year] || {};
-                const expectedOp = overrides.op !== undefined ? overrides.op : 47.2;
-                const baseUnit = tempSal / 20.0;
-                const bonusPercent = 29.64 * (expectedOp / 47.2063);
-                bonusHistory[year] = baseUnit * bonusPercent;
-                tempSal = Math.min(tempSal * (1 + salaryInc), salaryCeil);
-            }
-            bonusHistory[2024] = bonusHistory[2026];
-            bonusHistory[2025] = bonusHistory[2026];
+            let cumExp = 0;
+            let cumInv = 0;
+            let currentNw = initNw;
+            
+            let sumRet = 0, cntRet = 0;
+            let sumExp = 0, cntExp = 0;
 
-            // Phase 2: Render Table
             for (let year = startYear; year <= retYear; year++) {
-                const age = 30 + (year - startYear);
+                const age = year - birthYear + 1;
                 const overrides = tableData[year] || {};
-                const expectedOp = overrides.op !== undefined ? overrides.op : 47.2;
-                const gfSavings = overrides.gf !== undefined ? overrides.gf : 0;
-                
-                const isPastRow = anchorYear !== null && year < anchorYear;
+                const isPastRow = anchorYear !== null && year <= anchorYear;
                 const isAnchorRow = anchorYear === year;
-                const isBlurred = isPastRow || isAnchorRow;
-                const bgClass = isBlurred ? 'bg-blurred' : 'bg-white';
+                const bgClass = isPastRow ? 'bg-blurred' : 'bg-white';
                 
-                // Deferred bonus calculation
-                const bonusAmount = (bonusHistory[year] * p0) + (bonusHistory[year-1] * p1) + (bonusHistory[year-2] * p2);
+                const expectedOp = overrides.op !== undefined ? overrides.op : 47.2;
+                const basePct = basePctHistory[year] || 0;
                 
-                const grossIncome = currentSalary + bonusAmount;
+                const b0 = (salaryHistory[year-1] / 20) * (basePctHistory[year] / 100) * p0;
+                const b1 = (salaryHistory[year-2] / 20) * (basePctHistory[year-1] / 100) * p1;
+                const b2 = (salaryHistory[year-3] / 20) * (basePctHistory[year-2] / 100) * p2;
+                const bonusAmount = b0 + b1 + b2;
+                
+                const grossIncome = salaryHistory[year] + bonusAmount;
                 const netIncome = calcAfterTax(grossIncome);
-                const mySavings = netIncome * savingsRate;
-                const totalSavings = mySavings + gfSavings;
                 
-                if (isAnchorRow) currentNetWorth = overrides.nw;
-                else currentNetWorth = (currentNetWorth * (1 + returnRate)) + totalSavings;
+                let expense = 0;
+                if (overrides.cumExp !== undefined) {
+                    expense = overrides.cumExp - cumExp;
+                    cumExp = overrides.cumExp;
+                } else if (overrides.exp !== undefined) {
+                    expense = overrides.exp;
+                    cumExp += expense;
+                } else {
+                    expense = isExpenseMode ? savingsInput : netIncome * (1 - (savingsInput/100));
+                    cumExp += expense;
+                }
+
+                let invInc = 0;
+                if (overrides.cumInv !== undefined) {
+                    invInc = overrides.cumInv - cumInv;
+                    cumInv = overrides.cumInv;
+                } else if (overrides.invInc !== undefined) {
+                    invInc = overrides.invInc;
+                    cumInv += invInc;
+                } else {
+                    invInc = currentNw * returnRate;
+                    cumInv += invInc;
+                }
+
+                const gf = overrides.gf !== undefined ? overrides.gf : 0;
+                const totalSavings = netIncome - expense + gf;
+                const actualReturnRate = currentNw > 0 ? (invInc / currentNw) * 100 : 0;
+
+                if (overrides.nw !== undefined) {
+                    currentNw = overrides.nw;
+                } else {
+                    currentNw = currentNw + totalSavings + invInc;
+                }
+
+                if (isPastRow) {
+                    sumRet += actualReturnRate; cntRet++;
+                    sumExp += expense; cntExp++;
+                }
                 
                 const tr = document.createElement('tr');
                 tr.className = bgClass;
                 
-                const yearAgeClass = isPastRow ? 'blurred' : 'font-medium text-gray-900';
-                const yearBg = isPastRow ? 'bg-gray-200' : 'bg-white';
+                const yearAgeClass = isPastRow && !isAnchorRow ? 'blurred' : 'font-medium text-gray-900';
+                const yearBg = isPastRow && !isAnchorRow ? 'bg-gray-200' : 'bg-white';
+                const txtClass = isPastRow && !isAnchorRow ? 'blurred' : '';
+                const editableClass = (isPastRow && !isAnchorRow) ? '' : 'font-bold';
                 
                 tr.innerHTML += `<td class="text-center sticky left-0 z-10 shadow-[1px_0_0_0_#e5e7eb] ${yearBg} ${yearAgeClass}">${year}년</td>`;
                 tr.innerHTML += `<td class="text-center ${yearAgeClass}">${age}세</td>`;
                 
-                const txtClass = isBlurred ? 'blurred' : '';
+                const opColor = (isPastRow && !isAnchorRow) ? '' : 'bg-blue-50 text-blue-700';
+                tr.innerHTML += `<td class="${opColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="decimal" class="cell-input p-2.5" data-year="${year}" data-key="op" value="${overrides.op !== undefined ? overrides.op : expectedOp}" onchange="updateData(${year}, 'op', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
                 
-                // Editable: OP
-                const opColor = isBlurred ? '' : 'bg-blue-50 text-blue-700 font-bold';
-                tr.innerHTML += `<td class="${opColor} ${txtClass} p-0"><input type="text" inputmode="decimal" class="cell-input p-2.5" data-year="${year}" data-key="op" value="${expectedOp}" onchange="updateData(${year}, 'op', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                const salColor = (isPastRow && !isAnchorRow) ? '' : 'bg-blue-50 text-blue-700';
+                tr.innerHTML += `<td class="${salColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="sal" value="${overrides.sal !== undefined ? formatNumber(overrides.sal) : formatNumber(salaryHistory[year])}" onchange="updateData(${year}, 'sal', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
                 
-                // Readonlys
-                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(currentSalary)}</td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass} text-gray-600 font-medium">${formatNumber(basePct)}</td>`;
                 tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(bonusAmount)}</td>`;
                 tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(grossIncome)}</td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass} ${!isBlurred ? 'font-medium text-gray-900' : ''}">${formatNumber(netIncome)}</td>`;
-                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(mySavings)}</td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass} ${(!isPastRow || isAnchorRow) ? 'font-medium text-gray-900' : ''}">${formatNumber(netIncome)}</td>`;
                 
-                // Editable: GF Savings
-                const gfColor = isBlurred ? '' : 'bg-fuchsia-50 text-fuchsia-700 font-medium';
-                tr.innerHTML += `<td class="${gfColor} ${txtClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="gf" value="${formatNumber(gfSavings)}" onchange="updateData(${year}, 'gf', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                const expColor = (isPastRow && !isAnchorRow) ? '' : 'bg-red-50 text-red-700';
+                tr.innerHTML += `<td class="${expColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="exp" value="${overrides.exp !== undefined ? formatNumber(overrides.exp) : formatNumber(expense)}" onchange="updateData(${year}, 'exp', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                tr.innerHTML += `<td class="${expColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="cumExp" value="${overrides.cumExp !== undefined ? formatNumber(overrides.cumExp) : formatNumber(cumExp)}" onchange="updateData(${year}, 'cumExp', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
                 
-                // Readonly: Total Savings
-                tr.innerHTML += `<td class="text-right ${txtClass} ${!isBlurred ? 'text-indigo-700 font-bold' : ''}">${formatNumber(totalSavings)}</td>`;
+                const gfColor = (isPastRow && !isAnchorRow) ? '' : 'bg-fuchsia-50 text-fuchsia-700';
+                tr.innerHTML += `<td class="${gfColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="gf" value="${formatNumber(gf)}" onchange="updateData(${year}, 'gf', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass} ${(!isPastRow || isAnchorRow) ? 'text-indigo-700 font-bold' : ''}">${formatNumber(totalSavings)}</td>`;
                 
-                // Editable: Net Worth Anchor
+                const invColor = (isPastRow && !isAnchorRow) ? '' : 'bg-emerald-50 text-emerald-700';
+                tr.innerHTML += `<td class="${invColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="invInc" value="${overrides.invInc !== undefined ? formatNumber(overrides.invInc) : formatNumber(invInc)}" onchange="updateData(${year}, 'invInc', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                tr.innerHTML += `<td class="${invColor} ${txtClass} ${editableClass} p-0"><input type="text" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="cumInv" value="${overrides.cumInv !== undefined ? formatNumber(overrides.cumInv) : formatNumber(cumInv)}" onchange="updateData(${year}, 'cumInv', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                
                 let nwClass = txtClass;
                 if (isAnchorRow) nwClass = 'anchor';
-                else if (!isBlurred) nwClass = 'text-red-600 font-bold';
+                else if (!isPastRow) nwClass = 'bg-orange-50 text-orange-700 font-bold';
                 
                 const nwType = hideNw ? 'password' : 'text';
-                tr.innerHTML += `<td class="${nwClass} text-right p-0"><input type="${nwType}" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="nw" value="${formatNumber(currentNetWorth)}" onchange="updateAnchor(${year}, this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                tr.innerHTML += `<td class="${nwClass} text-right p-0"><input type="${nwType}" inputmode="numeric" class="cell-input p-2.5" data-year="${year}" data-key="nw" value="${overrides.nw !== undefined ? formatNumber(overrides.nw) : formatNumber(currentNw)}" onchange="updateData(${year}, 'nw', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass}">${actualReturnRate.toFixed(2)}%</td>`;
                 
-                // Readonly: Real Estates
-                const reClass = isBlurred ? txtClass : 'bg-emerald-50 text-emerald-700 font-bold';
-                tr.innerHTML += `<td class="text-right ${reClass}">${formatNumber(re24)}</td>`;
-                tr.innerHTML += `<td class="text-right ${reClass}">${formatNumber(re34)}</td>`;
+                const re24Val = re24 * Math.pow(1 + reRate, year - reBaseYear);
+                const re34Val = re34 * Math.pow(1 + reRate, year - reBaseYear);
+                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(re24Val)}</td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass}">${formatNumber(re34Val)}</td>`;
                 
                 tbody.appendChild(tr);
+            }
+
+            let parts = [];
+            if (cntRet > 0) parts.push(`📊 과거 평균 수익률: <b class="text-blue-700">${(sumRet/cntRet).toFixed(2)}%</b> ｜ 평균 연지출: <b class="text-red-700">${formatNumber(sumExp/cntExp)}원</b>`);
+            if (cntSalInc > 0) parts.push(`📉 평균 연봉인상: <b class="text-blue-700">${(sumSalInc/cntSalInc).toFixed(2)}%</b>`);
+            
+            if (parts.length > 0) {
+                document.getElementById('avgStats').innerHTML = parts.join(" ｜ ");
+            } else {
+                document.getElementById('avgStats').innerHTML = `📊 과거 기록 없음 <span class="text-gray-500 font-normal">(표에 ✏️값을 덮어쓰면 평균이 자동 계산됩니다)</span>`;
+            }
+        }="updateData(${year}, 'nw', this.value)" onfocus="this.value=this.value.replace(/,/g,'')" onblur="this.value=formatNumber(this.value)"></td>`;
+                tr.innerHTML += `<td class="text-right ${txtClass}">${actualReturnRate.toFixed(2)}%</td>`;
                 
-                currentSalary = Math.min(currentSalary * (1 + salaryInc), salaryCeil);
-                re24 *= (1 + reRate);
-                re34 *= (1 + reRate);
+                tbody.appendChild(tr);
+            }
+
+            let avgSalIncStr = cntSalInc > 0 ? \` ｜ 평균 연봉인상: <b class="text-blue-700">\${(sumSalInc/cntSalInc).toFixed(2)}%</b>\` : '';
+            if (cntRet > 0) {
+                document.getElementById('avgStats').innerHTML = \`📊 과거 평균 수익률: <b class="text-blue-700">\${(sumRet/cntRet).toFixed(2)}%</b> ｜ 평균 연지출: <b class="text-red-700">\${formatNumber(sumExp/cntExp)}원</b>\${avgSalIncStr}\`;
+            } else {
+                document.getElementById('avgStats').innerHTML = \`📊 과거 기록 없음 <span class="text-gray-500 font-normal">(표에 ✏️값을 덮어쓰면 평균이 자동 계산됩니다)</span>\`;
             }
         }
 
-        // --- Data Updates ---
         function updateData(year, key, value) {
             if (!tableData[year]) tableData[year] = {};
-            tableData[year][key] = parseNumber(value);
-            renderTable();
-        }
-
-        function updateAnchor(year, value) {
-            if (value.trim() === '') {
-                if (anchorYear === year) {
-                    anchorYear = null;
-                    if(tableData[year]) delete tableData[year].nw;
-                }
+            const parsed = parseNumber(value);
+            if (parsed === null) {
+                delete tableData[year][key];
+                if (Object.keys(tableData[year]).length === 0) delete tableData[year];
             } else {
-                anchorYear = year;
-                if (!tableData[year]) tableData[year] = {};
-                tableData[year].nw = parseNumber(value);
+                tableData[year][key] = parsed;
             }
             renderTable();
         }
 
-        function resetAnchor() {
-            anchorYear = null;
-            for (let y in tableData) { delete tableData[y].nw; }
-            renderTable();
-        }
+        function resetAnchor() { tableData = {}; renderTable(); }
 
-        // --- State Management (Get/Set Object) ---
+        
+        
         function getSaveDataObj() {
             return {
-                netWorth: parseNumber(document.getElementById('netWorth').value),
-                salary: parseNumber(document.getElementById('salary').value),
-                salaryInc: parseNumber(document.getElementById('salaryInc').value),
-                salaryCeil: parseNumber(document.getElementById('salaryCeil').value),
-                savingsRate: parseNumber(document.getElementById('savingsRate').value),
-                returnRate: parseNumber(document.getElementById('returnRate').value),
-                re24: parseNumber(document.getElementById('re24').value),
-                re34: parseNumber(document.getElementById('re34').value),
-                reRate: parseNumber(document.getElementById('reRate').value),
-                retYear: parseNumber(document.getElementById('retYear').value),
-                bonusP0: parseNumber(document.getElementById('bonusP0').value),
-                bonusP1: parseNumber(document.getElementById('bonusP1').value),
-                bonusP2: parseNumber(document.getElementById('bonusP2').value),
-                hideNw: hideNw,
-                anchorYear: anchorYear,
-                tableData: tableData
+                birthYear: document.getElementById('birthYear').value,
+                startYear: document.getElementById('startYear').value,
+                netWorth: document.getElementById('netWorth').value,
+                salary: document.getElementById('salary').value,
+                baseSalary: document.getElementById('baseSalary').value,
+                salaryInc: document.getElementById('salaryInc').value,
+                salaryCeil: document.getElementById('salaryCeil').value,
+                savingsRate: document.getElementById('savingsRate').value,
+                returnRate: document.getElementById('returnRate').value,
+                reBaseYear: document.getElementById('reBaseYear').value,
+                re24: document.getElementById('re24').value,
+                re34: document.getElementById('re34').value,
+                reRate: document.getElementById('reRate').value,
+                bonusP0: document.getElementById('bonusP0').value,
+                bonusP1: document.getElementById('bonusP1').value,
+                bonusP2: document.getElementById('bonusP2').value,
+                hideNw: isHideNw,
+                expenseMode: isExpenseMode,
+                tableData: tableData,
+                bonusDB: bonusDB
             };
+        }
+;
+        }
+;
         }
 
         function applySaveDataObj(data) {
             if(!data) return;
-            // Migration
-            if (data.tableData === undefined && data.net_worth !== undefined) {
-                data.netWorth = data.net_worth;
-                data.salaryInc = data.salary_inc;
-                data.salaryCeil = data.salary_ceiling;
-                data.savingsRate = data.savings_rate;
-                data.returnRate = data.return_rate;
-                data.re24 = data.re_24;
-                data.re34 = data.re_34;
-                data.reRate = data.re_rate;
-                data.retYear = data.retirement_year;
-                
-                data.tableData = {};
-                const aRow = data.anchor_row !== undefined ? data.anchor_row : -1;
-                if (aRow !== -1) data.anchorYear = 2026 + aRow;
-                else data.anchorYear = null;
-                
-                const opData = data.op_data || [];
-                const gfData = data.gf_data || [];
-                const len = Math.max(opData.length, gfData.length);
-                for(let i=0; i<len; i++) {
-                    const y = 2026 + i;
-                    const r = {};
-                    if(opData[i] && parseFloat(opData[i].toString().replace(/,/g,'')) !== 47.2) r.op = parseFloat(opData[i].toString().replace(/,/g,''));
-                    if(gfData[i] && parseFloat(gfData[i].toString().replace(/,/g,'')) !== 0) r.gf = parseFloat(gfData[i].toString().replace(/,/g,''));
-                    if(i === aRow) r.nw = parseFloat(data.manual_net_worth || 0);
-                    if(Object.keys(r).length > 0) data.tableData[y] = r;
-                }
-            }
-
-            document.getElementById('netWorth').value = formatNumber(data.netWorth !== undefined ? data.netWorth : 472242478);
+            document.getElementById('birthYear').value = data.birthYear || '1997';
+            document.getElementById('startYear').value = data.startYear || '2023';
+            document.getElementById('netWorth').value = formatNumber(data.netWorth !== undefined ? data.netWorth : 10000000);
             document.getElementById('salary').value = formatNumber(data.salary !== undefined ? data.salary : 53060000);
             document.getElementById('salaryInc').value = data.salaryInc || '3';
             document.getElementById('salaryCeil').value = formatNumber(data.salaryCeil !== undefined ? data.salaryCeil : 150000000);
-            document.getElementById('savingsRate').value = data.savingsRate || '70';
+            isExpenseMode = data.isExpenseMode || false;
+            document.getElementById('lblSavingsRate').innerText = isExpenseMode ? "연간 지출(원)" : "저축률(%)";
+            document.getElementById('savingsRate').value = isExpenseMode ? formatNumber(data.savingsRate || 30000000) : (data.savingsRate || '70');
             document.getElementById('returnRate').value = data.returnRate || '15';
+            document.getElementById('reBaseYear').value = data.reBaseYear || '2024';
             document.getElementById('re24').value = formatNumber(data.re24 !== undefined ? data.re24 : 2800000000);
             document.getElementById('re34').value = formatNumber(data.re34 !== undefined ? data.re34 : 4000000000);
             document.getElementById('reRate').value = data.reRate || '4';
             document.getElementById('retYear').value = data.retYear || '2050';
-            
             document.getElementById('bonusP0').value = data.bonusP0 !== undefined ? data.bonusP0 : 80;
             document.getElementById('bonusP1').value = data.bonusP1 !== undefined ? data.bonusP1 : 10;
             document.getElementById('bonusP2').value = data.bonusP2 !== undefined ? data.bonusP2 : 10;
             
-            if (data.hideNw !== undefined && data.hideNw !== hideNw) {
-                toggleNw(); // syncs UI button and state
-            }
+            if (data.hideNw !== undefined && data.hideNw !== hideNw) toggleNw();
             
-            anchorYear = data.anchorYear !== undefined ? data.anchorYear : null;
             tableData = data.tableData || {};
-            renderTable();
+            bonusDB = data.bonusDB || [
+                {year: 2023, op: 0.0, pct: 820.0},
+                {year: 2024, op: 0.0, pct: 0.0},
+                {year: 2025, op: 23.47, pct: 2964.0},
+                {year: 2026, op: 47.21, pct: 3704.0}
+            ];
+            renderBonusDB();
         }
 
-        // --- Local & File Syncing ---
         function saveDataLocal() {
             localStorage.setItem('simulatorDataMobile', JSON.stringify(getSaveDataObj()));
             const btn = document.getElementById('btnSave');
@@ -443,53 +633,22 @@
             setTimeout(() => { btn.innerText = '저장(로컬)'; btn.classList.replace('bg-emerald-500', 'bg-blue-600'); }, 2000);
         }
 
-        function loadDataLocal() {
-            const stored = localStorage.getItem('simulatorDataMobile');
-            if (stored) {
-                applySaveDataObj(JSON.parse(stored));
-            }
-        }
-
-        function importJsonFile(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                try {
-                    const data = JSON.parse(e.target.result);
-                    applySaveDataObj(data);
-                    alert("JSON 파일을 성공적으로 불러왔습니다!");
-                } catch (err) {
-                    alert("잘못된 JSON 파일입니다.");
-                }
-            };
-            reader.readAsText(file);
-            event.target.value = ''; 
-        }
-
         async function fetchGithubConfig() {
             try {
                 const response = await fetch('asset_simulator_config.json', { cache: "no-store" });
                 if (response.ok) {
                     const data = await response.json();
                     applySaveDataObj(data);
-                    console.log("Loaded GitHub/Server config.json!");
                     return true;
                 }
-            } catch (e) {
-                console.log("No remote config.json found or running locally.");
-            }
+            } catch (e) { }
             return false;
         }
 
-        // --- Copy / Paste Sync (Base64 URL encoding) ---
         function copySyncCode() {
-            const jsonStr = JSON.stringify(getSaveDataObj());
-            const b64 = btoa(encodeURIComponent(jsonStr));
-            navigator.clipboard.writeText(b64).then(() => {
+            navigator.clipboard.writeText(btoa(encodeURIComponent(JSON.stringify(getSaveDataObj())))).then(() => {
                 const btn = document.getElementById('btnCopy');
-                btn.innerText = '복사 완료! ✓';
-                btn.classList.replace('bg-white', 'bg-emerald-100');
+                btn.innerText = '복사 완료! ✓'; btn.classList.replace('bg-white', 'bg-emerald-100');
                 setTimeout(() => { btn.innerText = '📱코드 내보내기'; btn.classList.replace('bg-emerald-100', 'bg-white'); }, 2000);
             });
         }
@@ -497,36 +656,38 @@
         function pasteSyncCode() {
             const b64 = prompt("PC(.exe)나 다른 기기에서 복사한 영문 코드를 붙여넣어 주세요:");
             if (b64 && b64.trim() !== '') {
-                try {
-                    const jsonStr = decodeURIComponent(atob(b64.trim()));
-                    applySaveDataObj(JSON.parse(jsonStr));
-                    alert("성공적으로 연동되었습니다!");
-                } catch (e) {
-                    alert("올바르지 않은 코드입니다.");
-                }
+                try { applySaveDataObj(JSON.parse(decodeURIComponent(atob(b64.trim())))); alert("성공적으로 연동되었습니다!"); }
+                catch (e) { alert("올바르지 않은 코드입니다."); }
             }
         }
+        
+        function importJsonFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try { applySaveDataObj(JSON.parse(e.target.result)); alert("JSON 파일을 성공적으로 불러왔습니다!"); } 
+                catch (err) { alert("잘못된 JSON 파일입니다."); }
+            };
+            reader.readAsText(file);
+            event.target.value = ''; 
+        }
 
-        // --- Multi Drag & Ctrl+Enter Selection Logic ---
         let isDragging = false;
         document.addEventListener('mousedown', (e) => {
             if (e.target.classList.contains('cell-input')) {
                 document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
-                e.target.dataset.selected = 'true';
-                e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
+                e.target.dataset.selected = 'true'; e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
                 isDragging = true;
             } else {
                 isDragging = false; 
-                if(!e.target.closest('#tableWrapper')) {
-                    document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
-                }
+                if(!e.target.closest('#tableWrapper')) document.querySelectorAll('.cell-input').forEach(el => { el.dataset.selected = 'false'; el.style.backgroundColor = ''; });
             }
         });
         document.addEventListener('mouseup', () => isDragging = false);
         document.addEventListener('mouseover', (e) => {
             if (isDragging && e.target.classList.contains('cell-input')) {
-                e.target.dataset.selected = 'true';
-                e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
+                e.target.dataset.selected = 'true'; e.target.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
             }
         });
         document.addEventListener('keydown', (e) => {
@@ -539,44 +700,32 @@
                         el.value = val;
                         const year = parseInt(el.dataset.year);
                         const key = el.dataset.key;
-                        
-                        if (key === 'nw') {
-                            if (val.trim() === '') {
-                                if (anchorYear === year) { anchorYear = null; if (tableData[year]) delete tableData[year].nw; }
-                            } else {
-                                anchorYear = year;
-                                if (!tableData[year]) tableData[year] = {};
-                                tableData[year].nw = parseNumber(val);
-                            }
-                        } else {
-                            if (!tableData[year]) tableData[year] = {};
-                            tableData[year][key] = parseNumber(val);
+                        if (!tableData[year]) tableData[year] = {};
+                        if (val.trim() === '') {
+                            delete tableData[year][key];
+                            if(Object.keys(tableData[year]).length === 0) delete tableData[year];
                         }
+                        else tableData[year][key] = parseNumber(val);
                         updated = true;
                     });
-                    if (updated) {
-                        active.blur();
-                        renderTable();
-                    }
+                    if (updated) { active.blur(); renderTable(); }
                 }
             }
         });
 
-        // --- Init ---
         window.onload = async () => {
             document.querySelectorAll('.trigger-calc').forEach(el => {
-                el.addEventListener('input', () => { renderTable(); });
-                if(!['salaryInc', 'savingsRate', 'returnRate', 'reRate', 'retYear', 'bonusP0', 'bonusP1', 'bonusP2'].includes(el.id)) {
-                    el.addEventListener('blur', function() { this.value = formatNumber(parseNumber(this.value)); renderTable(); });
+                el.addEventListener('change', () => { renderTable(); }); // FIX LAG: change instead of input
+                if(!['salaryInc','returnRate','reRate','bonusP0','bonusP1','bonusP2','retYear','birthYear','startYear'].includes(el.id)) {
+                    el.addEventListener('blur', function() { this.value = formatNumber(parseNumber(this.value)); });
                     el.addEventListener('focus', function() { this.value = this.value.replace(/,/g, ''); });
                 }
             });
-            
             const fromServer = await fetchGithubConfig();
             if (!fromServer) {
                 const stored = localStorage.getItem('simulatorDataMobile');
                 if (stored) applySaveDataObj(JSON.parse(stored));
-                else renderTable(); 
+                else renderBonusDB(); 
             }
         };
     </script>
