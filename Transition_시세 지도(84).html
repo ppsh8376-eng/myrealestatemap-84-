@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>나만의 임장지도 (84) - 학군 & 상권 통합본</title>
     <style>
         #map { width: 100%; height: 100vh; position: relative; }
@@ -71,120 +72,136 @@
         .ame-wrapper { position: absolute; transform: translate(-50%, calc(-100% + 5px)); display: flex; flex-direction: column; align-items: center; z-index: 5; pointer-events: none; }
         .ame-name { background-color: rgba(255,255,255,0.95); padding: 2px 4px; border-radius: 3px; font-size: 9px; font-weight: bold; color: #333; margin-bottom: 3px; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.3); border: 1px solid rgba(0,0,0,0.2); }
         .ame-dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+
+        @media (max-width: 768px) {
+            .nav-btn { font-size: 10px; padding: 5px 8px; }
+            .nav-row { gap: 4px; }
+            .nav-buttons-container { gap: 4px; max-width: 65%; }
+            #top-ui-layer { left: 5px !important; right: 5px !important; top: 5px !important; }
+            .sequence-box { bottom: 5px; left: 5px; max-width: 60%; font-size: 10px; padding: 6px; line-height: 1.3; }
+            .price-legend-box { bottom: 55px; left: 5px; width: 60px; }
+            .legend-row { font-size: 9px; height: 18px; line-height: 18px; }
+            #bottom-right-container { bottom: 5px !important; right: 5px !important; }
+            #memo-panel { width: 90%; bottom: 5px; padding: 10px; }
+            #backup-panel { width: 90%; padding: 15px; }
+            .process-panel, .calendar-panel, #memo-list-panel, #user-memo-panel { width: 250px !important; right: 0 !important; top: 100% !important; margin-top: 8px !important; }
+        }
     </style>
 </head>
 <body>
-    <div class="nav-buttons-container">
-        <div class="nav-row">
-            <button class="nav-btn btn-move" onclick="moveTo(37.5141, 127.0142)">서울(강남구)</button>
-            <button class="nav-btn btn-move" onclick="moveTo(37.5893, 127.0167)">서울(성북구)</button>
-            <button class="nav-btn btn-move" onclick="moveTo(37.2886, 127.0540)">광교(영통구)</button>
-            <button class="nav-btn btn-move" onclick="moveTo(37.3943, 126.9639)">평촌(동안구)</button>
-            <button class="nav-btn btn-move" onclick="moveTo(37.4761, 126.8679)">광명(철산동)</button>
-            <button class="nav-btn btn-move" onclick="moveTo(35.8575, 128.6358)">대구(범어동)</button>
-            <button class="nav-btn btn-move" onclick="moveTo(36.8154, 127.1138)">천안(서북구)</button>
-        </div>
-        <div class="nav-row">
-            <button class="nav-btn btn-on" id="btn-apt" onclick="toggleApt()">단지 시세 (84)</button>
-            <button class="nav-btn btn-off" id="btn-struct" onclick="toggleStruct()">구조/방화장실</button>
-        </div>
-        <div class="nav-row">
-            <button class="nav-btn btn-on" id="btn-elem" onclick="toggleSchool('elem')">초등학교</button>
-            <button class="nav-btn btn-on" id="btn-mid" onclick="toggleSchool('mid')">중학교</button>
-            <button class="nav-btn btn-on" id="btn-high" onclick="toggleSchool('high')">고등학교</button>
-            <button class="nav-btn btn-off" id="btn-amenity" onclick="toggleAmenities()">상권/병원</button>
-        </div>
-    </div>
-
-    <div style="position: absolute; top: 15px; right: 15px; z-index: 2000; display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
-        <div style="display: flex; gap: 8px;">
-            <button class="nav-btn btn-off" id="btn-user-memo" onclick="toggleUserMemoList()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">사용자 메모 목록 🗒️</button>
-            <button class="nav-btn btn-off" id="btn-memo-list" onclick="toggleMemoList()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">단지별 메모 목록 📝</button>
-            <button class="nav-btn btn-off" id="btn-calendar" onclick="toggleCalendar()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">임장 캘린더 📅</button>
-            <button class="nav-btn btn-on" id="btn-process" onclick="toggleProcess()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">정비사업 절차 📋</button>
-        </div>
-    </div>
-    
-    <div class="process-panel" id="process-panel">
-        <div class="process-title">🏗️ 정비사업 추진 절차</div>
-        <div class="process-columns">
-            <div class="process-col">
-                <div class="process-col-title remodel">리모델링</div>
-                <div class="process-step">기본계획 수립</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">추진위/입주자대표회의</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">조합설립인가</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">안전진단 (1차)</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">건축·도시계획심의</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">권리변동계획수립</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">사업계획(행위허가)승인</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">분담금 확정 총회</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">이주</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">안전진단 (2차)</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">착공</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">준공(사업검사)</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">입주 및 청산</div>
+    <div id="top-ui-layer" style="position: absolute; top: 15px; left: 15px; right: 15px; z-index: 2000; display: flex; justify-content: space-between; align-items: flex-start; pointer-events: none;">
+        <div class="nav-buttons-container" style="position: relative; top: auto; left: auto; pointer-events: auto; max-width: 65%; display: flex; flex-direction: column; gap: 8px;">
+            <div class="nav-row">
+                <button class="nav-btn btn-move" onclick="moveTo(37.5141, 127.0142)">서울(강남구)</button>
+                <button class="nav-btn btn-move" onclick="moveTo(37.5893, 127.0167)">서울(성북구)</button>
+                <button class="nav-btn btn-move" onclick="moveTo(37.2886, 127.0540)">광교(영통구)</button>
+                <button class="nav-btn btn-move" onclick="moveTo(37.3943, 126.9639)">평촌(동안구)</button>
+                <button class="nav-btn btn-move" onclick="moveTo(37.4761, 126.8679)">광명(철산동)</button>
+                <button class="nav-btn btn-move" onclick="moveTo(35.8575, 128.6358)">대구(범어동)</button>
+                <button class="nav-btn btn-move" onclick="moveTo(36.8154, 127.1138)">천안(서북구)</button>
             </div>
-            <div class="process-col">
-                <div class="process-col-title recon">재건축</div>
-                <div class="process-step">정비 기본계획 수립</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">안전진단</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">정비구역지정</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">추진위원회 구성</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">조합설립인가</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">건축심의</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">사업시행인가</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">관리 처분계획</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">이주 및 철거</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">착공</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">준공인가</div>
-                <div class="process-arrow">▼</div>
-                <div class="process-step">입주 및 청산</div>
+            <div class="nav-row">
+                <button class="nav-btn btn-on" id="btn-apt" onclick="toggleApt()">단지 시세 (84)</button>
+                <button class="nav-btn btn-off" id="btn-struct" onclick="toggleStruct()">구조/방화장실</button>
+            </div>
+            <div class="nav-row">
+                <button class="nav-btn btn-on" id="btn-elem" onclick="toggleSchool('elem')">초등학교</button>
+                <button class="nav-btn btn-on" id="btn-mid" onclick="toggleSchool('mid')">중학교</button>
+                <button class="nav-btn btn-on" id="btn-high" onclick="toggleSchool('high')">고등학교</button>
+                <button class="nav-btn btn-off" id="btn-amenity" onclick="toggleAmenities()">상권/병원</button>
             </div>
         </div>
-    </div>
 
-    <div class="calendar-panel" id="calendar-panel" style="position: absolute; top: 55px; right: 15px;">
-        <div class="cal-header">
-            <button class="cal-btn" onclick="changeMonth(-1)">◀</button>
-            <span id="cal-month-year" style="font-weight:bold; font-size:13px; color:#333;"></span>
-            <button class="cal-btn" onclick="changeMonth(1)">▶</button>
+        <div id="right-nav-container" style="position: relative; top: auto; right: auto; pointer-events: auto; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; max-width: 35%;">
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;">
+                <button class="nav-btn btn-off" id="btn-user-memo" onclick="toggleUserMemoList()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">사용자 메모 🗒️</button>
+                <button class="nav-btn btn-off" id="btn-memo-list" onclick="toggleMemoList()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">단지 메모 📝</button>
+                <button class="nav-btn btn-off" id="btn-calendar" onclick="toggleCalendar()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">임장 캘린더 📅</button>
+                <button class="nav-btn btn-on" id="btn-process" onclick="toggleProcess()" style="margin: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">정비사업 📋</button>
+            </div>
+            
+            <div class="process-panel" id="process-panel" style="position: absolute; top: 100%; right: 0; margin-top: 8px;">
+                <div class="process-title">🏗️ 정비사업 추진 절차</div>
+                <div class="process-columns">
+                    <div class="process-col">
+                        <div class="process-col-title remodel">리모델링</div>
+                        <div class="process-step">기본계획 수립</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">추진위/입주자대표회의</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">조합설립인가</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">안전진단 (1차)</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">건축·도시계획심의</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">권리변동계획수립</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">사업계획(행위허가)승인</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">분담금 확정 총회</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">이주</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">안전진단 (2차)</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">착공</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">준공(사업검사)</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">입주 및 청산</div>
+                    </div>
+                    <div class="process-col">
+                        <div class="process-col-title recon">재건축</div>
+                        <div class="process-step">정비 기본계획 수립</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">안전진단</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">정비구역지정</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">추진위원회 구성</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">조합설립인가</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">건축심의</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">사업시행인가</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">관리 처분계획</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">이주 및 철거</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">착공</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">준공인가</div>
+                        <div class="process-arrow">▼</div>
+                        <div class="process-step">입주 및 청산</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-panel" id="calendar-panel" style="position: absolute; top: 100%; right: 0; margin-top: 8px;">
+                <div class="cal-header">
+                    <button class="cal-btn" onclick="changeMonth(-1)">◀</button>
+                    <span id="cal-month-year" style="font-weight:bold; font-size:13px; color:#333;"></span>
+                    <button class="cal-btn" onclick="changeMonth(1)">▶</button>
+                </div>
+                <div id="cal-grid"></div>
+            </div>
+
+            <div id="memo-list-panel" style="position: absolute; top: 100%; right: 0; margin-top: 8px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none;">
+                <div style="font-weight: 900; font-size: 13px; margin-bottom: 8px; border-bottom: 2px solid #333; padding-bottom: 5px;">📝 메모가 저장된 단지</div>
+                <div id="memo-list-content"></div>
+            </div>
+
+            <div id="user-memo-panel" style="position: absolute; top: 100%; right: 0; margin-top: 8px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none;">
+                <div style="font-weight: 900; font-size: 13px; margin-bottom: 8px; border-bottom: 2px solid #333; padding-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>🗒️ 사용자 메모 목록</span>
+                    <button onclick="openUserMemoEditor('', '')" style="background: #007BFF; color: #fff; border: none; border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer;">+ 메모 추가</button>
+                </div>
+                <div id="user-memo-content"></div>
+            </div>
         </div>
-        <div id="cal-grid"></div>
-    </div>
-
-    <div id="memo-list-panel" style="position: absolute; top: 55px; right: 15px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none;">
-        <div style="font-weight: 900; font-size: 13px; margin-bottom: 8px; border-bottom: 2px solid #333; padding-bottom: 5px;">📝 메모가 저장된 단지</div>
-        <div id="memo-list-content"></div>
-    </div>
-
-    <div id="user-memo-panel" style="position: absolute; top: 55px; right: 15px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none;">
-        <div style="font-weight: 900; font-size: 13px; margin-bottom: 8px; border-bottom: 2px solid #333; padding-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
-            <span>🗒️ 사용자 메모 목록</span>
-            <button onclick="openUserMemoEditor('', '')" style="background: #007BFF; color: #fff; border: none; border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer;">+ 메모 추가</button>
-        </div>
-        <div id="user-memo-content"></div>
     </div>
 
     <!-- 하단 우측 데이터 백업/복원 -->
