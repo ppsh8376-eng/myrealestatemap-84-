@@ -13,9 +13,9 @@
     "re34": "5100000000",
     "reRate": "6",
     "retYear": "2050",
-    "bonusP0": "80",
-    "bonusP1": "10",
-    "bonusP2": "10",
+    "bonusP0": "100",
+    "bonusP1": "0",
+    "bonusP2": "0",
     "hideNw": false,
     "isExpenseMode": true,
     "tableData": {
