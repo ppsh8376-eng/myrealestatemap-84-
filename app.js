@@ -40,6 +40,40 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('import-btn').addEventListener('click', importFromExcel);
     document.getElementById('load-json-btn').addEventListener('click', loadFromJson);
     document.getElementById('export-btn').addEventListener('click', exportToExcel);
+    
+    document.getElementById('download-json-btn').addEventListener('click', () => {
+        const allData = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key.startsWith('timeTrackerTasks_')) {
+                const dateStr = key.replace('timeTrackerTasks_', '');
+                try {
+                    const tasks = JSON.parse(localStorage.getItem(key));
+                    if (tasks && tasks.length > 0) {
+                        allData[dateStr] = tasks;
+                    }
+                } catch(e) {}
+            }
+        }
+        
+        if (Object.keys(allData).length === 0) {
+            alert('다운로드할 데이터가 없습니다.');
+            return;
+        }
+
+        const dataStr = JSON.stringify(allData, null, 4);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'data.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+
     document.getElementById('reset-btn').addEventListener('click', () => {
         if(confirm(`${selectedDate}의 모든 데이터를 초기화하시겠습니까?`)) {
             currentTasks = [];
