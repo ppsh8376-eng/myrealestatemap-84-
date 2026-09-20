@@ -205,6 +205,33 @@ function loadTasks() {
 
 function saveTasks() {
     localStorage.setItem(`timeTrackerTasks_${selectedDate}`, JSON.stringify(currentTasks));
+    autoSaveToServer();
+}
+
+async function autoSaveToServer() {
+    const allData = {};
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('timeTrackerTasks_')) {
+            const dateStr = key.replace('timeTrackerTasks_', '');
+            try {
+                const tasks = JSON.parse(localStorage.getItem(key));
+                if (tasks && tasks.length > 0) {
+                    allData[dateStr] = tasks;
+                }
+            } catch(e) {}
+        }
+    }
+    
+    try {
+        await fetch('http://localhost:8000/save', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(allData, null, 4)
+        });
+    } catch(e) {
+        // 서버가 꺼져있을 때는 에러를 무시합니다.
+    }
 }
 
 // 자동 연동 로직 (앱 시작 시 또는 새 날짜 선택 시)
