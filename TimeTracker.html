@@ -1,3 +1,4 @@
+<!-- TimeTracker.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,7 +26,14 @@
         </section>
 
         <section id="task-list-section">
-            <h2 class="section-label">할 일 목록</h2>
+            <div class="list-header">
+                <h2 class="section-label">할 일 목록</h2>
+                <div class="batch-actions">
+                    <label class="select-all-label"><input type="checkbox" id="select-all-cb"> 전체</label>
+                    <button id="batch-copy-btn" class="secondary batch-btn">선택 복사</button>
+                    <button id="batch-delete-btn" class="danger batch-btn">선택 삭제</button>
+                </div>
+            </div>
             <ul id="task-list">
                 <!-- 할 일 목록이 여기에 렌더링됩니다 -->
             </ul>
@@ -35,9 +43,28 @@
         <section id="export-section">
             <h2 class="section-label">결과 내보내기</h2>
             <button id="export-btn">결과 복사하기 (엑셀용)</button>
-            <button id="reset-btn" class="danger">모든 데이터 초기화</button>
+            <button id="reset-btn" class="danger">현재 날짜 데이터 초기화</button>
         </section>
     </div>
+
+    <!-- 복사 모달 -->
+    <div id="copy-modal" class="modal">
+        <div class="modal-content">
+            <h3>다른 날짜로 복사</h3>
+            <p>복사할 날짜를 선택하세요.</p>
+            <div id="date-checkboxes">
+            </div>
+            <div class="custom-date-add">
+                <input type="date" id="custom-copy-date">
+                <button id="add-custom-date-btn">추가</button>
+            </div>
+            <div class="modal-actions">
+                <button id="confirm-copy-btn">복사하기</button>
+                <button id="cancel-copy-btn" class="secondary">취소</button>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
