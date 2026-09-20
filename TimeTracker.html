@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>시간 기록 앱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>할 일 기록</h1>
+            <div class="date-picker-wrapper">
+                <input type="date" id="date-picker">
+            </div>
+        </header>
+        
+        <section id="import-section">
+            <label for="excel-input" class="section-label">엑셀 데이터 붙여넣기</label>
+            <textarea id="excel-input" rows="4" placeholder="엑셀에서 복사한 데이터를 여기에 붙여넣으세요. (빈 줄도 포함하여 복사해야 나중에 엑셀에 붙여넣을 때 줄이 맞습니다)"></textarea>
+            <div class="button-group">
+                <button id="import-btn">목록 가져오기</button>
+                <button id="load-json-btn" class="secondary">data.json 불러오기</button>
+            </div>
+        </section>
+
+        <section id="task-list-section">
+            <h2 class="section-label">할 일 목록</h2>
+            <ul id="task-list">
+                <!-- 할 일 목록이 여기에 렌더링됩니다 -->
+            </ul>
+            <p id="empty-message">데이터를 가져오면 목록이 표시됩니다.</p>
+        </section>
+
+        <section id="export-section">
+            <h2 class="section-label">결과 내보내기</h2>
+            <button id="export-btn">결과 복사하기 (엑셀용)</button>
+            <button id="reset-btn" class="danger">모든 데이터 초기화</button>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
