@@ -1,7 +1,7 @@
 // app.js
 let currentTasks = [];
 let selectedDate = '';
-let tasksToCopy = []; // 배열로 변경 (단일 복사, 다중 복사 모두 지원)
+let tasksToCopy = []; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const datePicker = document.getElementById('date-picker');
@@ -20,11 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem('timeTrackerTasks');
     }
 
+    // 초기 데이터 로드
     loadTasks();
+    
+    // 로컬 스토리지에 데이터가 비어있다면 자동으로 data.json 연동 시도
+    if (currentTasks.length === 0) {
+        autoLoadFromJson();
+    }
 
     datePicker.addEventListener('change', (e) => {
         selectedDate = e.target.value;
         loadTasks();
+        // 날짜를 바꿨는데 해당 날짜의 데이터가 없으면 자동 연동 시도
+        if (currentTasks.length === 0) {
+            autoLoadFromJson();
+        }
     });
 
     document.getElementById('import-btn').addEventListener('click', importFromExcel);
@@ -43,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('select-all-cb').addEventListener('change', (e) => {
         const isChecked = e.target.checked;
         currentTasks.forEach(t => {
-            // 헤더 역할 항목은 선택 제외
             if(t.content !== '내용' || t.note !== '비고') {
                 t.selected = isChecked;
             }
@@ -58,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('복사할 항목을 체크박스로 선택해주세요.');
             return;
         }
-        tasksToCopy = selected; // 선택된 여러 항목을 복사 대상으로 설정
+        tasksToCopy = selected; 
         showCopyModal();
     });
 
@@ -109,14 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetTasks = JSON.parse(saved);
             }
             
-            // 다중 복사 로직 적용
             tasksToCopy.forEach(task => {
                 const newTask = {...task};
                 newTask.startTime = '';
                 newTask.endTime = '';
                 newTask.duration = '';
                 newTask.completed = false;
-                newTask.selected = false; // 복사본은 선택 해제 상태로
+                newTask.selected = false; 
                 
                 targetTasks.push(newTask);
             });
@@ -127,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         alert('선택한 날짜로 복사되었습니다.');
         
-        // 원본의 선택 상태 해제
         currentTasks.forEach(t => t.selected = false);
         saveTasks();
         renderTasks();
@@ -164,6 +171,76 @@ function loadTasks() {
 
 function saveTasks() {
     localStorage.setItem(`timeTrackerTasks_${selectedDate}`, JSON.stringify(currentTasks));
+}
+
+// 자동 연동 로직 (앱 시작 시 또는 새 날짜 선택 시)
+async function autoLoadFromJson() {
+    try {
+        // GitHub Pages의 강력한 캐시 방지를 위해 타임스탬프 추가
+        const res = await fetch('data.json?t=' + new Date().getTime());
+        if (!res.ok) return;
+        const data = await res.json();
+        
+        let loadedTasks = [];
+        if (!Array.isArray(data)) {
+            // data.json이 객체 형태인 경우 (특정 날짜 지정) {"2026-09-21": [...], "2026-09-22": [...]}
+            if (data[selectedDate]) {
+                loadedTasks = data[selectedDate];
+            } else {
+                return;
+            }
+        } else {
+            // 기존처럼 배열 형태일 경우 (모든 빈 날짜의 템플릿으로 사용)
+            loadedTasks = data;
+        }
+
+        currentTasks = loadedTasks;
+        
+        currentTasks.forEach((t, i) => {
+            if (!t.rowNumber) t.rowNumber = i + 1;
+            t.selected = false;
+        });
+
+        saveTasks();
+        renderTasks();
+    } catch (e) {
+        console.error('Auto-load JSON failed:', e);
+    }
+}
+
+// 수동 연동 로직 (버튼 클릭 시 강제 덮어쓰기)
+async function loadFromJson() {
+    try {
+        const res = await fetch('data.json?t=' + new Date().getTime());
+        if (!res.ok) throw new Error('네트워크 응답이 정상이 아닙니다.');
+        const data = await res.json();
+        
+        let loadedTasks = [];
+        if (!Array.isArray(data)) {
+            if (data[selectedDate]) {
+                loadedTasks = data[selectedDate];
+            } else {
+                alert(`data.json에 [${selectedDate}] 날짜의 데이터가 없습니다.`);
+                return;
+            }
+        } else {
+            loadedTasks = data;
+        }
+
+        currentTasks = loadedTasks;
+        
+        currentTasks.forEach((t, i) => {
+            if (!t.rowNumber) t.rowNumber = i + 1;
+            t.selected = false;
+        });
+
+        saveTasks();
+        renderTasks();
+        alert(`data.json에서 ${selectedDate} 목록을 성공적으로 불러왔습니다!`);
+    } catch (e) {
+        console.error(e);
+        alert('data.json 파일을 불러오지 못했습니다. 파일이 존재하는지 확인해주세요.');
+    }
 }
 
 function importFromExcel() {
@@ -204,34 +281,13 @@ function importFromExcel() {
     alert(`${selectedDate} 목록을 성공적으로 가져왔습니다!`);
 }
 
-async function loadFromJson() {
-    try {
-        const res = await fetch('data.json');
-        if (!res.ok) throw new Error('네트워크 응답이 정상이 아닙니다.');
-        const data = await res.json();
-        currentTasks = data;
-        
-        currentTasks.forEach((t, i) => {
-            if (!t.rowNumber) t.rowNumber = i + 1;
-            t.selected = false;
-        });
-
-        saveTasks();
-        renderTasks();
-        alert(`data.json에서 ${selectedDate} 목록을 성공적으로 불러왔습니다!`);
-    } catch (e) {
-        console.error(e);
-        alert('data.json 파일을 불러오지 못했습니다. 파일이 존재하는지 확인해주세요.');
-    }
-}
-
 function escapeHtml(str) {
     if(!str) return '';
-    return str.replace(/&/g, "&amp;")
-              .replace(/</g, "&lt;")
-              .replace(/>/g, "&gt;")
-              .replace(/"/g, "&quot;")
-              .replace(/'/g, "&#039;");
+    return String(str).replace(/&/g, "&amp;")
+                      .replace(/</g, "&lt;")
+                      .replace(/>/g, "&gt;")
+                      .replace(/"/g, "&quot;")
+                      .replace(/'/g, "&#039;");
 }
 
 function renderTasks() {
@@ -263,7 +319,7 @@ function renderTasks() {
                     <input type="text" class="edit-note" value="${escapeHtml(task.note)}" onchange="updateTask(${index}, 'note', this.value)" placeholder="비고 입력">
                 </div>
                 <div class="task-mini-actions">
-                    <button class="btn-icon" onclick="openCopyModal(${index})" title="이 항목만 다른 날짜로 복사">🗓️</button>
+                    <button class="btn-icon" onclick="openCopyModal(${index})" title="이 항목만 다른 날짜로 복사">🗓️ 날짜복사</button>
                     <button class="btn-icon" onclick="resetTime(${index})" title="시간 초기화">🔄</button>
                     <button class="btn-icon" onclick="copyItem(${index})" title="항목 복제(현재 날짜)">📋</button>
                     <button class="btn-icon" onclick="deleteItem(${index})" title="항목 삭제">❌</button>
@@ -314,9 +370,8 @@ window.updateTask = function(index, field, value) {
     if(field === 'rowNumber') renderTasks(); 
 };
 
-// 개별 항목 날짜 복사 버튼용
 window.openCopyModal = function(index) {
-    tasksToCopy = [currentTasks[index]]; // 단일 항목 배열로 전달
+    tasksToCopy = [currentTasks[index]];
     showCopyModal();
 };
 
