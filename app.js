@@ -304,6 +304,32 @@ async function loadFromJson() {
     }
 }
 
+// 소요시간 제외 체크박스 상태 저장 및 복원
+document.addEventListener('DOMContentLoaded', () => {
+    const cb = document.getElementById('exclude-duration-cb');
+    if (cb) {
+        cb.checked = localStorage.getItem('excludeDuration') === 'true';
+        cb.addEventListener('change', (e) => {
+            localStorage.setItem('excludeDuration', e.target.checked);
+        });
+    }
+});
+
+window.updateTime = function(index, field, value) {
+    currentTasks[index][field] = value;
+    
+    if (currentTasks[index].startTime && currentTasks[index].endTime) {
+        currentTasks[index].duration = calculateDuration(currentTasks[index].startTime, currentTasks[index].endTime);
+        currentTasks[index].completed = true;
+    } else {
+        currentTasks[index].duration = '';
+        currentTasks[index].completed = false;
+    }
+    
+    saveTasks();
+    renderTasks();
+};
+
 function importFromExcel() {
     const text = document.getElementById('excel-input').value;
     if (!text) {
@@ -388,9 +414,9 @@ function renderTasks() {
             </div>
             <div class="item-row">
                 <div class="task-times-inline">
-                    <div>시작 <b>${task.startTime || '-'}</b></div>
-                    <div>끝 <b>${task.endTime || '-'}</b></div>
-                    <div>소요 <b>${task.duration || '-'}</b></div>
+                    <div style="align-items: flex-start;">시작 <input type="time" class="edit-time" value="${task.startTime}" onchange="updateTime(${index}, 'startTime', this.value)" title="시작 시간 직접 수정"></div>
+                    <div style="align-items: flex-start;">끝 <input type="time" class="edit-time" value="${task.endTime}" onchange="updateTime(${index}, 'endTime', this.value)" title="마침 시간 직접 수정"></div>
+                    <div>소요 <span class="duration-text">${task.duration || '-'}</span></div>
                 </div>
                 <div class="task-main-actions">
                     <button class="btn-start" onclick="recordTime(${index}, 'start')">시작</button>
@@ -544,12 +570,16 @@ function exportToExcel() {
         return;
     }
 
+    const cb = document.getElementById('exclude-duration-cb');
+    const excludeDuration = cb && cb.checked;
+
     const maxRow = Math.max(...currentTasks.map(t => t.rowNumber));
     let textLines = new Array(maxRow).fill('\t\t\t\t\t'); 
 
     currentTasks.forEach(task => {
         const completedMark = task.completed ? '0' : ''; 
-        textLines[task.rowNumber - 1] = `${task.content}\t${task.note}\t${task.startTime}\t${task.endTime}\t${task.duration}\t${completedMark}`;
+        const dur = excludeDuration ? '' : (task.duration || '');
+        textLines[task.rowNumber - 1] = `${task.content}\t${task.note}\t${task.startTime}\t${task.endTime}\t${dur}\t${completedMark}`;
     });
 
     const text = textLines.join('\n');

@@ -191,6 +191,29 @@ button.danger:active {
     outline: none; border-color: #ccc; background: #fdfdfd;
 }
 
+.edit-time {
+    border: 1px solid transparent;
+    background: transparent;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 4px;
+    font-family: inherit;
+    text-align: center;
+    width: 80px;
+    color: #000;
+}
+.edit-time:focus {
+    outline: none;
+    border-color: #ccc;
+    background: #fdfdfd;
+}
+.duration-text {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+
 .task-mini-actions {
     display: flex;
     gap: 4px;
