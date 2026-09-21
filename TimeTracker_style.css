@@ -1,0 +1,306 @@
+/* style.css */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+.container {
+    padding: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+header h1 {
+    margin: 0 0 10px 0;
+    color: #cc0000;
+    font-size: 24px;
+}
+input[type="date"] {
+    padding: 8px 12px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: bold;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    color: #333;
+    background-color: white;
+}
+.section-label {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+}
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+button {
+    flex: 1;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+button:active {
+    background-color: #0056b3;
+}
+button.secondary {
+    background-color: #6c757d;
+}
+button.secondary:active {
+    background-color: #5a6268;
+}
+button.danger {
+    background-color: #dc3545;
+}
+button.danger:active {
+    background-color: #a71d2a;
+}
+#export-btn {
+    background-color: #17a2b8;
+    margin-bottom: 10px;
+    width: 100%;
+}
+#export-btn:active {
+    background-color: #117a8b;
+}
+
+/* 상단 헤더 및 일괄 처리 버튼 */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background: #e9ecef;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+.list-header .section-label {
+    margin-bottom: 0;
+}
+.batch-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.select-all-label {
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 5px;
+}
+.select-all-label input {
+    width: 16px;
+    height: 16px;
+}
+.batch-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 0;
+    flex: none;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+#empty-message {
+    text-align: center;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* 콤팩트 가로 배열 레이아웃 */
+.task-item {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.task-item.completed {
+    background: #e8f5e9;
+    border-left-color: #28a745;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    gap: 8px;
+}
+
+.task-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 150px;
+    margin-right: 10px;
+}
+
+/* 인라인 편집 스타일 */
+.row-number-wrapper {
+    display: flex; align-items: center; gap: 5px; font-size: 12px; color: #666; margin-bottom: 4px;
+}
+.task-select-cb {
+    width: 16px; height: 16px; margin-right: 2px; cursor: pointer;
+}
+.edit-row {
+    width: 45px; padding: 2px 4px; font-size: 12px; border: 1px solid #ccc; border-radius: 4px; text-align: center;
+}
+.edit-title {
+    font-size: 16px; font-weight: bold; color: #cc0000; border: 1px solid transparent; background: transparent; padding: 2px 4px; margin-bottom: 2px; width: 100%; box-sizing: border-box; border-radius: 4px;
+}
+.edit-note {
+    font-size: 13px; color: #666; border: 1px solid transparent; background: transparent; padding: 2px 4px; width: 100%; box-sizing: border-box; border-radius: 4px;
+}
+.edit-title:focus, .edit-note:focus {
+    outline: none; border-color: #ccc; background: #fdfdfd;
+}
+
+.edit-time {
+    border: 1px solid transparent;
+    background: transparent;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 4px;
+    font-family: inherit;
+    text-align: center;
+    width: 125px; /* 넓게 조정하여 오전/오후 텍스트 및 시계 아이콘이 잘리지 않게 함 */
+    color: #000;
+}
+.edit-time:focus {
+    outline: none;
+    border-color: #ccc;
+    background: #fdfdfd;
+}
+.duration-text {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+
+.task-mini-actions {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+}
+.btn-icon {
+    background: #f1f3f5;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    flex: none;
+}
+.btn-icon:active {
+    background: #e2e6ea;
+}
+
+.task-times-inline {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #555;
+    align-items: center;
+}
+.task-times-inline div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.task-times-inline b {
+    font-size: 15px;
+    color: #000;
+    margin-top: 2px;
+}
+
+.task-main-actions {
+    display: flex;
+    gap: 8px;
+}
+.btn-start {
+    background-color: #28a745;
+    padding: 8px 16px;
+    flex: none;
+}
+.btn-start:active {
+    background-color: #1e7e34;
+}
+.btn-end {
+    background-color: #ffc107;
+    color: #333;
+    padding: 8px 16px;
+    flex: none;
+}
+.btn-end:active {
+    background-color: #d39e00;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none; 
+    position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center; justify-content: center;
+}
+.modal-content {
+    background: white; padding: 20px; border-radius: 12px; width: 90%; max-width: 350px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.modal-content h3 {
+    margin-top: 0; color: #333;
+}
+.date-checkbox-label {
+    display: block; margin: 10px 0; font-size: 16px; padding: 5px; background: #f8f9fa; border-radius: 6px;
+}
+.custom-date-add {
+    display: flex; gap: 5px; margin-top: 15px; margin-bottom: 20px;
+}
+.custom-date-add input {
+    flex: 1; padding: 8px;
+}
+.custom-date-add button {
+    flex: none; padding: 8px 12px; font-size: 14px; margin: 0;
+}
+.modal-actions {
+    display: flex; gap: 10px; margin-top: 10px;
+}
+.modal-actions button {
+    margin: 0;
+}

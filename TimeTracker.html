@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>시간 기록 앱</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="TimeTracker_style.css">
 </head>
 <body>
     <div class="container">
@@ -21,7 +21,7 @@
             <textarea id="excel-input" rows="4" placeholder="엑셀에서 복사한 데이터를 여기에 붙여넣으세요. (빈 줄도 포함하여 복사해야 나중에 엑셀에 붙여넣을 때 줄이 맞습니다)"></textarea>
             <div class="button-group">
                 <button id="import-btn">목록 가져오기</button>
-                <button id="load-json-btn" class="secondary">data.json 불러오기</button>
+                <button id="load-json-btn" class="secondary">TimeTracker_data.json 불러오기</button>
             </div>
         </section>
 
@@ -46,7 +46,7 @@
                 <input type="checkbox" id="exclude-duration-cb"> 엑셀에 붙여넣을 때 '소요시간' 값 제외 (엑셀 자동계산 수식 유지용)
             </label>
             <button id="export-btn">결과 복사하기 (엑셀용)</button>
-            <button id="download-json-btn" class="secondary" style="width: 100%; margin-bottom: 10px; padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; color: white;">PC에 저장된 전체 일정 다운로드 (data.json)</button>
+            <button id="download-json-btn" class="secondary" style="width: 100%; margin-bottom: 10px; padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; color: white;">PC에 저장된 전체 일정 다운로드 (TimeTracker_data.json)</button>
             <button id="reset-btn" class="danger">현재 날짜 데이터 초기화</button>
         </section>
     </div>
@@ -69,6 +69,6 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="TimeTracker_app.js"></script>
 </body>
 </html>
