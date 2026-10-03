@@ -23,18 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 초기 데이터 로드
     loadTasks();
     
-    // 로컬 스토리지에 데이터가 비어있다면 자동으로 TimeTracker_data.json 연동 시도
-    if (currentTasks.length === 0) {
-        autoLoadFromJson();
-    }
+    // 항상 백그라운드에서 GitHub의 TimeTracker_data.json을 확인하여 연동(스마트 동기화)
+    autoSyncFromJson();
 
     datePicker.addEventListener('change', (e) => {
         selectedDate = e.target.value;
         loadTasks();
-        // 날짜를 바꿨는데 해당 날짜의 데이터가 없으면 자동 연동 시도
-        if (currentTasks.length === 0) {
-            autoLoadFromJson();
-        }
+        // 날짜 변경 시에도 항상 스마트 동기화
+        autoSyncFromJson();
     });
 
     document.getElementById('import-btn').addEventListener('click', importFromExcel);
@@ -234,8 +230,8 @@ async function autoSaveToServer() {
     }
 }
 
-// 자동 연동 로직 (앱 시작 시 또는 새 날짜 선택 시)
-async function autoLoadFromJson() {
+// 스마트 연동 로직 (앱 시작 시 또는 새 날짜 선택 시)
+async function autoSyncFromJson() {
     try {
         // GitHub Pages의 강력한 캐시 방지를 위해 타임스탬프 추가
         const res = await fetch('TimeTracker_data.json?t=' + new Date().getTime());
@@ -244,28 +240,38 @@ async function autoLoadFromJson() {
         
         let loadedTasks = [];
         if (!Array.isArray(data)) {
-            // TimeTracker_data.json이 객체 형태인 경우 (특정 날짜 지정) {"2026-09-21": [...], "2026-09-22": [...]}
+            // TimeTracker_data.json이 객체 형태인 경우 (특정 날짜 지정)
             if (data[selectedDate]) {
                 loadedTasks = data[selectedDate];
             } else {
                 return;
             }
         } else {
-            // 기존처럼 배열 형태일 경우 (모든 빈 날짜의 템플릿으로 사용)
             loadedTasks = data;
         }
 
-        currentTasks = loadedTasks;
-        
-        currentTasks.forEach((t, i) => {
-            if (!t.rowNumber) t.rowNumber = i + 1;
-            t.selected = false;
-        });
+        const loadedTasksStr = JSON.stringify(loadedTasks);
+        const lastHash = localStorage.getItem(`syncHash_${selectedDate}`);
 
-        saveTasks();
-        renderTasks();
+        // GitHub에 올라가 있는 JSON 내용이 이전에 동기화했던 내용과 '다를 때만' 덮어씁니다.
+        // 즉, PC에서 새롭게 일정을 짜서 Github에 올렸을 때만 모바일이 알아서 업데이트하고,
+        // 모바일에서 진행 중인 시간 기록은 새로고침해도 날아가지 않게 보호합니다.
+        if (loadedTasksStr !== lastHash) {
+            localStorage.setItem(`syncHash_${selectedDate}`, loadedTasksStr);
+            
+            currentTasks = loadedTasks;
+            
+            currentTasks.forEach((t, i) => {
+                if (!t.rowNumber) t.rowNumber = i + 1;
+                if (t.selected === undefined) t.selected = false;
+            });
+
+            saveTasks();
+            renderTasks();
+            console.log(`[AutoSync] ${selectedDate} 데이터가 완벽하게 동기화되었습니다.`);
+        }
     } catch (e) {
-        console.error('Auto-load JSON failed:', e);
+        console.error('Auto-sync JSON failed:', e);
     }
 }
 
