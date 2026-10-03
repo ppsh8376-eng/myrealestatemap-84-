@@ -37,6 +37,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('load-json-btn').addEventListener('click', loadFromJson);
     document.getElementById('export-btn').addEventListener('click', exportToExcel);
     
+    const mobileSyncBtn = document.getElementById('mobile-sync-btn');
+    if (mobileSyncBtn) {
+        mobileSyncBtn.addEventListener('click', () => {
+            if (currentTasks.length === 0) {
+                alert('복사할 데이터가 없습니다.');
+                return;
+            }
+            const jsonText = JSON.stringify(currentTasks);
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(jsonText).then(() => {
+                    alert('📱 모바일 데이터가 클립보드에 복사되었습니다!\nPC의 "엑셀 데이터 붙여넣기" 칸에 그대로 붙여넣고 "목록 가져오기"를 누르세요.');
+                }).catch(err => {
+                    fallbackCopyTextToClipboard(jsonText);
+                });
+            } else {
+                fallbackCopyTextToClipboard(jsonText);
+            }
+        });
+    }
+
     document.getElementById('download-json-btn').addEventListener('click', () => {
         const allData = {};
         for (let i = 0; i < localStorage.length; i++) {
@@ -337,10 +357,27 @@ window.updateTime = function(index, field, value) {
 };
 
 function importFromExcel() {
-    const text = document.getElementById('excel-input').value;
+    const text = document.getElementById('excel-input').value.trim();
     if (!text) {
         alert('엑셀 데이터를 입력칸에 붙여넣어주세요.');
         return;
+    }
+
+    // 모바일 동기화 코드(JSON) 확인
+    if (text.startsWith('[') && text.endsWith(']')) {
+        try {
+            const parsed = JSON.parse(text);
+            if (Array.isArray(parsed)) {
+                currentTasks = parsed;
+                saveTasks();
+                renderTasks();
+                alert('모바일 데이터가 성공적으로 덮어씌워졌습니다!');
+                document.getElementById('excel-input').value = '';
+                return;
+            }
+        } catch(e) {
+            console.error("JSON 파싱 실패", e);
+        }
     }
 
     const lines = text.split('\n');
@@ -580,12 +617,17 @@ function exportToExcel() {
     const excludeDuration = cb && cb.checked;
 
     const maxRow = Math.max(...currentTasks.map(t => t.rowNumber));
-    let textLines = new Array(maxRow).fill('\t\t\t\t\t'); 
+    // 제외 체크 시 탭 3개(4열), 미체크 시 탭 5개(6열)
+    let textLines = new Array(maxRow).fill(excludeDuration ? '\t\t\t' : '\t\t\t\t\t'); 
 
     currentTasks.forEach(task => {
         const completedMark = task.completed ? '0' : ''; 
-        const dur = excludeDuration ? '' : (task.duration || '');
-        textLines[task.rowNumber - 1] = `${task.content}\t${task.note}\t${task.startTime}\t${task.endTime}\t${dur}\t${completedMark}`;
+        if (excludeDuration) {
+            // 소요시간, 완료 열 탭을 아예 제거하여 엑셀 수식이 덮어씌워지지 않게 함
+            textLines[task.rowNumber - 1] = `${task.content}\t${task.note}\t${task.startTime}\t${task.endTime}`;
+        } else {
+            textLines[task.rowNumber - 1] = `${task.content}\t${task.note}\t${task.startTime}\t${task.endTime}\t${task.duration || ''}\t${completedMark}`;
+        }
     });
 
     const text = textLines.join('\n');
