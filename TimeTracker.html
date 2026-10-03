@@ -16,6 +16,11 @@
             </div>
         </header>
         
+        <section id="mobile-sync-section" style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button id="mobile-sync-copy-btn" style="flex: 1; background-color: #10b981; color: white; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">📱 모바일 전체 복사</button>
+            <button id="mobile-sync-paste-btn" style="flex: 1; background-color: #f59e0b; color: white; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">💻 PC 전체 붙여넣기</button>
+        </section>
+
         <section id="import-section">
             <label for="excel-input" class="section-label">엑셀 데이터 붙여넣기</label>
             <textarea id="excel-input" rows="4" placeholder="엑셀에서 복사한 데이터를 여기에 붙여넣으세요. (빈 줄도 포함하여 복사해야 나중에 엑셀에 붙여넣을 때 줄이 맞습니다)"></textarea>
@@ -45,10 +50,7 @@
             <label style="display:block; margin-bottom:12px; font-size:14px; cursor:pointer;">
                 <input type="checkbox" id="exclude-duration-cb"> 엑셀에 붙여넣을 때 '소요시간' 및 '완' 열 제거 (수식 유지용)
             </label>
-            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                <button id="export-btn" style="flex: 1;">결과 복사하기 (엑셀용)</button>
-                <button id="mobile-sync-btn" style="flex: 1; background-color: #10b981; color: white;">📱 모바일 내용 복사</button>
-            </div>
+            <button id="export-btn">결과 복사하기 (엑셀용)</button>
             <button id="download-json-btn" class="secondary" style="width: 100%; margin-bottom: 10px; padding: 12px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; color: white;">PC에 저장된 전체 일정 다운로드 (TimeTracker_data.json)</button>
             <button id="reset-btn" class="danger">현재 날짜 데이터 초기화</button>
         </section>

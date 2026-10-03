@@ -37,22 +37,73 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('load-json-btn').addEventListener('click', loadFromJson);
     document.getElementById('export-btn').addEventListener('click', exportToExcel);
     
-    const mobileSyncBtn = document.getElementById('mobile-sync-btn');
-    if (mobileSyncBtn) {
-        mobileSyncBtn.addEventListener('click', () => {
-            if (currentTasks.length === 0) {
+    const mobileSyncCopyBtn = document.getElementById('mobile-sync-copy-btn');
+    if (mobileSyncCopyBtn) {
+        mobileSyncCopyBtn.addEventListener('click', () => {
+            const allData = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('timeTrackerTasks_')) {
+                    const dateStr = key.replace('timeTrackerTasks_', '');
+                    try {
+                        const tasks = JSON.parse(localStorage.getItem(key));
+                        if (tasks && tasks.length > 0) {
+                            allData[dateStr] = tasks;
+                        }
+                    } catch(e) {}
+                }
+            }
+            
+            if (Object.keys(allData).length === 0) {
                 alert('복사할 데이터가 없습니다.');
                 return;
             }
-            const jsonText = JSON.stringify(currentTasks);
+
+            const jsonText = JSON.stringify(allData);
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(jsonText).then(() => {
-                    alert('📱 모바일 데이터가 클립보드에 복사되었습니다!\nPC의 "엑셀 데이터 붙여넣기" 칸에 그대로 붙여넣고 "목록 가져오기"를 누르세요.');
+                    alert('📱 모든 날짜의 모바일 데이터가 클립보드에 복사되었습니다!\nPC에서 "💻 PC 전체 붙여넣기" 버튼을 누르세요.');
                 }).catch(err => {
                     fallbackCopyTextToClipboard(jsonText);
                 });
             } else {
                 fallbackCopyTextToClipboard(jsonText);
+            }
+        });
+    }
+
+    const mobileSyncPasteBtn = document.getElementById('mobile-sync-paste-btn');
+    if (mobileSyncPasteBtn) {
+        mobileSyncPasteBtn.addEventListener('click', () => {
+            const text = prompt('모바일에서 복사한 전체 연동 코드(텍스트)를 여기에 붙여넣어주세요:');
+            if (!text || text.trim() === '') return;
+
+            try {
+                const parsed = JSON.parse(text.trim());
+                if (typeof parsed === 'object' && !Array.isArray(parsed)) {
+                    let count = 0;
+                    for (const [dateStr, tasks] of Object.entries(parsed)) {
+                        if (Array.isArray(tasks)) {
+                            localStorage.setItem(`timeTrackerTasks_${dateStr}`, JSON.stringify(tasks));
+                            count++;
+                        }
+                    }
+                    if (count > 0) {
+                        loadTasks();
+                        renderTasks();
+                        if (typeof autoSaveToServer === 'function') {
+                            autoSaveToServer(); // PC 로컬 서버로 즉시 저장
+                        }
+                        alert(`총 ${count}일치의 모바일 데이터가 성공적으로 PC에 덮어씌워졌습니다!`);
+                    } else {
+                        alert('유효한 데이터가 없습니다.');
+                    }
+                } else {
+                    alert('데이터 형식이 올바르지 않습니다.');
+                }
+            } catch(e) {
+                console.error("JSON 파싱 실패", e);
+                alert('데이터를 파싱할 수 없습니다. 올바른 전체 복사 코드를 붙여넣었는지 확인해주세요.');
             }
         });
     }
