@@ -108,6 +108,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const localSaveBtn = document.getElementById('local-save-btn');
+    if (localSaveBtn) {
+        localSaveBtn.addEventListener('click', async () => {
+            const allData = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('timeTrackerTasks_')) {
+                    const dateStr = key.replace('timeTrackerTasks_', '');
+                    try {
+                        const tasks = JSON.parse(localStorage.getItem(key));
+                        if (tasks && tasks.length > 0) {
+                            allData[dateStr] = tasks;
+                        }
+                    } catch(e) {}
+                }
+            }
+
+            if (Object.keys(allData).length === 0) {
+                alert('저장할 데이터가 없습니다.');
+                return;
+            }
+
+            try {
+                const res = await fetch('http://localhost:8000/save', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(allData, null, 4)
+                });
+                
+                if (res.ok) {
+                    alert('TimeTracker_data.json 파일에 성공적으로 덮어쓰기 저장되었습니다!');
+                } else {
+                    alert('저장에 실패했습니다. 자동저장 서버(시작_자동저장.bat)가 실행 중인지 확인해주세요.');
+                }
+            } catch(e) {
+                alert('서버에 연결할 수 없습니다. 백그라운드에 "시작_자동저장.bat" 창이 켜져 있는지 확인해주세요.');
+            }
+        });
+    }
+
     document.getElementById('download-json-btn').addEventListener('click', () => {
         const allData = {};
         for (let i = 0; i < localStorage.length; i++) {
