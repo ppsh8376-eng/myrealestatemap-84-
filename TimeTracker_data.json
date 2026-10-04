@@ -1468,10 +1468,10 @@
             "rowNumber": 18,
             "content": "재테크 도서",
             "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "startTime": "23:47",
+            "endTime": "23:47",
+            "duration": "00:00",
+            "completed": true,
             "selected": false
         },
         {
