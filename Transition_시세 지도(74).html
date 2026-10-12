@@ -39,17 +39,33 @@
         .process-step { font-size: 9.5px; font-weight: bold; color: #333; text-align: center; background: #fff; border: 1.5px solid #ccc; border-radius: 4px; padding: 3px 2px; width: 100%; box-sizing: border-box; letter-spacing: -0.5px; word-break: keep-all; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
         .process-arrow { font-size: 10px; color: #777; margin: 1px 0; line-height: 1; }
 
-        /* 📅 임장 캘린더 UI */
-        .calendar-panel { position: absolute; bottom: 65px; right: 20px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none; }
-        .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .cal-btn { background: none; border: none; cursor: pointer; font-size: 14px; color: #555; padding: 0 5px; }
-        .cal-btn:hover { color: #000; }
-        .cal-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-        .cal-table th { font-size: 11px; padding: 4px; border-bottom: 1.5px solid #ccc; text-align: center; color: #333; }
-        .cal-table td { border: 1px solid #ddd; height: 45px; vertical-align: top; padding: 3px; background: #fff; }
-        .cal-table td.empty { background: #f9f9f9; }
-        .cal-date { font-size: 10px; font-weight: bold; color: #777; margin-bottom: 2px; }
-        .cal-content { font-size: 10px; min-height: 25px; outline: none; color: #111; word-break: break-all; font-weight: bold; cursor: text; }
+        /* 📅 임장 캘린더 UI (Notion 스타일 연속 스크롤) */
+        .calendar-panel { position: absolute; top: 100%; right: 0; margin-top: 8px; z-index: 2000; background: rgba(255,255,255,0.98); border-radius: 10px; border: 2px solid #333; width: 330px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); pointer-events: auto; display: none; flex-direction: column; overflow: hidden; box-sizing: border-box; }
+        .cal-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #f8f9fa; border-bottom: 1.5px solid #e0e0e0; box-sizing: border-box; }
+        .cal-nav-btn { background: #fff; border: 1.5px solid #ccc; border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.15s; }
+        .cal-nav-btn:hover { background: #e9ecef; color: #000; }
+        .cal-today-btn { background: #E3F2FD; border: 1.5px solid #90CAF9; border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer; font-weight: bold; color: #1565C0; transition: all 0.15s; }
+        .cal-today-btn:hover { background: #BBDEFB; }
+        .cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); background: #fafafa; border-bottom: 1px solid #ddd; padding: 5px 0; text-align: center; box-sizing: border-box; }
+        .cal-weekday { font-size: 10.5px; font-weight: bold; color: #555; }
+        .cal-weekday.sun { color: #E53935; }
+        .cal-weekday.sat { color: #1E88E5; }
+        .cal-scroll-container { height: 420px; max-height: 55vh; overflow-y: auto; scroll-behavior: smooth; padding: 6px; background: #fff; box-sizing: border-box; }
+        .cal-scroll-container::-webkit-scrollbar { width: 6px; }
+        .cal-scroll-container::-webkit-scrollbar-thumb { background: #bbb; border-radius: 3px; }
+        .cal-scroll-container::-webkit-scrollbar-thumb:hover { background: #888; }
+        .cal-month-section { margin-bottom: 14px; }
+        .cal-month-divider { font-size: 11.5px; font-weight: 900; color: #1565C0; padding: 4px 8px; margin-bottom: 4px; background: #F0F7FF; border-radius: 4px; border-left: 3px solid #1E88E5; display: flex; align-items: center; letter-spacing: -0.3px; }
+        .cal-month-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+        .cal-cell { border: 1px solid #e0e0e0; border-radius: 3px; min-height: 48px; padding: 2px 3px; background: #fff; display: flex; flex-direction: column; box-sizing: border-box; }
+        .cal-cell:hover { background: #fbfcfe; border-color: #90CAF9; }
+        .cal-cell.empty { border: 1px dashed #f0f0f0; background: #fafafa; min-height: 48px; }
+        .cal-cell.today { border: 1.5px solid #1E88E5; background: #F0F7FF; }
+        .cal-date-label { font-size: 9.5px; font-weight: bold; color: #666; margin-bottom: 1px; line-height: 1.1; }
+        .cal-cell.sun .cal-date-label { color: #E53935; }
+        .cal-cell.sat .cal-date-label { color: #1E88E5; }
+        .cal-cell.today .cal-date-label { color: #1565C0; font-weight: 900; }
+        .cal-content { font-size: 9.5px; font-weight: bold; color: #111; line-height: 1.25; word-break: break-all; outline: none; cursor: text; flex: 1; min-height: 22px; }
         .cal-content:focus { background: #e8f0fe; border-radius: 2px; }
 
         /* 📍 마커 공통 */
@@ -84,7 +100,8 @@
             #bottom-right-container { bottom: 5px !important; right: 5px !important; }
             #memo-panel { width: 90%; bottom: 5px; padding: 10px; }
             #backup-panel { width: 90%; padding: 15px; }
-            .process-panel, .calendar-panel, #memo-list-panel, #user-memo-panel { width: 250px !important; right: 0 !important; top: 100% !important; margin-top: 8px !important; }
+            .process-panel, #memo-list-panel, #user-memo-panel { width: 250px !important; right: 0 !important; top: 100% !important; margin-top: 8px !important; }
+            .calendar-panel { width: 330px !important; max-width: 92vw !important; right: 0 !important; top: 100% !important; margin-top: 8px !important; }
         }
     </style>
 </head>
@@ -182,11 +199,23 @@
 
             <div class="calendar-panel" id="calendar-panel" style="position: absolute; top: 100%; right: 0; margin-top: 8px;">
                 <div class="cal-header">
-                    <button class="cal-btn" onclick="changeMonth(-1)">◀</button>
-                    <span id="cal-month-year" style="font-weight:bold; font-size:13px; color:#333;"></span>
-                    <button class="cal-btn" onclick="changeMonth(1)">▶</button>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <button class="cal-nav-btn" onclick="navMonth(-1)" title="이전 달">◀</button>
+                        <button class="cal-nav-btn" onclick="navMonth(1)" title="다음 달">▶</button>
+                        <button class="cal-today-btn" onclick="scrollToCurrentMonth()" title="이번 달로 이동">오늘</button>
+                    </div>
+                    <span id="cal-month-year" style="font-weight: 900; font-size: 13.5px; color: #111; letter-spacing: -0.3px;"></span>
                 </div>
-                <div id="cal-grid"></div>
+                <div class="cal-weekdays">
+                    <div class="cal-weekday sun">일</div>
+                    <div class="cal-weekday">월</div>
+                    <div class="cal-weekday">화</div>
+                    <div class="cal-weekday">수</div>
+                    <div class="cal-weekday">목</div>
+                    <div class="cal-weekday">금</div>
+                    <div class="cal-weekday sat">토</div>
+                </div>
+                <div id="cal-scroll-body" class="cal-scroll-container" onscroll="handleCalendarScroll()"></div>
             </div>
 
             <div id="memo-list-panel" style="position: absolute; top: 100%; right: 0; margin-top: 8px; z-index: 2000; background: rgba(255,255,255,0.95); padding: 12px; border-radius: 8px; border: 2px solid #555; width: 300px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: auto; display: none;">
@@ -333,55 +362,166 @@
         }
 
         var showCalendar = false;
-        var currentDate = new Date(); 
+        var calCurrentYear = 2026;
+        var calCurrentMonth = 10;
+        var calInitialized = false;
+
         function toggleCalendar() {
             showCalendar = !showCalendar;
             document.getElementById('btn-calendar').className = showCalendar ? "nav-btn btn-on" : "nav-btn btn-off";
-            document.getElementById('calendar-panel').style.display = showCalendar ? "block" : "none";
+            var panel = document.getElementById('calendar-panel');
+            panel.style.display = showCalendar ? "flex" : "none";
             
-            if(showCalendar) {
+            if (showCalendar) {
                 if (showMemoListPanel) toggleMemoList();
                 if (showUserMemoListPanel) toggleUserMemoList();
-                renderCalendar();
+                if (!calInitialized) {
+                    initContinuousCalendar();
+                    calInitialized = true;
+                }
+                setTimeout(function() {
+                    scrollToMonth(calCurrentYear, calCurrentMonth, false);
+                }, 40);
             }
         }
 
-        function renderCalendar() {
-            var year = currentDate.getFullYear();
-            var month = currentDate.getMonth();
-            document.getElementById('cal-month-year').innerText = year + "년 " + (month + 1) + "월";
-            
-            var firstDay = new Date(year, month, 1).getDay();
-            var daysInMonth = new Date(year, month + 1, 0).getDate();
-            
-            var html = '<table class="cal-table"><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr><tr>';
-            var dayCount = 1;
-            
-            for (var i = 0; i < 42; i++) {
-                if (i % 7 === 0 && i !== 0) html += '</tr><tr>';
-                if (i < firstDay || dayCount > daysInMonth) {
-                    html += '<td class="empty"></td>';
-                } else {
-                    var dateKey = 'imjang_cal_' + year + '_' + (month+1) + '_' + dayCount;
-                    var savedText = localStorage.getItem(dateKey) || '';
-                    html += `<td>
-                        <div class="cal-date">${dayCount}</div>
-                        <div class="cal-content" contenteditable="true" onblur="saveCalData('${dateKey}', this.innerText)">${savedText}</div>
-                    </td>`;
-                    dayCount++;
+        function initContinuousCalendar() {
+            var container = document.getElementById('cal-scroll-body');
+            var today = new Date();
+            var todayY = today.getFullYear();
+            var todayM = today.getMonth() + 1;
+            var todayD = today.getDate();
+
+            var startYear = Math.min(todayY - 1, 2025);
+            var endYear = Math.max(todayY + 2, 2028);
+
+            var html = '';
+            for (var y = startYear; y <= endYear; y++) {
+                for (var m = 1; m <= 12; m++) {
+                    html += buildMonthHtml(y, m, todayY, todayM, todayD);
                 }
             }
-            html += '</tr></table>';
-            document.getElementById('cal-grid').innerHTML = html;
+            container.innerHTML = html;
         }
 
-        function changeMonth(dir) {
-            currentDate.setMonth(currentDate.getMonth() + dir);
-            renderCalendar();
+        function buildMonthHtml(year, month, todayY, todayM, todayD) {
+            var firstDay = new Date(year, month - 1, 1).getDay();
+            var daysInMonth = new Date(year, month, 0).getDate();
+
+            var out = `<div class="cal-month-section" id="cal-month-${year}-${month}" data-year="${year}" data-month="${month}">
+                <div class="cal-month-divider">📅 ${year}년 ${month}월</div>
+                <div class="cal-month-grid">`;
+
+            for (var i = 0; i < firstDay; i++) {
+                out += '<div class="cal-cell empty"></div>';
+            }
+
+            for (var d = 1; d <= daysInMonth; d++) {
+                var dateKey = 'imjang_cal_' + year + '_' + month + '_' + d;
+                var savedText = localStorage.getItem(dateKey) || '';
+                
+                var dayOfWeek = (firstDay + d - 1) % 7;
+                var dayClass = '';
+                if (dayOfWeek === 0) dayClass = ' sun';
+                else if (dayOfWeek === 6) dayClass = ' sat';
+                
+                var isToday = (year === todayY && month === todayM && d === todayD) ? ' today' : '';
+
+                out += `<div class="cal-cell${dayClass}${isToday}">
+                    <div class="cal-date-label">${d}</div>
+                    <div class="cal-content" contenteditable="true" onblur="saveCalData('${dateKey}', this.innerText)">${savedText}</div>
+                </div>`;
+            }
+
+            var totalCells = firstDay + daysInMonth;
+            var remainder = totalCells % 7;
+            if (remainder !== 0) {
+                for (var r = 0; r < (7 - remainder); r++) {
+                    out += '<div class="cal-cell empty"></div>';
+                }
+            }
+
+            out += '</div></div>';
+            return out;
         }
 
         function saveCalData(key, text) {
-            localStorage.setItem(key, text);
+            if (text.trim() === '') {
+                localStorage.removeItem(key);
+            } else {
+                localStorage.setItem(key, text);
+            }
+        }
+
+        function scrollToMonth(year, month, smooth) {
+            var container = document.getElementById('cal-scroll-body');
+            var target = document.getElementById('cal-month-' + year + '-' + month);
+            if (container && target) {
+                var targetTop = Math.max(0, target.offsetTop - 4);
+                if (smooth) {
+                    container.scrollTo({ top: targetTop, behavior: 'smooth' });
+                } else {
+                    container.scrollTop = targetTop;
+                }
+                updateHeaderTitle(year, month);
+                calCurrentYear = year;
+                calCurrentMonth = month;
+            }
+        }
+
+        function updateHeaderTitle(year, month) {
+            var titleElem = document.getElementById('cal-month-year');
+            if (titleElem) {
+                titleElem.innerText = year + "년 " + month + "월";
+            }
+        }
+
+        function navMonth(dir) {
+            var nextM = calCurrentMonth + dir;
+            var nextY = calCurrentYear;
+            if (nextM > 12) {
+                nextM = 1;
+                nextY++;
+            } else if (nextM < 1) {
+                nextM = 12;
+                nextY--;
+            }
+            scrollToMonth(nextY, nextM, true);
+        }
+
+        function changeMonth(dir) {
+            navMonth(dir);
+        }
+
+        function scrollToCurrentMonth() {
+            var now = new Date();
+            scrollToMonth(now.getFullYear(), now.getMonth() + 1, true);
+        }
+
+        var scrollDebounce = null;
+        function handleCalendarScroll() {
+            if (scrollDebounce) return;
+            scrollDebounce = setTimeout(function() {
+                scrollDebounce = null;
+                var container = document.getElementById('cal-scroll-body');
+                if (!container) return;
+                var sections = container.querySelectorAll('.cal-month-section');
+                var scrollTop = container.scrollTop;
+
+                for (var i = 0; i < sections.length; i++) {
+                    var sec = sections[i];
+                    if ((sec.offsetTop + sec.offsetHeight) > scrollTop + 60) {
+                        var y = parseInt(sec.getAttribute('data-year'));
+                        var m = parseInt(sec.getAttribute('data-month'));
+                        if (y && m && (y !== calCurrentYear || m !== calCurrentMonth)) {
+                            calCurrentYear = y;
+                            calCurrentMonth = m;
+                            updateHeaderTitle(y, m);
+                        }
+                        break;
+                    }
+                }
+            }, 40);
         }
 
         // 📝 다중 단지 선택 및 메모 기능
@@ -411,7 +551,7 @@
                 regenHtml = `<div class="regen-badge" style="background-color: ${badgeBg};">${pos.regen_type}${stageText}</div>`;
             }
 
-            var memoIconHtml = aptsWithMemo.has(pos.uid) ? `<div style="position: absolute; top: -10px; right: -10px; background: #FFF; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 13px; box-shadow: 0 3px 6px rgba(0,0,0,0.4); border: 2px solid #555; z-index: 250;" title="메모가 저장된 단지">📝</div>` : '';
+            var memoIconHtml = aptsWithMemo.has(pos.uid) ? `<div style="position: absolute; top: -20px; right: -7px; background: #FFF; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 10.5px; box-shadow: 0 2px 4px rgba(0,0,0,0.35); border: 1.5px solid #555; z-index: 260;" title="메모가 저장된 단지">📝</div>` : '';
 
             var selectedClass = isSelected ? ' selected-apt' : '';
             
