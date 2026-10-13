@@ -367,7 +367,7 @@ async function autoSyncFromJson() {
         // GitHub에 올라가 있는 JSON 내용이 이전에 동기화했던 내용과 '다를 때만' 덮어씁니다.
         // 즉, PC에서 새롭게 일정을 짜서 Github에 올렸을 때만 모바일이 알아서 업데이트하고,
         // 모바일에서 진행 중인 시간 기록은 새로고침해도 날아가지 않게 보호합니다.
-        if (loadedTasksStr !== lastHash) {
+        if (loadedTasksStr !== lastHash || currentTasks.length === 0) {
             localStorage.setItem(`syncHash_${selectedDate}`, loadedTasksStr);
             
             currentTasks = loadedTasks;
@@ -412,6 +412,7 @@ async function loadFromJson() {
             t.selected = false;
         });
 
+        localStorage.setItem(`syncHash_${selectedDate}`, JSON.stringify(loadedTasks));
         saveTasks();
         renderTasks();
         alert(`TimeTracker_data.json에서 ${selectedDate} 목록을 성공적으로 불러왔습니다!`);
@@ -525,8 +526,18 @@ function renderTasks() {
     currentTasks.forEach((task, index) => {
         if (task.content === '내용' && task.note === '비고') return; 
 
+        const isCompleted = task.completed || (task.startTime && task.endTime);
+        const isInProgress = !isCompleted && Boolean(task.startTime) && !task.endTime;
+        
+        let statusClass = '';
+        if (isCompleted) {
+            statusClass = 'completed';
+        } else if (isInProgress) {
+            statusClass = 'in-progress';
+        }
+
         const li = document.createElement('li');
-        li.className = `task-item ${task.completed ? 'completed' : ''}`;
+        li.className = `task-item ${statusClass}`;
         
         li.innerHTML = `
             <div class="item-row">
@@ -550,7 +561,7 @@ function renderTasks() {
                 <div class="task-times-inline">
                     <div style="align-items: flex-start;">시작 <input type="time" class="edit-time" value="${task.startTime}" onchange="updateTime(${index}, 'startTime', this.value)" title="시작 시간 직접 수정"></div>
                     <div style="align-items: flex-start;">끝 <input type="time" class="edit-time" value="${task.endTime}" onchange="updateTime(${index}, 'endTime', this.value)" title="마침 시간 직접 수정"></div>
-                    <div>소요 <span class="duration-text">${task.duration || '-'}</span></div>
+                    <div>소요 <span class="duration-text">${task.duration || (isInProgress ? '진행중' : '-')}</span></div>
                 </div>
                 <div class="task-main-actions">
                     <button class="btn-start" onclick="recordTime(${index}, 'start')">시작</button>

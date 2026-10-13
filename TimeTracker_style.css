@@ -154,6 +154,14 @@ button.danger:active {
     background: #e8f5e9;
     border-left-color: #28a745;
 }
+.task-item.in-progress {
+    background: #ffebee;
+    border-left-color: #dc3545;
+}
+.task-item.in-progress .duration-text {
+    color: #dc3545;
+    font-weight: bold;
+}
 
 .item-row {
     display: flex;
