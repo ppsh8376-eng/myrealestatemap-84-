@@ -1,0 +1,3438 @@
+{
+    "totals": {
+        "fretboard_time": 33825,
+        "diatonic_time": 0,
+        "string_counts": {
+            "1": 0,
+            "2": 1570,
+            "3": 1593,
+            "4": 1652,
+            "5": 1601,
+            "6": 1624
+        },
+        "diatonic_count": 0
+    },
+    "theme": "light",
+    "2026-08-15": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 189,
+            "quiz_type": "fretboard",
+            "start_time": "23:17",
+            "end_time": "23:20",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 26
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 19,
+            "total": 20,
+            "accuracy": 95,
+            "time_spent": 69,
+            "quiz_type": "fretboard",
+            "start_time": "23:27",
+            "end_time": "23:28",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 20
+            },
+            "fast_answers": 11
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 174,
+            "quiz_type": "fretboard",
+            "start_time": "23:28",
+            "end_time": "23:31",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 34
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 195,
+            "quiz_type": "fretboard",
+            "start_time": "23:32",
+            "end_time": "23:35",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 24
+        },
+        {
+            "mode": "지판: 5, 6번 줄",
+            "score": 44,
+            "total": 50,
+            "accuracy": 88,
+            "time_spent": 207,
+            "quiz_type": "fretboard",
+            "start_time": "23:35",
+            "end_time": "23:39",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 19,
+                "6": 31
+            },
+            "fast_answers": 18
+        },
+        {
+            "mode": "지판: 5, 6번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 207,
+            "quiz_type": "fretboard",
+            "start_time": "23:39",
+            "end_time": "23:42",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 24,
+                "6": 26
+            },
+            "fast_answers": 17
+        },
+        {
+            "mode": "지판: 5, 6번 줄",
+            "score": 44,
+            "total": 50,
+            "accuracy": 88,
+            "time_spent": 175,
+            "quiz_type": "fretboard",
+            "start_time": "23:43",
+            "end_time": "23:46",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 21,
+                "6": 29
+            },
+            "fast_answers": 25
+        },
+        {
+            "mode": "지판: 5, 6번 줄",
+            "score": 45,
+            "total": 50,
+            "accuracy": 90,
+            "time_spent": 192,
+            "quiz_type": "fretboard",
+            "start_time": "23:46",
+            "end_time": "23:50",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 26,
+                "6": 24
+            },
+            "fast_answers": 20
+        }
+    ],
+    "2026-08-16": [
+        {
+            "mode": "지판: 5, 6번 줄",
+            "score": 44,
+            "total": 50,
+            "accuracy": 88,
+            "time_spent": 198,
+            "quiz_type": "fretboard",
+            "start_time": "08:49",
+            "end_time": "08:52",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 23,
+                "6": 27
+            },
+            "fast_answers": 23
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 168,
+            "quiz_type": "fretboard",
+            "start_time": "08:54",
+            "end_time": "08:57",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 36
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 156,
+            "quiz_type": "fretboard",
+            "start_time": "08:57",
+            "end_time": "08:59",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 38
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 192,
+            "quiz_type": "fretboard",
+            "start_time": "08:59",
+            "end_time": "09:03",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 25
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 173,
+            "quiz_type": "fretboard",
+            "start_time": "09:03",
+            "end_time": "09:06",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 37
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 186,
+            "quiz_type": "fretboard",
+            "start_time": "09:06",
+            "end_time": "09:09",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 28
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 19,
+            "total": 20,
+            "accuracy": 95,
+            "time_spent": 112,
+            "quiz_type": "fretboard",
+            "start_time": "09:09",
+            "end_time": "09:11",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 20,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 7
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 46,
+            "total": 50,
+            "accuracy": 92,
+            "time_spent": 232,
+            "quiz_type": "fretboard",
+            "start_time": "09:11",
+            "end_time": "09:15",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 20
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 220,
+            "quiz_type": "fretboard",
+            "start_time": "09:17",
+            "end_time": "09:21",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 21
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 192,
+            "quiz_type": "fretboard",
+            "start_time": "09:27",
+            "end_time": "09:30",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 25
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 207,
+            "quiz_type": "fretboard",
+            "start_time": "09:30",
+            "end_time": "09:34",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 24
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 203,
+            "quiz_type": "fretboard",
+            "start_time": "09:34",
+            "end_time": "09:37",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 30
+        },
+        {
+            "mode": "지판: 4, 5, 6번 줄",
+            "score": 43,
+            "total": 50,
+            "accuracy": 86,
+            "time_spent": 221,
+            "quiz_type": "fretboard",
+            "start_time": "09:37",
+            "end_time": "09:41",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 18,
+                "5": 16,
+                "6": 16
+            },
+            "fast_answers": 19
+        },
+        {
+            "mode": "지판: 4, 5, 6번 줄",
+            "score": 44,
+            "total": 50,
+            "accuracy": 88,
+            "time_spent": 220,
+            "quiz_type": "fretboard",
+            "start_time": "09:42",
+            "end_time": "09:46",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 18,
+                "5": 12,
+                "6": 20
+            },
+            "fast_answers": 22
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 171,
+            "quiz_type": "fretboard",
+            "start_time": "09:48",
+            "end_time": "09:51",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 36
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 43,
+            "total": 50,
+            "accuracy": 86,
+            "time_spent": 205,
+            "quiz_type": "fretboard",
+            "start_time": "09:51",
+            "end_time": "09:55",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 20
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 171,
+            "quiz_type": "fretboard",
+            "start_time": "09:55",
+            "end_time": "09:58",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 28
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 171,
+            "quiz_type": "fretboard",
+            "start_time": "09:58",
+            "end_time": "10:01",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 36
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 161,
+            "quiz_type": "fretboard",
+            "start_time": "10:01",
+            "end_time": "10:03",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 35
+        },
+        {
+            "mode": "지판: 4, 5, 6번 줄",
+            "score": 44,
+            "total": 50,
+            "accuracy": 88,
+            "time_spent": 246,
+            "quiz_type": "fretboard",
+            "start_time": "10:04",
+            "end_time": "10:08",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 12,
+                "5": 24,
+                "6": 14
+            },
+            "fast_answers": 19
+        },
+        {
+            "mode": "지판: 4, 5, 6번 줄",
+            "score": 45,
+            "total": 50,
+            "accuracy": 90,
+            "time_spent": 235,
+            "quiz_type": "fretboard",
+            "start_time": "10:08",
+            "end_time": "10:12",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 17,
+                "5": 14,
+                "6": 19
+            },
+            "fast_answers": 16
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 19,
+            "total": 20,
+            "accuracy": 95,
+            "time_spent": 104,
+            "quiz_type": "fretboard",
+            "start_time": "10:15",
+            "end_time": "10:16",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 20,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 8
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 203,
+            "quiz_type": "fretboard",
+            "start_time": "13:18",
+            "end_time": "13:21",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 23
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 196,
+            "quiz_type": "fretboard",
+            "start_time": "13:23",
+            "end_time": "13:26",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 26
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 175,
+            "quiz_type": "fretboard",
+            "start_time": "13:27",
+            "end_time": "13:30",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 32
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 186,
+            "quiz_type": "fretboard",
+            "start_time": "13:30",
+            "end_time": "13:34",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 33
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 189,
+            "quiz_type": "fretboard",
+            "start_time": "13:34",
+            "end_time": "13:37",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 28
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 45,
+            "total": 50,
+            "accuracy": 90,
+            "time_spent": 203,
+            "quiz_type": "fretboard",
+            "start_time": "13:38",
+            "end_time": "13:42",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 28
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 162,
+            "quiz_type": "fretboard",
+            "start_time": "13:42",
+            "end_time": "13:45",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 38
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 44,
+            "total": 50,
+            "accuracy": 88,
+            "time_spent": 189,
+            "quiz_type": "fretboard",
+            "start_time": "13:45",
+            "end_time": "13:48",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 23
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 170,
+            "quiz_type": "fretboard",
+            "start_time": "13:49",
+            "end_time": "13:52",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 28
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 172,
+            "quiz_type": "fretboard",
+            "start_time": "13:55",
+            "end_time": "13:58",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 35
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 157,
+            "quiz_type": "fretboard",
+            "start_time": "13:59",
+            "end_time": "14:01",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 36
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 179,
+            "quiz_type": "fretboard",
+            "start_time": "14:02",
+            "end_time": "14:05",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 30
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 165,
+            "quiz_type": "fretboard",
+            "start_time": "14:14",
+            "end_time": "14:16",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 36
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 161,
+            "quiz_type": "fretboard",
+            "start_time": "14:18",
+            "end_time": "14:20",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 37
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 195,
+            "quiz_type": "fretboard",
+            "start_time": "14:20",
+            "end_time": "14:24",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 26
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 44,
+            "total": 50,
+            "accuracy": 88,
+            "time_spent": 211,
+            "quiz_type": "fretboard",
+            "start_time": "14:29",
+            "end_time": "14:32",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 34
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 256,
+            "quiz_type": "fretboard",
+            "start_time": "14:37",
+            "end_time": "14:41",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 25,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 45,
+            "total": 50,
+            "accuracy": 90,
+            "time_spent": 245,
+            "quiz_type": "fretboard",
+            "start_time": "14:42",
+            "end_time": "14:46",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 25,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 19,
+            "total": 20,
+            "accuracy": 95,
+            "time_spent": 97,
+            "quiz_type": "fretboard",
+            "start_time": "14:50",
+            "end_time": "14:51",
+            "string_counts": {
+                "1": 0,
+                "2": 20,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 9,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 46,
+            "total": 50,
+            "accuracy": 92,
+            "time_spent": 228,
+            "quiz_type": "fretboard",
+            "start_time": "14:52",
+            "end_time": "14:56",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 29,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 212,
+            "quiz_type": "fretboard",
+            "start_time": "14:56",
+            "end_time": "15:00",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 36,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 236,
+            "quiz_type": "fretboard",
+            "start_time": "15:01",
+            "end_time": "15:05",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 27,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 215,
+            "quiz_type": "fretboard",
+            "start_time": "15:05",
+            "end_time": "15:09",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 36,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 46,
+            "total": 50,
+            "accuracy": 92,
+            "time_spent": 216,
+            "quiz_type": "fretboard",
+            "start_time": "15:09",
+            "end_time": "15:13",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 33,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 209,
+            "quiz_type": "fretboard",
+            "start_time": "15:13",
+            "end_time": "15:16",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 35,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-17": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 198,
+            "quiz_type": "fretboard",
+            "start_time": "10:02",
+            "end_time": "10:05",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 41,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 185,
+            "quiz_type": "fretboard",
+            "start_time": "10:06",
+            "end_time": "10:09",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 42,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 194,
+            "quiz_type": "fretboard",
+            "start_time": "10:13",
+            "end_time": "10:17",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 41,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 192,
+            "quiz_type": "fretboard",
+            "start_time": "10:18",
+            "end_time": "10:21",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 40,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-18": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 45,
+            "total": 50,
+            "accuracy": 90,
+            "time_spent": 214,
+            "quiz_type": "fretboard",
+            "start_time": "20:31",
+            "end_time": "20:35",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 31,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 46,
+            "total": 50,
+            "accuracy": 92,
+            "time_spent": 217,
+            "quiz_type": "fretboard",
+            "start_time": "21:00",
+            "end_time": "21:04",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 34,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-19": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 16,
+            "total": 20,
+            "accuracy": 80,
+            "time_spent": 101,
+            "quiz_type": "fretboard",
+            "start_time": "22:09",
+            "end_time": "22:11",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 20,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 1,
+            "fast_time_limit": 2
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 257,
+            "quiz_type": "fretboard",
+            "start_time": "22:11",
+            "end_time": "22:15",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 23,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 45,
+            "total": 50,
+            "accuracy": 90,
+            "time_spent": 216,
+            "quiz_type": "fretboard",
+            "start_time": "22:16",
+            "end_time": "22:19",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 30,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-20": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 45,
+            "total": 50,
+            "accuracy": 90,
+            "time_spent": 241,
+            "quiz_type": "fretboard",
+            "start_time": "22:55",
+            "end_time": "22:59",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 27,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 42,
+            "total": 50,
+            "accuracy": 84,
+            "time_spent": 230,
+            "quiz_type": "fretboard",
+            "start_time": "22:59",
+            "end_time": "23:03",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 25,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-22": [
+        {
+            "mode": "지판: 5, 6번 줄",
+            "score": 41,
+            "total": 50,
+            "accuracy": 82,
+            "time_spent": 241,
+            "quiz_type": "fretboard",
+            "start_time": "15:10",
+            "end_time": "15:14",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 24,
+                "6": 26
+            },
+            "fast_answers": 21,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5, 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 237,
+            "quiz_type": "fretboard",
+            "start_time": "15:14",
+            "end_time": "15:18",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 28,
+                "6": 22
+            },
+            "fast_answers": 23,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-23": [
+        {
+            "mode": "지판: 3, 4번 줄",
+            "score": 17,
+            "total": 20,
+            "accuracy": 85,
+            "time_spent": 96,
+            "quiz_type": "fretboard",
+            "start_time": "09:20",
+            "end_time": "09:21",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 11,
+                "4": 9,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 4,
+            "fast_time_limit": 2
+        },
+        {
+            "mode": "지판: 3, 4번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 261,
+            "quiz_type": "fretboard",
+            "start_time": "09:21",
+            "end_time": "09:26",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 22,
+                "4": 28,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 20,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3, 4번 줄",
+            "score": 45,
+            "total": 50,
+            "accuracy": 90,
+            "time_spent": 259,
+            "quiz_type": "fretboard",
+            "start_time": "09:27",
+            "end_time": "09:31",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 26,
+                "4": 24,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 22,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-24": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 229,
+            "quiz_type": "fretboard",
+            "start_time": "21:56",
+            "end_time": "22:00",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 28,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 211,
+            "quiz_type": "fretboard",
+            "start_time": "22:00",
+            "end_time": "22:04",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 35,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-26": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 216,
+            "quiz_type": "fretboard",
+            "start_time": "22:28",
+            "end_time": "22:32",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 37,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 176,
+            "quiz_type": "fretboard",
+            "start_time": "22:34",
+            "end_time": "22:37",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 49,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-28": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 19,
+            "total": 20,
+            "accuracy": 95,
+            "time_spent": 97,
+            "quiz_type": "fretboard",
+            "start_time": "23:51",
+            "end_time": "23:53",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 20,
+                "6": 0
+            },
+            "fast_answers": 7,
+            "fast_time_limit": 2
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 200,
+            "quiz_type": "fretboard",
+            "start_time": "23:54",
+            "end_time": "23:57",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 38,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-29": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 44,
+            "total": 50,
+            "accuracy": 88,
+            "time_spent": 243,
+            "quiz_type": "fretboard",
+            "start_time": "19:19",
+            "end_time": "19:23",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 11,
+            "fast_time_limit": 2
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 216,
+            "quiz_type": "fretboard",
+            "start_time": "19:23",
+            "end_time": "19:27",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 13,
+            "fast_time_limit": 2
+        }
+    ],
+    "2026-08-30": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 217,
+            "quiz_type": "fretboard",
+            "start_time": "21:40",
+            "end_time": "21:43",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 29,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 209,
+            "quiz_type": "fretboard",
+            "start_time": "21:46",
+            "end_time": "21:50",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 34,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-08-31": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 223,
+            "quiz_type": "fretboard",
+            "start_time": "21:47",
+            "end_time": "21:51",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 32,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 268,
+            "quiz_type": "fretboard",
+            "start_time": "21:52",
+            "end_time": "21:57",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 27,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-01": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 212,
+            "quiz_type": "fretboard",
+            "start_time": "20:59",
+            "end_time": "21:03",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 34,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 202,
+            "quiz_type": "fretboard",
+            "start_time": "21:03",
+            "end_time": "21:07",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 40,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-02": [
+        {
+            "mode": "지판: 3, 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 285,
+            "quiz_type": "fretboard",
+            "start_time": "22:02",
+            "end_time": "22:06",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 19,
+                "4": 31,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 17,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3, 4번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 297,
+            "quiz_type": "fretboard",
+            "start_time": "22:06",
+            "end_time": "22:11",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 25,
+                "4": 25,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 13,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-03": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 20,
+            "total": 20,
+            "accuracy": 100,
+            "time_spent": 97,
+            "quiz_type": "fretboard",
+            "start_time": "21:20",
+            "end_time": "21:21",
+            "string_counts": {
+                "1": 0,
+                "2": 20,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 4,
+            "fast_time_limit": 2
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 28,
+            "total": 30,
+            "accuracy": 93,
+            "time_spent": 142,
+            "quiz_type": "fretboard",
+            "start_time": "21:22",
+            "end_time": "21:24",
+            "string_counts": {
+                "1": 0,
+                "2": 30,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 19,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 179,
+            "quiz_type": "fretboard",
+            "start_time": "23:05",
+            "end_time": "23:08",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 46,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-04": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 234,
+            "quiz_type": "fretboard",
+            "start_time": "19:07",
+            "end_time": "19:11",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 26,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 243,
+            "quiz_type": "fretboard",
+            "start_time": "19:14",
+            "end_time": "19:18",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 25,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-05": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 183,
+            "quiz_type": "fretboard",
+            "start_time": "16:25",
+            "end_time": "16:28",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 44,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 211,
+            "quiz_type": "fretboard",
+            "start_time": "16:28",
+            "end_time": "16:32",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 37,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-06": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 197,
+            "quiz_type": "fretboard",
+            "start_time": "16:38",
+            "end_time": "16:42",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 38,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 222,
+            "quiz_type": "fretboard",
+            "start_time": "16:44",
+            "end_time": "16:47",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 35,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-07": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 221,
+            "quiz_type": "fretboard",
+            "start_time": "10:08",
+            "end_time": "10:11",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 28,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 196,
+            "quiz_type": "fretboard",
+            "start_time": "10:12",
+            "end_time": "10:15",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 41,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-08": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 219,
+            "quiz_type": "fretboard",
+            "start_time": "22:57",
+            "end_time": "23:01",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 35,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 247,
+            "quiz_type": "fretboard",
+            "start_time": "23:01",
+            "end_time": "23:05",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 32,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-10": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 227,
+            "quiz_type": "fretboard",
+            "start_time": "22:59",
+            "end_time": "23:03",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 30,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 236,
+            "quiz_type": "fretboard",
+            "start_time": "23:03",
+            "end_time": "23:07",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 29,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-11": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 190,
+            "quiz_type": "fretboard",
+            "start_time": "11:26",
+            "end_time": "11:29",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 41,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 211,
+            "quiz_type": "fretboard",
+            "start_time": "11:31",
+            "end_time": "11:34",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 31,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-12": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 230,
+            "quiz_type": "fretboard",
+            "start_time": "14:29",
+            "end_time": "14:33",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 28,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 235,
+            "quiz_type": "fretboard",
+            "start_time": "14:41",
+            "end_time": "14:45",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 26,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-13": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 222,
+            "quiz_type": "fretboard",
+            "start_time": "09:57",
+            "end_time": "10:01",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 32,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 193,
+            "quiz_type": "fretboard",
+            "start_time": "10:02",
+            "end_time": "10:05",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 41,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-15": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 206,
+            "quiz_type": "fretboard",
+            "start_time": "22:35",
+            "end_time": "22:38",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 33,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 274,
+            "quiz_type": "fretboard",
+            "start_time": "22:39",
+            "end_time": "22:44",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 16,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-17": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 282,
+            "quiz_type": "fretboard",
+            "start_time": "21:12",
+            "end_time": "21:17",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 19,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 272,
+            "quiz_type": "fretboard",
+            "start_time": "21:21",
+            "end_time": "21:25",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 27,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-19": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 177,
+            "quiz_type": "fretboard",
+            "start_time": "19:32",
+            "end_time": "19:35",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 45,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 205,
+            "quiz_type": "fretboard",
+            "start_time": "19:35",
+            "end_time": "19:39",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 35,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-20": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 189,
+            "quiz_type": "fretboard",
+            "start_time": "11:49",
+            "end_time": "11:53",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 41,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 233,
+            "quiz_type": "fretboard",
+            "start_time": "11:55",
+            "end_time": "11:59",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 29,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-21": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 184,
+            "quiz_type": "fretboard",
+            "start_time": "22:32",
+            "end_time": "22:35",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 43,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 179,
+            "quiz_type": "fretboard",
+            "start_time": "22:35",
+            "end_time": "22:38",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 43,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-22": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 20,
+            "total": 20,
+            "accuracy": 100,
+            "time_spent": 83,
+            "quiz_type": "fretboard",
+            "start_time": "21:49",
+            "end_time": "21:50",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 20,
+                "6": 0
+            },
+            "fast_answers": 2,
+            "fast_time_limit": 2
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 29,
+            "total": 30,
+            "accuracy": 97,
+            "time_spent": 108,
+            "quiz_type": "fretboard",
+            "start_time": "21:51",
+            "end_time": "21:53",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 30,
+                "6": 0
+            },
+            "fast_answers": 15,
+            "fast_time_limit": 2
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 30,
+            "total": 30,
+            "accuracy": 100,
+            "time_spent": 128,
+            "quiz_type": "fretboard",
+            "start_time": "21:53",
+            "end_time": "21:55",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 30,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 20,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 17,
+            "total": 20,
+            "accuracy": 85,
+            "time_spent": 89,
+            "quiz_type": "fretboard",
+            "start_time": "21:55",
+            "end_time": "21:57",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 20,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 12,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-23": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 231,
+            "quiz_type": "fretboard",
+            "start_time": "23:55",
+            "end_time": "23:59",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 28,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-24": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 231,
+            "quiz_type": "fretboard",
+            "start_time": "00:00",
+            "end_time": "00:04",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 24,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 192,
+            "quiz_type": "fretboard",
+            "start_time": "13:23",
+            "end_time": "13:26",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 42,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 222,
+            "quiz_type": "fretboard",
+            "start_time": "13:26",
+            "end_time": "13:30",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 34,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-25": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 46,
+            "total": 50,
+            "accuracy": 92,
+            "time_spent": 213,
+            "quiz_type": "fretboard",
+            "start_time": "19:40",
+            "end_time": "19:43",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 32,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 218,
+            "quiz_type": "fretboard",
+            "start_time": "19:44",
+            "end_time": "19:48",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 32,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-26": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 200,
+            "quiz_type": "fretboard",
+            "start_time": "13:32",
+            "end_time": "13:35",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 40,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 183,
+            "quiz_type": "fretboard",
+            "start_time": "13:35",
+            "end_time": "13:38",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 46,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-27": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 198,
+            "quiz_type": "fretboard",
+            "start_time": "23:22",
+            "end_time": "23:25",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 35,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 248,
+            "quiz_type": "fretboard",
+            "start_time": "23:27",
+            "end_time": "23:31",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 24,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-28": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 221,
+            "quiz_type": "fretboard",
+            "start_time": "22:16",
+            "end_time": "22:19",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 31,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 214,
+            "quiz_type": "fretboard",
+            "start_time": "22:20",
+            "end_time": "22:23",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 29,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-29": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 189,
+            "quiz_type": "fretboard",
+            "start_time": "21:19",
+            "end_time": "21:22",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 45,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 202,
+            "quiz_type": "fretboard",
+            "start_time": "21:25",
+            "end_time": "21:28",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 36,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-09-30": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 216,
+            "quiz_type": "fretboard",
+            "start_time": "22:04",
+            "end_time": "22:08",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 33,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 46,
+            "total": 50,
+            "accuracy": 92,
+            "time_spent": 261,
+            "quiz_type": "fretboard",
+            "start_time": "22:08",
+            "end_time": "22:12",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 25,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-01": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 225,
+            "quiz_type": "fretboard",
+            "start_time": "20:19",
+            "end_time": "20:23",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 29,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 192,
+            "quiz_type": "fretboard",
+            "start_time": "20:24",
+            "end_time": "20:27",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 42,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-03": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 208,
+            "quiz_type": "fretboard",
+            "start_time": "22:08",
+            "end_time": "22:12",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 34,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 215,
+            "quiz_type": "fretboard",
+            "start_time": "22:12",
+            "end_time": "22:16",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 33,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-04": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 238,
+            "quiz_type": "fretboard",
+            "start_time": "23:50",
+            "end_time": "23:54",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 27,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 215,
+            "quiz_type": "fretboard",
+            "start_time": "23:55",
+            "end_time": "23:58",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 33,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-05": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 191,
+            "quiz_type": "fretboard",
+            "start_time": "22:20",
+            "end_time": "22:23",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 40,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 219,
+            "quiz_type": "fretboard",
+            "start_time": "22:24",
+            "end_time": "22:28",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 29,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-06": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 226,
+            "quiz_type": "fretboard",
+            "start_time": "23:41",
+            "end_time": "23:45",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 28,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 231,
+            "quiz_type": "fretboard",
+            "start_time": "23:46",
+            "end_time": "23:50",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 27,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-09": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 192,
+            "quiz_type": "fretboard",
+            "start_time": "18:00",
+            "end_time": "18:03",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 40,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 189,
+            "quiz_type": "fretboard",
+            "start_time": "18:06",
+            "end_time": "18:09",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 40,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-10": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 193,
+            "quiz_type": "fretboard",
+            "start_time": "23:17",
+            "end_time": "23:20",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 37,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 220,
+            "quiz_type": "fretboard",
+            "start_time": "23:20",
+            "end_time": "23:24",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 30,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-12": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 200,
+            "quiz_type": "fretboard",
+            "start_time": "23:52",
+            "end_time": "23:56",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 39,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 205,
+            "quiz_type": "fretboard",
+            "start_time": "23:56",
+            "end_time": "23:59",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 39,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-14": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 187,
+            "quiz_type": "fretboard",
+            "start_time": "00:10",
+            "end_time": "00:14",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 44,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 192,
+            "quiz_type": "fretboard",
+            "start_time": "00:14",
+            "end_time": "00:17",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 39,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 197,
+            "quiz_type": "fretboard",
+            "start_time": "23:36",
+            "end_time": "23:40",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 37,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 197,
+            "quiz_type": "fretboard",
+            "start_time": "23:40",
+            "end_time": "23:43",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 38,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-15": [
+        {
+            "mode": "지판: 2번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 189,
+            "quiz_type": "fretboard",
+            "start_time": "22:55",
+            "end_time": "22:58",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 39,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 261,
+            "quiz_type": "fretboard",
+            "start_time": "23:02",
+            "end_time": "23:06",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 16,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-16": [
+        {
+            "mode": "지판: 5번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 202,
+            "quiz_type": "fretboard",
+            "start_time": "21:40",
+            "end_time": "21:44",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 38,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 4번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 238,
+            "quiz_type": "fretboard",
+            "start_time": "21:44",
+            "end_time": "21:48",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 28,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-17": [
+        {
+            "mode": "지판: 3번 줄",
+            "score": 49,
+            "total": 50,
+            "accuracy": 98,
+            "time_spent": 222,
+            "quiz_type": "fretboard",
+            "start_time": "21:30",
+            "end_time": "21:33",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 34,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 2번 줄",
+            "score": 47,
+            "total": 50,
+            "accuracy": 94,
+            "time_spent": 233,
+            "quiz_type": "fretboard",
+            "start_time": "21:33",
+            "end_time": "21:37",
+            "string_counts": {
+                "1": 0,
+                "2": 50,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 27,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-18": [
+        {
+            "mode": "지판: 6번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 180,
+            "quiz_type": "fretboard",
+            "start_time": "14:26",
+            "end_time": "14:29",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0,
+                "6": 50
+            },
+            "fast_answers": 46,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 5번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 196,
+            "quiz_type": "fretboard",
+            "start_time": "14:30",
+            "end_time": "14:33",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 50,
+                "6": 0
+            },
+            "fast_answers": 38,
+            "fast_time_limit": 3
+        }
+    ],
+    "2026-10-19": [
+        {
+            "mode": "지판: 4번 줄",
+            "score": 50,
+            "total": 50,
+            "accuracy": 100,
+            "time_spent": 179,
+            "quiz_type": "fretboard",
+            "start_time": "21:31",
+            "end_time": "21:34",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 50,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 47,
+            "fast_time_limit": 3
+        },
+        {
+            "mode": "지판: 3번 줄",
+            "score": 48,
+            "total": 50,
+            "accuracy": 96,
+            "time_spent": 191,
+            "quiz_type": "fretboard",
+            "start_time": "21:34",
+            "end_time": "21:37",
+            "string_counts": {
+                "1": 0,
+                "2": 0,
+                "3": 50,
+                "4": 0,
+                "5": 0,
+                "6": 0
+            },
+            "fast_answers": 39,
+            "fast_time_limit": 3
+        }
+    ]
+}
