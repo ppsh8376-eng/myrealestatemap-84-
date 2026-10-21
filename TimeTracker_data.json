@@ -783,6 +783,36 @@
             "selected": false
         },
         {
+            "rowNumber": 5,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
             "rowNumber": 10,
             "content": "경제 기사",
             "note": "26/10/22 기사",
@@ -2130,20 +2160,20 @@
             "rowNumber": 16,
             "content": "재테크 도서",
             "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "startTime": "08:18",
+            "endTime": "08:37",
+            "duration": "00:19",
+            "completed": true,
             "selected": false
         },
         {
             "rowNumber": 17,
             "content": "재테크 도서",
             "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "startTime": "21:21",
+            "endTime": "21:47",
+            "duration": "00:26",
+            "completed": true,
             "selected": false
         },
         {
