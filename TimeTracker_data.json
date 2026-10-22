@@ -836,20 +836,20 @@
             "rowNumber": 16,
             "content": "재테크 도서",
             "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "startTime": "08:41",
+            "endTime": "09:04",
+            "duration": "00:23",
+            "completed": true,
             "selected": false
         },
         {
             "rowNumber": 17,
             "content": "재테크 도서",
             "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "startTime": "22:37",
+            "endTime": "22:56",
+            "duration": "00:19",
+            "completed": true,
             "selected": false
         },
         {
