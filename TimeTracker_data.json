@@ -3328,20 +3328,20 @@
             "rowNumber": 18,
             "content": "재테크 도서",
             "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "startTime": "08:43",
+            "endTime": "08:54",
+            "duration": "00:11",
+            "completed": true,
             "selected": false
         },
         {
             "rowNumber": 19,
             "content": "재테크 도서",
             "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "startTime": "19:30",
+            "endTime": "19:54",
+            "duration": "00:24",
+            "completed": true,
             "selected": false
         },
         {
