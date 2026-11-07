@@ -1,838 +1,4 @@
 {
-    "2026-09-30": [
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "단지 분석 (서초구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 10,
-            "content": "Notion 복습",
-            "note": "월급쟁이 부자들",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/09/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/09/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "08:09",
-            "endTime": "08:25",
-            "duration": "00:16",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "18:00",
-            "endTime": "18:20",
-            "duration": "00:20",
-            "completed": true,
-            "selected": false
-        }
-    ],
-    "2026-09-29": [
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "단지 분석 (서초구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 10,
-            "content": "Notion 복습",
-            "note": "월급쟁이 부자들",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/09/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/09/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "08:10",
-            "endTime": "08:22",
-            "duration": "00:12",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "19:09",
-            "endTime": "19:29",
-            "duration": "00:20",
-            "completed": true,
-            "selected": false
-        }
-    ],
-    "2026-10-29": [
-        {
-            "rowNumber": 1,
-            "content": "청음 & Voice 연습",
-            "note": "E [42차시]",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 2,
-            "content": "Piano 기본 연습",
-            "note": "인생의 회전목마",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "임장",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "임장",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 12,
-            "content": "경제 기사",
-            "note": "26/10/24 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 14,
-            "content": "부동산 기사",
-            "note": "26/10/24 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "주식 Update",
-            "note": "주식 주간 리밸런싱",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "주식 Update",
-            "note": "주요 지표 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "08:22",
-            "endTime": "08:36",
-            "duration": "00:14",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 20,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 21,
-            "content": "가계부",
-            "note": "차주 계획 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-17": [
-        {
-            "rowNumber": 1,
-            "content": "청음 & Voice 연습",
-            "note": "E [41차시]",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 2,
-            "content": "Piano 기본 연습",
-            "note": "인생의 회전목마",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "",
-            "startTime": "10:22",
-            "endTime": "12:30",
-            "duration": "02:08",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "",
-            "startTime": "13:19",
-            "endTime": "14:41",
-            "duration": "01:22",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "",
-            "startTime": "15:20",
-            "endTime": "16:50",
-            "duration": "01:30",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/10/17 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/10/17 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 15,
-            "content": "주식 Update",
-            "note": "주식 주간 리밸런싱",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "주식 Update",
-            "note": "주요 지표 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "09:27",
-            "endTime": "09:55",
-            "duration": "00:28",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 20,
-            "content": "가계부",
-            "note": "차주 계획 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-07": [
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/10/07 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/10/07 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-09-23": [
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "단지 분석 (서초구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 10,
-            "content": "Notion 복습",
-            "note": "월급쟁이 부자들",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/09/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/09/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-28": [
-        {
-            "rowNumber": 1,
-            "content": "청음 & Voice 연습",
-            "note": "E [42차시]",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 2,
-            "content": "Piano 기본 연습",
-            "note": "인생의 회전목마",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "임장",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "임장",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 12,
-            "content": "경제 기사",
-            "note": "26/10/24 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 14,
-            "content": "부동산 기사",
-            "note": "26/10/24 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "주식 Update",
-            "note": "주식 주간 리밸런싱",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "주식 Update",
-            "note": "주요 지표 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "08:43",
-            "endTime": "08:54",
-            "duration": "00:11",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "19:30",
-            "endTime": "19:54",
-            "duration": "00:24",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 20,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 21,
-            "content": "가계부",
-            "note": "차주 계획 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
     "2026-10-24": [
         {
             "rowNumber": 1,
@@ -965,7 +131,209 @@
             "selected": false
         }
     ],
-    "2026-10-02": [
+    "2026-11-14": [
+        {
+            "rowNumber": 1,
+            "content": "청음 & Voice 연습",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "평당가, 전세가율 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "시세 조사 (송파구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세 조사 (송파구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/11/14 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/11/14 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 14,
+            "content": "주식 Update",
+            "note": "주식 주간 리밸런싱",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "주식 Update",
+            "note": "주식 주간 리밸런싱",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "주식 Update",
+            "note": "주요 지표 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "Weight",
+            "note": "Push-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 22,
+            "content": "Weight",
+            "note": "Pull-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 23,
+            "content": "Weight",
+            "note": "플랭크",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 24,
+            "content": "Weight",
+            "note": "스쿼트",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-09-30": [
         {
             "rowNumber": 3,
             "content": "Bass 기본 연습",
@@ -1040,440 +408,24 @@
             "rowNumber": 16,
             "content": "재테크 도서",
             "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "08:25",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-31": [
-        {
-            "rowNumber": 1,
-            "content": "청음 & Voice 연습",
-            "note": "A [41차시]",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 2,
-            "content": "Piano 기본 연습",
-            "note": "인생의 회전목마",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "단지 임장 (강남구)",
-            "startTime": "14:28",
-            "endTime": "18:00",
-            "duration": "03:32",
+            "startTime": "08:09",
+            "endTime": "08:25",
+            "duration": "00:16",
             "completed": true,
             "selected": false
         },
         {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "단지 임장 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "보고서 정리 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/10/31 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/10/31 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 15,
-            "content": "주식 Update",
-            "note": "주식 주간 리밸런싱",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "주식 Update",
-            "note": "주요 지표 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "11:53",
-            "endTime": "12:17",
-            "duration": "00:24",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 20,
-            "content": "가계부",
-            "note": "차주 계획 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-13": [
-        {
-            "rowNumber": 1,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 2,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 9,
-            "content": "경제 기사",
-            "note": "26/10/13 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "부동산 기사",
-            "note": "26/10/13 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 15,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-11": [
-        {
-            "rowNumber": 2,
-            "content": "Piano 기본 연습",
-            "note": "인생의 회전목마",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "보고서 정리 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "보고서 정리 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "보고서 정리 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/10/11 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/10/11 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
             "rowNumber": 17,
             "content": "재테크 도서",
             "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 21,
-            "content": "기타",
-            "note": "콘서트",
             "startTime": "18:00",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "endTime": "18:20",
+            "duration": "00:20",
+            "completed": true,
             "selected": false
         }
     ],
-    "2026-10-26": [
+    "2026-10-18": [
         {
             "rowNumber": 1,
             "content": "청음 & Voice 연습",
@@ -1517,7 +469,7 @@
         {
             "rowNumber": 5,
             "content": "임장",
-            "note": "임장",
+            "note": "",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1527,7 +479,7 @@
         {
             "rowNumber": 6,
             "content": "임장",
-            "note": "임장",
+            "note": "",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1535,9 +487,29 @@
             "selected": false
         },
         {
-            "rowNumber": 12,
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
             "content": "경제 기사",
-            "note": "26/10/24 기사",
+            "note": "26/10/18 기사",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1545,19 +517,9 @@
             "selected": false
         },
         {
-            "rowNumber": 14,
+            "rowNumber": 13,
             "content": "부동산 기사",
-            "note": "26/10/24 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "주식 Update",
-            "note": "주식 주간 리밸런싱",
+            "note": "26/10/18 기사",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1566,8 +528,8 @@
         },
         {
             "rowNumber": 17,
-            "content": "주식 Update",
-            "note": "주요 지표 작성",
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1577,27 +539,7 @@
         {
             "rowNumber": 18,
             "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "08:19",
-            "endTime": "08:31",
-            "duration": "00:12",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "22:09",
-            "endTime": "22:24",
-            "duration": "00:15",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 20,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
+            "note": "재테크 도서 (백만장자 시크릿)",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1605,9 +547,9 @@
             "selected": false
         },
         {
-            "rowNumber": 21,
-            "content": "가계부",
-            "note": "차주 계획 작성",
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1615,9 +557,9 @@
             "selected": false
         }
     ],
-    "2026-11-02": [
+    "2026-09-29": [
         {
-            "rowNumber": 1,
+            "rowNumber": 3,
             "content": "Bass 기본 연습",
             "note": "계이름 숙지",
             "startTime": "",
@@ -1627,7 +569,7 @@
             "selected": false
         },
         {
-            "rowNumber": 2,
+            "rowNumber": 4,
             "content": "Guitar 기본 연습",
             "note": "계이름 숙지",
             "startTime": "",
@@ -1637,7 +579,17 @@
             "selected": false
         },
         {
-            "rowNumber": 3,
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "단지 분석 (서초구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
             "content": "임장",
             "note": "시세 숙지",
             "startTime": "",
@@ -1647,9 +599,81 @@
             "selected": false
         },
         {
+            "rowNumber": 10,
+            "content": "Notion 복습",
+            "note": "월급쟁이 부자들",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "08:10",
+            "endTime": "08:22",
+            "duration": "00:12",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "19:09",
+            "endTime": "19:29",
+            "duration": "00:20",
+            "completed": true,
+            "selected": false
+        }
+    ],
+    "2026-10-10": [
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
             "rowNumber": 4,
-            "content": "임장",
-            "note": "단지 임장 (강남구)",
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1659,7 +683,27 @@
         {
             "rowNumber": 5,
             "content": "임장",
-            "note": "단지 임장 (강남구)",
+            "note": "분위기 임장 (강남구)",
+            "startTime": "15:40",
+            "endTime": "17:51",
+            "duration": "02:11",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "분위기 임장 (강남구)",
+            "startTime": "18:28",
+            "endTime": "19:34",
+            "duration": "01:06",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "분위기 임장 (강남구)",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1667,7 +711,7 @@
             "selected": false
         },
         {
-            "rowNumber": 6,
+            "rowNumber": 8,
             "content": "임장",
             "note": "보고서 정리 (강남구)",
             "startTime": "",
@@ -1677,9 +721,9 @@
             "selected": false
         },
         {
-            "rowNumber": 9,
+            "rowNumber": 11,
             "content": "경제 기사",
-            "note": "26/11/02 기사",
+            "note": "26/10/10 기사",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1687,9 +731,9 @@
             "selected": false
         },
         {
-            "rowNumber": 11,
+            "rowNumber": 13,
             "content": "부동산 기사",
-            "note": "26/11/02 기사",
+            "note": "26/10/10 기사",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1698,38 +742,58 @@
         },
         {
             "rowNumber": 15,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "08:31",
-            "endTime": "08:52",
-            "duration": "00:21",
-            "completed": true,
+            "content": "주식 Update",
+            "note": "주식 주간 리밸런싱",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
             "selected": false
         },
         {
             "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "12:40",
-            "endTime": "13:00",
-            "duration": "00:20",
-            "completed": true,
+            "content": "주식 Update",
+            "note": "주요 지표 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
             "selected": false
         },
         {
             "rowNumber": 17,
             "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "19:05",
-            "endTime": "19:23",
-            "duration": "00:18",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "19:59",
+            "endTime": "20:25",
+            "duration": "00:26",
             "completed": true,
             "selected": false
         },
         {
             "rowNumber": 18,
             "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "가계부",
+            "note": "차주 계획 작성",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1737,129 +801,7 @@
             "selected": false
         }
     ],
-    "2026-10-12": [
-        {
-            "rowNumber": 1,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 2,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 9,
-            "content": "경제 기사",
-            "note": "26/10/12 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "부동산 기사",
-            "note": "26/10/12 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 15,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "08:11",
-            "endTime": "08:27",
-            "duration": "00:16",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "12:50",
-            "endTime": "13:21",
-            "duration": "00:31",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "22:04",
-            "endTime": "22:23",
-            "duration": "00:19",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-19": [
+    "2026-11-11": [
         {
             "rowNumber": 1,
             "content": "Piano 기본 연습",
@@ -1903,7 +845,7 @@
         {
             "rowNumber": 10,
             "content": "경제 기사",
-            "note": "26/10/19 기사",
+            "note": "26/11/11 기사",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1913,7 +855,7 @@
         {
             "rowNumber": 12,
             "content": "부동산 기사",
-            "note": "26/10/19 기사",
+            "note": "26/11/11 기사",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -1923,109 +865,7 @@
         {
             "rowNumber": 16,
             "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "08:09",
-            "endTime": "08:29",
-            "duration": "00:20",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "20:46",
-            "endTime": "21:03",
-            "duration": "00:17",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-06": [
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "시세트래킹",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/10/06 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/10/06 기사",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -2035,7 +875,7 @@
         {
             "rowNumber": 17,
             "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -2045,159 +885,7 @@
         {
             "rowNumber": 18,
             "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-10": [
-        {
-            "rowNumber": 2,
-            "content": "Piano 기본 연습",
-            "note": "인생의 회전목마",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "분위기 임장 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "분위기 임장 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "분위기 임장 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "보고서 정리 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "경제 기사",
-            "note": "26/10/10 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 13,
-            "content": "부동산 기사",
-            "note": "26/10/10 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 15,
-            "content": "주식 Update",
-            "note": "주식 주간 리밸런싱",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "주식 Update",
-            "note": "주요 지표 작성",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -2206,8 +894,70 @@
         },
         {
             "rowNumber": 20,
-            "content": "가계부",
-            "note": "차주 계획 작성",
+            "content": "Weight",
+            "note": "Push-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "Weight",
+            "note": "Pull-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 22,
+            "content": "Weight",
+            "note": "플랭크",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 23,
+            "content": "Weight",
+            "note": "스쿼트",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-05": [
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:34",
+            "endTime": "08:50",
+            "duration": "00:16",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "20:46",
+            "endTime": "21:04",
+            "duration": "00:18",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -2479,7 +1229,7 @@
             "selected": false
         }
     ],
-    "2026-09-22": [
+    "2026-10-02": [
         {
             "rowNumber": 3,
             "content": "Bass 기본 연습",
@@ -2554,7 +1304,7 @@
             "rowNumber": 16,
             "content": "재테크 도서",
             "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
+            "startTime": "08:25",
             "endTime": "",
             "duration": "",
             "completed": false,
@@ -2571,11 +1321,11 @@
             "selected": false
         }
     ],
-    "2026-10-14": [
+    "2026-10-17": [
         {
             "rowNumber": 1,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
+            "content": "청음 & Voice 연습",
+            "note": "E [41차시]",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -2584,118 +1334,6 @@
         },
         {
             "rowNumber": 2,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 9,
-            "content": "경제 기사",
-            "note": "26/10/14 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "부동산 기사",
-            "note": "26/10/14 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 15,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "08:27",
-            "endTime": "08:48",
-            "duration": "00:21",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "08:54",
-            "endTime": "08:56",
-            "duration": "00:02",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "22:18",
-            "endTime": "22:37",
-            "duration": "00:19",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-21": [
-        {
-            "rowNumber": 1,
             "content": "Piano 기본 연습",
             "note": "인생의 회전목마",
             "startTime": "",
@@ -2705,88 +1343,6 @@
             "selected": false
         },
         {
-            "rowNumber": 2,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 10,
-            "content": "경제 기사",
-            "note": "26/10/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 12,
-            "content": "부동산 기사",
-            "note": "26/10/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "08:18",
-            "endTime": "08:37",
-            "duration": "00:19",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "21:21",
-            "endTime": "21:47",
-            "duration": "00:26",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-09-27": [
-        {
             "rowNumber": 3,
             "content": "Bass 기본 연습",
             "note": "계이름 숙지",
@@ -2800,148 +1356,6 @@
             "rowNumber": 4,
             "content": "Guitar 기본 연습",
             "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "분위기 임장 (구리시)",
-            "startTime": "09:29",
-            "endTime": "09:35",
-            "duration": "00:06",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "분위기 임장 (구리시)",
-            "startTime": "10:14",
-            "endTime": "13:36",
-            "duration": "03:22",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 9,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "Notion 복습",
-            "note": "월급쟁이 부자들",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 12,
-            "content": "경제 기사",
-            "note": "26/09/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 14,
-            "content": "부동산 기사",
-            "note": "26/09/21 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "09:02",
-            "endTime": "09:26",
-            "duration": "00:24",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "08:35",
-            "endTime": "08:55",
-            "duration": "00:20",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 19,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 20,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-16": [
-        {
-            "rowNumber": 1,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 2,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "임장",
-            "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "임장",
-            "note": "",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -2952,14 +1366,34 @@
             "rowNumber": 5,
             "content": "임장",
             "note": "",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
+            "startTime": "10:22",
+            "endTime": "12:30",
+            "duration": "02:08",
+            "completed": true,
             "selected": false
         },
         {
             "rowNumber": 6,
+            "content": "임장",
+            "note": "",
+            "startTime": "13:19",
+            "endTime": "14:41",
+            "duration": "01:22",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "",
+            "startTime": "15:20",
+            "endTime": "16:50",
+            "duration": "01:30",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
             "content": "임장",
             "note": "",
             "startTime": "",
@@ -2969,243 +1403,9 @@
             "selected": false
         },
         {
-            "rowNumber": 9,
-            "content": "경제 기사",
-            "note": "26/10/16 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "부동산 기사",
-            "note": "26/10/16 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 15,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "08:40",
-            "endTime": "09:01",
-            "duration": "00:21",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "19:24",
-            "endTime": "19:39",
-            "duration": "00:15",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (백만장자 시크릿)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-11-03": [
-        {
-            "rowNumber": 1,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 2,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 3,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "임장",
-            "note": "단지 임장 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 5,
-            "content": "임장",
-            "note": "단지 임장 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 6,
-            "content": "임장",
-            "note": "보고서 정리 (강남구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 9,
-            "content": "경제 기사",
-            "note": "26/11/03 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 11,
-            "content": "부동산 기사",
-            "note": "26/11/03 기사",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 15,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "08:26",
-            "endTime": "08:48",
-            "duration": "00:22",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "12:40",
-            "endTime": "13:26",
-            "duration": "00:46",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 17,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "21:41",
-            "endTime": "21:57",
-            "duration": "00:16",
-            "completed": true,
-            "selected": false
-        },
-        {
-            "rowNumber": 18,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (부의 계단)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        }
-    ],
-    "2026-10-01": [
-        {
-            "rowNumber": 3,
-            "content": "Bass 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 4,
-            "content": "Guitar 기본 연습",
-            "note": "계이름 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 7,
-            "content": "임장",
-            "note": "단지 분석 (서초구)",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 8,
-            "content": "임장",
-            "note": "시세 숙지",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
-            "rowNumber": 10,
-            "content": "Notion 복습",
-            "note": "월급쟁이 부자들",
-            "startTime": "",
-            "endTime": "",
-            "duration": "",
-            "completed": false,
-            "selected": false
-        },
-        {
             "rowNumber": 11,
             "content": "경제 기사",
-            "note": "26/09/21 기사",
+            "note": "26/10/17 기사",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -3215,7 +1415,17 @@
         {
             "rowNumber": 13,
             "content": "부동산 기사",
-            "note": "26/09/21 기사",
+            "note": "26/10/17 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "주식 Update",
+            "note": "주식 주간 리밸런싱",
             "startTime": "",
             "endTime": "",
             "duration": "",
@@ -3224,9 +1434,9 @@
         },
         {
             "rowNumber": 16,
-            "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "19:18",
+            "content": "주식 Update",
+            "note": "주요 지표 작성",
+            "startTime": "",
             "endTime": "",
             "duration": "",
             "completed": false,
@@ -3235,11 +1445,357 @@
         {
             "rowNumber": 17,
             "content": "재테크 도서",
-            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "08:10",
-            "endTime": "08:25",
-            "duration": "00:15",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "09:27",
+            "endTime": "09:55",
+            "duration": "00:28",
             "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "가계부",
+            "note": "차주 계획 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-29": [
+        {
+            "rowNumber": 1,
+            "content": "청음 & Voice 연습",
+            "note": "E [42차시]",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "임장",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "임장",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "경제 기사",
+            "note": "26/10/24 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 14,
+            "content": "부동산 기사",
+            "note": "26/10/24 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "주식 Update",
+            "note": "주식 주간 리밸런싱",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "주식 Update",
+            "note": "주요 지표 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:22",
+            "endTime": "08:36",
+            "duration": "00:14",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "가계부",
+            "note": "차주 계획 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-13": [
+        {
+            "rowNumber": 1,
+            "content": "청음 & Voice 연습",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/11/13 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/11/13 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "Weight",
+            "note": "Push-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 22,
+            "content": "Weight",
+            "note": "Pull-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 23,
+            "content": "Weight",
+            "note": "플랭크",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 24,
+            "content": "Weight",
+            "note": "스쿼트",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-06": [
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:08",
+            "endTime": "08:28",
+            "duration": "00:20",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "13:29",
+            "endTime": "13:42",
+            "duration": "00:13",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
             "selected": false
         }
     ],
@@ -3427,6 +1983,942 @@
             "selected": false
         }
     ],
+    "2026-09-22": [
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "단지 분석 (서초구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "Notion 복습",
+            "note": "월급쟁이 부자들",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-09": [
+        {
+            "rowNumber": 1,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "경제 기사",
+            "note": "26/11/09 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "부동산 기사",
+            "note": "26/11/09 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "Weight",
+            "note": "Push-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "Weight",
+            "note": "Pull-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 22,
+            "content": "Weight",
+            "note": "플랭크",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 23,
+            "content": "Weight",
+            "note": "스쿼트",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-31": [
+        {
+            "rowNumber": 1,
+            "content": "청음 & Voice 연습",
+            "note": "A [41차시]",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "14:28",
+            "endTime": "18:00",
+            "duration": "03:32",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/10/31 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/10/31 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "주식 Update",
+            "note": "주식 주간 리밸런싱",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "주식 Update",
+            "note": "주요 지표 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "11:53",
+            "endTime": "12:17",
+            "duration": "00:24",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "가계부",
+            "note": "차주 계획 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-14": [
+        {
+            "rowNumber": 1,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 9,
+            "content": "경제 기사",
+            "note": "26/10/14 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "부동산 기사",
+            "note": "26/10/14 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "08:27",
+            "endTime": "08:48",
+            "duration": "00:21",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "08:54",
+            "endTime": "08:56",
+            "duration": "00:02",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "22:18",
+            "endTime": "22:37",
+            "duration": "00:19",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-07": [
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-12": [
+        {
+            "rowNumber": 1,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "경제 기사",
+            "note": "26/11/12 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "부동산 기사",
+            "note": "26/11/12 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "Weight",
+            "note": "Push-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "Weight",
+            "note": "Pull-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 22,
+            "content": "Weight",
+            "note": "플랭크",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 23,
+            "content": "Weight",
+            "note": "스쿼트",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-09": [
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/10/09 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/10/09 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-07": [
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/10/07 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/10/07 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "08:10",
+            "endTime": "08:30",
+            "duration": "00:20",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "18:33",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
     "2026-10-03": [
         {
             "rowNumber": 3,
@@ -3559,6 +3051,98 @@
             "selected": false
         }
     ],
+    "2026-09-23": [
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "단지 분석 (서초구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "Notion 복습",
+            "note": "월급쟁이 부자들",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
     "2026-11-01": [
         {
             "rowNumber": 1,
@@ -3681,6 +3265,688 @@
             "selected": false
         }
     ],
+    "2026-10-13": [
+        {
+            "rowNumber": 1,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 9,
+            "content": "경제 기사",
+            "note": "26/10/13 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "부동산 기사",
+            "note": "26/10/13 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-21": [
+        {
+            "rowNumber": 1,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "경제 기사",
+            "note": "26/10/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "부동산 기사",
+            "note": "26/10/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:18",
+            "endTime": "08:37",
+            "duration": "00:19",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "21:21",
+            "endTime": "21:47",
+            "duration": "00:26",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-11": [
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "16:10",
+            "endTime": "16:29",
+            "duration": "00:19",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/10/11 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/10/11 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "기타",
+            "note": "콘서트",
+            "startTime": "18:00",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-26": [
+        {
+            "rowNumber": 1,
+            "content": "청음 & Voice 연습",
+            "note": "E [42차시]",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "임장",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "임장",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "경제 기사",
+            "note": "26/10/24 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 14,
+            "content": "부동산 기사",
+            "note": "26/10/24 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "주식 Update",
+            "note": "주식 주간 리밸런싱",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "주식 Update",
+            "note": "주요 지표 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:19",
+            "endTime": "08:31",
+            "duration": "00:12",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "22:09",
+            "endTime": "22:24",
+            "duration": "00:15",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "가계부",
+            "note": "차주 계획 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-10": [
+        {
+            "rowNumber": 1,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "경제 기사",
+            "note": "26/11/10 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "부동산 기사",
+            "note": "26/11/10 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "Weight",
+            "note": "Push-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "Weight",
+            "note": "Pull-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 22,
+            "content": "Weight",
+            "note": "플랭크",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 23,
+            "content": "Weight",
+            "note": "스쿼트",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-04": [
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:19",
+            "endTime": "08:32",
+            "duration": "00:13",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "21:13",
+            "endTime": "21:45",
+            "duration": "00:32",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
     "2026-10-27": [
         {
             "rowNumber": 1,
@@ -3769,6 +4035,402 @@
             "startTime": "20:37",
             "endTime": "20:52",
             "duration": "00:15",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-08": [
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/10/08 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/10/08 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "08:17",
+            "endTime": "08:31",
+            "duration": "00:14",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "19:40",
+            "endTime": "19:55",
+            "duration": "00:15",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-08": [
+        {
+            "rowNumber": 1,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "경제 기사",
+            "note": "26/11/08 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "부동산 기사",
+            "note": "26/11/08 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "Weight",
+            "note": "Push-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "Weight",
+            "note": "Pull-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 22,
+            "content": "Weight",
+            "note": "플랭크",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 23,
+            "content": "Weight",
+            "note": "스쿼트",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-02": [
+        {
+            "rowNumber": 1,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 9,
+            "content": "경제 기사",
+            "note": "26/11/02 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "부동산 기사",
+            "note": "26/11/02 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:31",
+            "endTime": "08:52",
+            "duration": "00:21",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "12:40",
+            "endTime": "13:00",
+            "duration": "00:20",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "19:05",
+            "endTime": "19:23",
+            "duration": "00:18",
             "completed": true,
             "selected": false
         },
@@ -3896,6 +4558,514 @@
         },
         {
             "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-28": [
+        {
+            "rowNumber": 1,
+            "content": "청음 & Voice 연습",
+            "note": "E [42차시]",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "임장",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "임장",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "경제 기사",
+            "note": "26/10/24 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 14,
+            "content": "부동산 기사",
+            "note": "26/10/24 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "주식 Update",
+            "note": "주식 주간 리밸런싱",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "주식 Update",
+            "note": "주요 지표 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:43",
+            "endTime": "08:54",
+            "duration": "00:11",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "19:30",
+            "endTime": "19:54",
+            "duration": "00:24",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "가계부",
+            "note": "차주 계획 작성",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-15": [
+        {
+            "rowNumber": 1,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 9,
+            "content": "경제 기사",
+            "note": "26/10/15 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "부동산 기사",
+            "note": "26/10/15 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-12": [
+        {
+            "rowNumber": 1,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 9,
+            "content": "경제 기사",
+            "note": "26/10/12 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "부동산 기사",
+            "note": "26/10/12 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "08:11",
+            "endTime": "08:27",
+            "duration": "00:16",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "12:50",
+            "endTime": "13:21",
+            "duration": "00:31",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "22:04",
+            "endTime": "22:23",
+            "duration": "00:19",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-09-27": [
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "분위기 임장 (구리시)",
+            "startTime": "09:29",
+            "endTime": "09:35",
+            "duration": "00:06",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "분위기 임장 (구리시)",
+            "startTime": "10:14",
+            "endTime": "13:36",
+            "duration": "03:22",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 9,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "Notion 복습",
+            "note": "월급쟁이 부자들",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "경제 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 14,
+            "content": "부동산 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "09:02",
+            "endTime": "09:26",
+            "duration": "00:24",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "08:35",
+            "endTime": "08:55",
+            "duration": "00:20",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
             "content": "재테크 도서",
             "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
             "startTime": "",
@@ -4281,6 +5451,178 @@
             "selected": false
         }
     ],
+    "2026-11-15": [
+        {
+            "rowNumber": 1,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "시세 조사 (송파구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "시세 조사 (송파구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "시세 조사 (송파구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "시세 조사 (송파구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "경제 기사",
+            "note": "26/11/15 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "부동산 기사",
+            "note": "26/11/15 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (돈, 뜨겁게 사랑하고 차갑게 다루어라)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 20,
+            "content": "Weight",
+            "note": "Push-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 21,
+            "content": "Weight",
+            "note": "Pull-up",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 22,
+            "content": "Weight",
+            "note": "플랭크",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 23,
+            "content": "Weight",
+            "note": "스쿼트",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 25,
+            "content": "기타",
+            "note": "주혁 결혼식",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
     "2026-10-04": [
         {
             "rowNumber": 2,
@@ -4386,10 +5728,10 @@
             "rowNumber": 18,
             "content": "재테크 도서",
             "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
-            "startTime": "23:37",
-            "endTime": "23:37",
-            "duration": "00:00",
-            "completed": true,
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
             "selected": false
         },
         {
@@ -4410,6 +5752,546 @@
             "endTime": "16:30",
             "duration": "",
             "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-16": [
+        {
+            "rowNumber": 1,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 9,
+            "content": "경제 기사",
+            "note": "26/10/16 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "부동산 기사",
+            "note": "26/10/16 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "08:40",
+            "endTime": "09:01",
+            "duration": "00:21",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "19:24",
+            "endTime": "19:39",
+            "duration": "00:15",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (백만장자 시크릿)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-19": [
+        {
+            "rowNumber": 1,
+            "content": "Piano 기본 연습",
+            "note": "인생의 회전목마",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "경제 기사",
+            "note": "26/10/19 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 12,
+            "content": "부동산 기사",
+            "note": "26/10/19 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:09",
+            "endTime": "08:29",
+            "duration": "00:20",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "20:46",
+            "endTime": "21:03",
+            "duration": "00:17",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-11-03": [
+        {
+            "rowNumber": 1,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 2,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 3,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "단지 임장 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "보고서 정리 (강남구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 9,
+            "content": "경제 기사",
+            "note": "26/11/03 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "부동산 기사",
+            "note": "26/11/03 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 15,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "08:26",
+            "endTime": "08:48",
+            "duration": "00:22",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "12:40",
+            "endTime": "13:26",
+            "duration": "00:46",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "21:41",
+            "endTime": "21:57",
+            "duration": "00:16",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (부의 계단)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        }
+    ],
+    "2026-10-01": [
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "단지 분석 (서초구)",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 10,
+            "content": "Notion 복습",
+            "note": "월급쟁이 부자들",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/09/21 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 16,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "19:18",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "08:10",
+            "endTime": "08:25",
+            "duration": "00:15",
+            "completed": true,
+            "selected": false
+        }
+    ],
+    "2026-10-06": [
+        {
+            "rowNumber": 3,
+            "content": "Bass 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 4,
+            "content": "Guitar 기본 연습",
+            "note": "계이름 숙지",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 5,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 6,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 7,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 8,
+            "content": "임장",
+            "note": "시세트래킹",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 11,
+            "content": "경제 기사",
+            "note": "26/10/06 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 13,
+            "content": "부동산 기사",
+            "note": "26/10/06 기사",
+            "startTime": "",
+            "endTime": "",
+            "duration": "",
+            "completed": false,
+            "selected": false
+        },
+        {
+            "rowNumber": 17,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "08:13",
+            "endTime": "08:29",
+            "duration": "00:16",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 18,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "13:00",
+            "endTime": "13:11",
+            "duration": "00:11",
+            "completed": true,
+            "selected": false
+        },
+        {
+            "rowNumber": 19,
+            "content": "재테크 도서",
+            "note": "재테크 도서 (결국 당신은 아파트를 사게 된다)",
+            "startTime": "17:41",
+            "endTime": "18:13",
+            "duration": "00:32",
+            "completed": true,
             "selected": false
         }
     ]
